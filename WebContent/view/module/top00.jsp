@@ -8,25 +8,25 @@
     <meta name="description" content="">
     <meta name="author" content="">
    <!-- jQuery -->
-    <script src="./../../assets/js/jquery-2.1.0.min.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/jquery-2.1.0.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="./../../assets/js/popper.js"></script>
-    <script src="./../../assets/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/popper.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/bootstrap.min.js"></script>
 
     <!-- Plugins -->
-    <script src="./../../assets/js/owl-carousel.js"></script>
-    <script src="./../../assets/js/accordions.js"></script>
-    <script src="./../../assets/js/datepicker.js"></script>
-    <script src="./../../assets/js/scrollreveal.min.js"></script>
-    <script src="./../../assets/js/waypoints.min.js"></script>
-    <script src="./../../assets/js/jquery.counterup.min.js"></script>
-    <script src="./../../assets/js/imgfix.min.js"></script> 
-    <script src="./../../assets/js/slick.js"></script> 
-    <script src="./../../assets/js/lightbox.js"></script> 
-    <script src="./../../assets/js/isotope.js"></script> 
+    <script src="<%=request.getContextPath()%>/assets/js/owl-carousel.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/accordions.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/datepicker.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/scrollreveal.min.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/waypoints.min.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/jquery.counterup.min.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/imgfix.min.js"></script> 
+    <script src="<%=request.getContextPath()%>/assets/js/slick.js"></script> 
+    <script src="<%=request.getContextPath()%>/assets/js/lightbox.js"></script> 
+    <script src="<%=request.getContextPath()%>/assets/js/isotope.js"></script> 
     
-    <script src="./../../assets/js/custom.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
 
     <script>
 
@@ -57,13 +57,13 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="./main.jsp" class="logo" >
-                            <img  src="./../../assets/images/logo.png">
+                        <a href="<%=request.getContextPath()%>/view/main.jsp" class="logo" >
+                            <img  src="<%=request.getContextPath()%>/assets/images/logo.png">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="./main.jsp" class="active">메인페이지</a></li>
+                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp" class="active">메인페이지</a></li>
                             <li class="scroll-to-section"><a href="#">공지사항</a></li>
                             <li class="scroll-to-section"><a href="#">근태관리</a></li>
                             <li class="scroll-to-section"><a href="#">중고장터</a></li>
