@@ -25,7 +25,7 @@
 		</div>
 		<div id="container">
 			<div id="aside">
-				<img id="img" src="/asset/images/login_img.png">
+				<img id="img" src="/assets/images/login_img.png">
 			</div>
 		<form action="/login.do" method="post">
 			<div class="contents">

@@ -9,7 +9,7 @@
 <title>GroupWare Index</title>
 </head>
 <body>
-	<h2>hello World</h2>
+	<!-- <h2>hello World</h2> -->
 		<script type="text/javascript">
 			location.href = 'login.do';
 		</script>
