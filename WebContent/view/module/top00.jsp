@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/templatemo-hexashop.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/lightbox.css">
+    
    <!-- jQuery -->
     <script src="<%=request.getContextPath()%>/assets/js/jquery-2.1.0.min.js"></script>
 
@@ -49,7 +57,6 @@
     <!-- ***** Preloader Start ***** -->
     <div id="preloader"></div>  
     <!-- ***** Preloader End ***** -->
-    
        <!-- ***** Header Area Start ***** -->
     <header class="header-area header-area">
         <div class="container">
@@ -57,15 +64,15 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="./main.jsp" class="logo" >
-                            <img  src="./../../assets/images/logo.png">
+                        <a href="<%=request.getContextPath()%>/view/main.jsp" class="logo" >
+                            <img  src="<%=request.getContextPath()%>/assets/images/logo.png">
                         </a>
                         <!-- ***** Logo End ***** -->
-                            <a id="today" class="today">일자</a><br>
-                            <a id="time"  class="time">시간</a>
+                           <!--  <a id="today" class="today">일자</a><br>
+                            <a id="time"  class="time">시간</a> -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="./main.jsp" class="active">메인페이지</a></li>
+                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp" class="active">메인페이지</a></li>
                             <li class="scroll-to-section"><a href="#">공지사항</a></li>
                             <li class="submenu">
                                 <a href="javascript:;">근태관리</a>
@@ -106,6 +113,5 @@
         </div>
       
     </header>
-  <script src="<%=request.getContextPath()%>/assets/js/timeJs.js"></script>
     
     

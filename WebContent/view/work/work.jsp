@@ -14,13 +14,13 @@
  <!-- bootstrap css -->
  <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
  <style>
- .date {
+ .date2 {
  	color : gray;
  	margin-bottom: 0;
  }
  
- .time{
-  font-size: 60px;
+ .time2{
+  font-size: 60px !important;
  }
  .inOut{
  border: 2px solid #c7c7c7;
@@ -90,14 +90,18 @@
 </head>
 <body id="bd" onload="getTime()">
 	<!-- 네비 바 인클루드 -->
-<%@ include file="/view/module/top00.jsp" %>	
+<%@ include file="/view/module/top00.jsp" %>
+<br>
+<br>
+<br>
+<br>
 <div class="container" style="margin-top: 10px;">
   <div class="row">
   	<!-- 출퇴근 버튼, 정보 영역 -->
     <div class="col-md-3 inOut mr-2">
 			<p>${AUTHUSER.emp_kname} 님, 안녕하세요</p>
-			<p id="WhatDateIsItNow" class="date"></p>
-			<p id="WhatTimeIsItNow" class="time"></p>
+			<p id="WhatDateIsItNow" class="date2"></p>
+			<p id="WhatTimeIsItNow" class="time2"></p>
 			<p>현재 [${work.status}]상태입니다</p>
 			<p><span>출근시간</span><span class="fmt_time"><fmt:formatDate type="date" value="${work.work_in_time}" pattern="kk:mm:ss"/></span></p>
 			<p><span>퇴근시간</span><span class="fmt_time"><fmt:formatDate type="date" value="${work.work_out_time}" pattern="kk:mm:ss"/></span></p>
@@ -147,6 +151,8 @@
   </div>
 </div>
  
+ 
+ <%@ include file="/view/module/bottom00.jsp" %> 
 </body>
 </html>
 
