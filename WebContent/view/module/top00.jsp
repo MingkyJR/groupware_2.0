@@ -61,8 +61,6 @@
                             <img  src="./../../assets/images/logo.png">
                         </a>
                         <!-- ***** Logo End ***** -->
-                            <a id="today" class="today">일자</a><br>
-                            <a id="time"  class="time">시간</a>
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="./main.jsp" class="active">메인페이지</a></li>
@@ -99,6 +97,5 @@
         </div>
       
     </header>
-  <script src="./../assets/js/timeJs.js"></script>
     
     
