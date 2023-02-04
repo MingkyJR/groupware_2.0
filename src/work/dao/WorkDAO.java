@@ -48,10 +48,10 @@ public class WorkDAO {
 	
 	
 	public void workIn(Connection conn, int emp_no) throws SQLException {
-		String sql = "insert into work_history(work_num,work_in_time,work_out_time,status,work_reg_date,emp_no,work_late) " + 
+		String sql = "insert into work_history(work_num,work_in_time,work_out_time,status,work_reg_date,emp_no,work_late,work_status) " + 
 				"values(work_histroy_seq.nextval,current_timestamp,null,'출근',sysdate,?,(CASE WHEN TO_CHAR(sysdate, 'HH24:MI:SS') > '09:10:59' THEN '지각' " + 
 				"     ELSE null " + 
-				"     end))";
+				"     end),'근태이상')";
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = conn.prepareStatement(sql);

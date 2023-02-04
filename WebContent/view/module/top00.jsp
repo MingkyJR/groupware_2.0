@@ -1,32 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-   <!-- jQuery -->
-    <script src="<%=request.getContextPath()%>/assets/js/jquery-2.1.0.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="<%=request.getContextPath()%>/assets/js/popper.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/bootstrap.min.js"></script>
-
-    <!-- Plugins -->
-    <script src="<%=request.getContextPath()%>/assets/js/owl-carousel.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/accordions.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/datepicker.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/scrollreveal.min.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/waypoints.min.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/jquery.counterup.min.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/imgfix.min.js"></script> 
-    <script src="<%=request.getContextPath()%>/assets/js/slick.js"></script> 
-    <script src="<%=request.getContextPath()%>/assets/js/lightbox.js"></script> 
-    <script src="<%=request.getContextPath()%>/assets/js/isotope.js"></script> 
-    
-    <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
 
     <script>
 
@@ -58,14 +32,24 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="<%=request.getContextPath()%>/view/main.jsp" class="logo" >
-                            <img  src="<%=request.getContextPath()%>/assets/images/logo.png">
+                            <img  src="<%=request.getContextPath()%>/assets/images/logo.png" style="">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp" class="active">메인페이지</a></li>
+                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp">메인페이지</a></li>
                             <li class="scroll-to-section"><a href="#">공지사항</a></li>
-                            <li class="scroll-to-section"><a href="#">근태관리</a></li>
+                            <li class="submenu">
+                                <a href="<%=request.getContextPath()%>/work.do">근태관리</a>
+                                <ul>
+                                    <li><a href="<%=request.getContextPath()%>/work.do">근태관리</a></li>
+                                    <li><a href="#">출퇴근 수정</a></li>
+                                    <c:if test="${AUTHUSER.emp_grade eq 5}">
+                                    <li><a href="#">직원 근태현황 조회</a></li>
+                                    <li><a href="#">직원 출퇴근 수정</a></li>
+                                    </c:if>
+                                </ul>
+                            </li>
                             <li class="scroll-to-section"><a href="#">중고장터</a></li>
                             <li class="scroll-to-section"><a href="#">메세지</a></li>
                              <li class="submenu">

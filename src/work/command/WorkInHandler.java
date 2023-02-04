@@ -27,8 +27,8 @@ public class WorkInHandler implements CommandHandler {
 		if(work != null) {
 			
 			request.setAttribute("msg", "이미 출근처리되었습니다.");
-			request.setAttribute("url", "/work.do");
-			return "/view/error.jsp";
+			request.setAttribute("url", request.getContextPath()+"/work.do");
+			return "/view/work/error.jsp";
 		}
 		
 		workService.workIn(emp_no);
