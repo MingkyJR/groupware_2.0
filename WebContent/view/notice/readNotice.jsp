@@ -39,6 +39,17 @@
     
     <!-- Global Init -->
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
+       <style>
+		table {
+	    width: 800px;
+	    height: 600px;
+	    margin-left: auto;
+	    margin-right: auto;
+	 	}
+        </style>
+    
+    
+    
 
         <script>
         	$(document).ready(function(){
