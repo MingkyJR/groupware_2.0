@@ -39,7 +39,7 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp" class="active">메인페이지</a></li>
-                            <li class="scroll-to-section"><a href="#">공지사항</a></li>
+                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/notice/list.do">공지사항</a></li>
                             <li class="scroll-to-section"><a href="#">근태관리</a></li>
                             <li class="scroll-to-section"><a href="#">중고장터</a></li>
                             <li class="scroll-to-section"><a href="#">메세지</a></li>
