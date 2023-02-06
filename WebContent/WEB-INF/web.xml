@@ -63,12 +63,12 @@
   	<filter-name>LoginCheckFilter</filter-name>
   	<filter-class>filter.LoginCheckFilter</filter-class>
   </filter>
-  
+<!--   
   <filter-mapping>
   	<filter-name>LoginCheckFilter</filter-name>
   	<url-pattern>/changeMyInfo.do</url-pattern>
-
+  	<url-pattern>*.jsp</url-pattern>
   </filter-mapping>
- 
+  -->
   
 </web-app>
