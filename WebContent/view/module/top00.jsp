@@ -45,7 +45,7 @@
                                     <li><a href="<%=request.getContextPath()%>/work.do">근태관리</a></li>
                                     <li><a href="#">출퇴근 수정</a></li>
                                     <c:if test="${AUTHUSER.emp_grade eq 5}">
-                                    <li><a href="#">직원 근태현황 조회</a></li>
+                                    <li><a href="<%=request.getContextPath()%>/work_admin.do">직원 근태현황 조회</a></li>
                                     <li><a href="#">직원 출퇴근 수정</a></li>
                                     </c:if>
                                 </ul>
@@ -81,5 +81,9 @@
         </div>
       
     </header>
+    <br>
+    <br>
+    <br>
+    <br>
     
     

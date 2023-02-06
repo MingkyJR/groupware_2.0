@@ -60,8 +60,20 @@
 			.fmt_time{
 				float: right;
 			}
-			.empNoInput{
-			text-align: right;
+			
+			.work_status{
+			color: white;
+			border-radius: 25px;
+			font-size: small;
+			padding: 3px;
+			}
+			.ws1{
+			background-color: #FE2E2E;
+			color: white;
+			}
+			.ws2{
+			background-color: #2E9AFE;
+			color: white;
 			}
  
  </style>
@@ -121,10 +133,6 @@
 
 <body id="bd" onload="getTime()">
 <%@ include file="../module/top00.jsp" %>
-<br>
-<br>
-<br>
-<br>
 
 <div class="container" style="margin-top: 10px;">
   <div class="row">
@@ -186,7 +194,14 @@
       <td><fmt:formatDate type="date" value="${month.work_out_time}" pattern="kk:mm:ss"/></td>
       <td><c:if test="${not empty month.work_out_time}">${month.total_day}</c:if></td>
       <td>${month.overtime}</td>
-      <td>${month.work_status}</td>
+      <td>
+      <c:if test="${month.work_status eq '근태이상'}">
+      <span class="work_status ws1">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '정상처리'}">
+      <span class="work_status ws2">${month.work_status}</span>
+      </c:if>
+      </td>
     </tr>
   	</c:forEach>
   </tbody>

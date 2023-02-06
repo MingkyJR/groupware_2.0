@@ -16,9 +16,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/templatemo-hexashop.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/owl-carousel.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/lightbox.css">
-     </head>
     
-    <body>
     <script src="<%=request.getContextPath()%>/assets/js/jquery-2.1.0.min.js"></script>
 
     <!-- Bootstrap -->
