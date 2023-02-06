@@ -32,7 +32,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="<%=request.getContextPath()%>/view/main.jsp" class="logo" >
-                            <img  src="<%=request.getContextPath()%>/assets/images/logo.png" style="">
+                            <img  src="<%=request.getContextPath()%>/assets/images/logo.png">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -43,7 +43,7 @@
                                 <a href="<%=request.getContextPath()%>/work.do">근태관리</a>
                                 <ul>
                                     <li><a href="<%=request.getContextPath()%>/work.do">근태관리</a></li>
-                                    <li><a href="#">출퇴근 수정</a></li>
+                                    <li><a href="<%=request.getContextPath()%>/workEdit.do">출퇴근 수정</a></li>
                                     <c:if test="${AUTHUSER.emp_grade eq 5}">
                                     <li><a href="<%=request.getContextPath()%>/work_admin.do">직원 근태현황 조회</a></li>
                                     <li><a href="#">직원 출퇴근 수정</a></li>

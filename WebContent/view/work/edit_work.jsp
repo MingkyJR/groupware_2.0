@@ -9,7 +9,7 @@
  <meta name="description" content="member board Web Application">
  <meta name="keywords" content="member, board, article, mvc">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title></title>
+ <title>출퇴근 수정 요청</title>
  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
@@ -71,10 +71,11 @@
 			}
     
     </style>
+    
 </head>
 <body>
 <%@ include file="../module/top00.jsp" %>
-<h2>근태 수정 요청 페이지</h2>
+<h2>출퇴근 수정 요청 페이지</h2>
 <div class="container" style="margin-top: 10px;">
   <div class="row">
   	<!-- 출퇴근 버튼, 정보 영역 -->
@@ -119,7 +120,7 @@
       </td>
       <td>
       <c:if test="${month.work_status eq '근태이상'}">
-      <img src="/assets/icon/pencil-square.svg">
+      <a href="writeEdit.do?date=${month.work_reg_date}&empNo=${AUTHUSER.emp_no}"><img src="/assets/icon/pencil-square.svg"></a>
       </c:if>
       </td>
     </tr>
