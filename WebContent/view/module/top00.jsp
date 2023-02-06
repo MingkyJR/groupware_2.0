@@ -1,32 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-   <!-- jQuery -->
-    <script src="<%=request.getContextPath()%>/assets/js/jquery-2.1.0.min.js"></script>
 
-    <!-- Bootstrap -->
-    <script src="<%=request.getContextPath()%>/assets/js/popper.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/bootstrap.min.js"></script>
-
-    <!-- Plugins -->
-    <script src="<%=request.getContextPath()%>/assets/js/owl-carousel.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/accordions.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/datepicker.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/scrollreveal.min.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/waypoints.min.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/jquery.counterup.min.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/imgfix.min.js"></script> 
-    <script src="<%=request.getContextPath()%>/assets/js/slick.js"></script> 
-    <script src="<%=request.getContextPath()%>/assets/js/lightbox.js"></script> 
-    <script src="<%=request.getContextPath()%>/assets/js/isotope.js"></script> 
-    
-    <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
 
     <script>
 
@@ -97,5 +72,9 @@
         </div>
       
     </header>
+    <br>
+    <br>
+    <br>
+    <br>
     
     
