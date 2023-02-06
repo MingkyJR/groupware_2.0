@@ -658,8 +658,8 @@ banner
 
 .main-banner {
   border-bottom: 3px dotted #eee;
-  padding-top: 160px;
-  padding-bottom: 30px;x
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .main-banner .left-content .thumb img {
