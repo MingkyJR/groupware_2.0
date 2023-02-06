@@ -42,6 +42,9 @@ public class User {
 		this.emp_grade = emp_grade;
 	}
 
+	public User(int emp_no) {
+		this.emp_no = emp_no;
+	}
 
 	//메서드
 	public int getEmp_no() {

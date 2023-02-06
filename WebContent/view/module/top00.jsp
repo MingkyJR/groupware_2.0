@@ -70,19 +70,26 @@
                             <li class="scroll-to-section"><a href="#">메세지</a></li>
                              <li class="submenu">
                                 <a href="javascript:;">전자결재</a>
+                  <c:if test="${!empty AUTHUSER && (AUTHUSER.emp_grade ne 5)}">
                                 <ul>
-                                    <li><a href="./4-00.통합페이지.jsp">통합페이지</a></li>
+                                    <li><a href="<%=request.getContextPath()%>/view/eApproval/4-00.통합페이지.jsp">통합페이지</a></li>
                                     <li><a href="<%=request.getContextPath()%>/document/writeDocument.do">전자결재</a></li>
-                                    <li><a href="<%=request.getContextPath()%>/document/listDocument.do">결재대기 </a></li>
-                                    <li><a href="<%=request.getContextPath()%>/document/passDocument.do">승인결과 </a></li>
+                                    <li><a href="<%=request.getContextPath()%>/view/eApproval/4-12.대기문커버리스트.jsp">결재대기 </a></li>
+                                    <li><a href="<%=request.getContextPath()%>/view/eApproval/4-13.승인문커버리스트.jsp">승인결과 </a></li>
                                 </ul>
+                  </c:if>
+                  <c:if test="${not empty AUTHUSER && (AUTHUSER.emp_grade eq 5)}">
+                                <ul>
+                                    <li><a href="<%=request.getContextPath()%>/view/eApproval/4-00.통합페이지2.jsp">전자결재</a></li>
+                                </ul>
+                  </c:if>
                             </li>
                             <li class="submenu">
                                 <a href="javascript:;">마이페이지</a>
                                 <ul>
+                                    <li><a href="/login.do">로그인</a></li>
                                     <li><a href="/logout.do">로그아웃</a></li>
                                     <li><a href="#">개인정보</a></li>
-                                    <li><a href="#">Features Page 3</a></li>
                                 </ul>
                             </li>
                             
