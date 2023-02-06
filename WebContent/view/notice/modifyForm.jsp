@@ -47,7 +47,53 @@
 	    margin-left: auto;
 	    margin-right: auto;
 	 	}
+	 	th {
+	    text-align: center;
+/* 	    border: 1px solid #EFEFEF; */
+	    background: #C5CAD7
+	 	}
 	 	textarea{ width:98%; border:0; resize: none;}
+	 	
+	 	
+	 	#ism{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	
+	 	#bsm{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	
+	 	#list{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	
+	 	#read{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	
+	 	#del{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
     </style>
     
         <script>
@@ -89,9 +135,13 @@ ${modReq}<br/><br/><br/><br/>
 --%>
 
 <%--  <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
- <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
+<p class="home" style="text-align: left; margin-left:150px;">
+<a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
+</p>
  <hr/>
- <h3>modifyForm.jsp</h3>
+  
+<br/><br/>
+<!--  <h3>modifyForm.jsp</h3> -->
  <form name="modifyFrm" id= "modifyFrm"
  		method="post" action="<%=request.getContextPath()%>/notice/modify.do"> 
  <input type="hidden" name="pageNo" id="pageNo" value="${pageNo}"/>
@@ -129,16 +179,16 @@ ${modReq}<br/><br/><br/><br/>
  	
  	 <tr>
  		<td colspan="2" style="text-align:center;">
- 		<input type="submit" value="수정하기(submit)"/>
- 		<button type="button" onclick="formSubmit();">수정하기(button)</button>
+<!--  		<input type="submit" id="ism" value="수정하기"/> -->
+ 		<button type="button" id="bsm" onclick="formSubmit();">수정하기</button>
  		</td>
  	</tr>
  	
  	 <tr>
  		<td colspan="2" style="text-align:center;">
- 		<button type="button" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}'">목록보기</button>
- 		<button type="button" onclick="location.href='<%=request.getContextPath()%>/notice/read.do?no=${modReq.noticeNumber}&pageNo=${pageNo}&rowSize=3'">게시글 상세조회</button>
- 		<button type="button" onclick="location.href='<%=request.getContextPath()%>/notice/delete.do?no=${modReq.noticeNumber}'">게시글 삭제</button>
+ 		<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}'">목록보기</button>
+ 		<button type="button" id="read" onclick="location.href='<%=request.getContextPath()%>/notice/read.do?no=${modReq.noticeNumber}&pageNo=${pageNo}&rowSize=3'">게시글 상세조회</button>
+ 		<button type="button" id="del" onclick="location.href='<%=request.getContextPath()%>/notice/delete.do?no=${modReq.noticeNumber}'">게시글 삭제</button>
 
 <%--  		<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}">목록보기(파라미터 처리 안함)</a> --%>
 <%--  		<a href="<%=request.getContextPath()%>/notice/read.do?no=${modReq.noticeNumber}&pageNo=${pageNo}&rowSize=3">글 상세조회(모델보면서 보완예정)</a> --%>

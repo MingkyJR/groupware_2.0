@@ -44,8 +44,9 @@
 		width: 950px;
  	    margin-left: auto; 
  	    margin-right: auto; 
-  	    border: 1px solid #bcbcbc;
+/*   	    border: 1px solid #bcbcbc; */
   	    text-align: center;
+/*   	    border-collapse: separate; border-radius: 8px; */
  	 	} 
  	 	.t2{ 
 		width: 950px;
@@ -60,40 +61,61 @@
  	 	} 
 	 	
 	 	th {
- 	    border: 1px solid #bcbcbc;
-
+/*  	    border: 1px solid #bcbcbc; */
+/* 		border: 1px solid #EFEFEF; */
 	 	}
 	 	
-	 	#nu{ width:50px;
+	 	#nu{ width:50px; background: #C5CAD7;
 	 	}
-	 	#ti{ width:230px;
+	 	#ti{ width:230px; background: #C5CAD7;
 	 	}
-	 	#wr{ width:90px;
+	 	#wr{ width:90px; background: #C5CAD7;
 	 	}
-	 	#wd{ width:150px;
+	 	#rd{ width:150px; background: #C5CAD7;
 	 	}
-	 	#md{ width:230px;
+	 	#md{ width:230px; background: #C5CAD7;
 	 	}
-	 	#ct{ width:60px;
+	 	#ct{ width:60px; background: #C5CAD7;
 	 	}
 	 	
 	 	td {
 	    width: 120px;
- 	    border: 1px solid #bcbcbc;
+/*   	    border: 1px solid #bcbcbc; */
 	 	}
-	 	
 	 	
  	 	tr { 
  	    height: 60px; 
-	    border: 1px solid #bcbcbc; 
+/*  	    border: 1px solid #bcbcbc; */
  	 	} 
 	 	
-
+/* 		#rowSizeFrm { */
+/* 		text-align: right; margin-right: auto; */
+/* 		} */
 	 	
 	 	
 	 	h1 { text-align: center; }
-	 	p { text-align: right; margin-right:200px;}
-        
+/* 	 	p { text-align: right; margin-right:200px;} */
+/* 	 	p { text-align: right; margin-right: auto; margin-left: auto;} */
+/*  	 	.write {float:left; margin-left: auto;} */
+  	 	.write {float:left;}
+  	 	.choice {float:right;}
+/* 	 	.home { text-align: left; margin-left:150px;} */
+	 	#sub{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	
+	 	#wri{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+/*         #C5CAD7 */
         </style>
         
         
@@ -188,33 +210,35 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 
 
 <%-- <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
+<p class="home" style="text-align: left; margin-left:150px;">
 <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
+<!-- <h6>공 지 사 항</h6> -->
+</p>
 <hr/>
- <h1>공  지  사  항</h1>
+<!--  <h1>공  지  사  항</h1> -->
  
  
+<br/><br/><br/><br/>
+ 
+<div class="choice">
  <form name="rowSizeFrm" id="rowSizeFrm" action="<%=request.getContextPath()%>/notice/list.do" method="post">
- 	<p>게시물수 : 
+ 	게시물수 : 
 	<select name = "rowSize" id = "rowSize" >
-<!-- 			<option value="" selected disabled hidden></option> -->
 			<option value="" disabled>선택</option>
 			<option value="1" <c:if test="${rsize == 1}">selected</c:if>>1</option>
          	<option value="3" <c:if test="${rsize == 3}">selected</c:if>>3</option>
          	<option value="5" <c:if test="${rsize == 5}">selected</c:if>>5</option>
          	<option value="10" <c:if test="${rsize == 10}">selected</c:if>>10</option>
     </select> 
-    </p>
  </form>
- 
- 
+ </div>
 
- 
- <p>
-
- 	
- 	<button type="button" onclick="authCheck(${AUTHUSER.emp_grade});">글쓰기</button>
- </p>
- <table class="t1" style="table-layout: fixed">
+ 	<div class="write">
+ 	<button type="button" id="wri" onclick="authCheck(${AUTHUSER.emp_grade});">글쓰기</button>
+	</div>
+	
+	
+ <table class="t1" border="1" style="table-layout: fixed">		
  	<thead>
  		<tr class="hang">
  			<th id="nu">번호</th>
@@ -225,6 +249,7 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
  			<th id="ct">조회수</th>
  		</tr>
  	</thead>
+ 
 
  	<tbody>
  	<%--  keyword가 없으면서 게시글이 없는 경우 --%>
@@ -412,7 +437,7 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 <lebel class="hidden"></lebel>	<!-- ?choice=title&keyword=~~~ -->
 <input type="text" name="keyword" id="keyword" value="${param.keyword}"/>
  
-<button type="submit">검색</button>
+<button type="submit" id="sub">검색</button>
  
 </form>
  

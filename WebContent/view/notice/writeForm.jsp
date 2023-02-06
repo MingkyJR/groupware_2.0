@@ -48,6 +48,11 @@
 	    margin-left: auto;
 	    margin-right: auto;
 	 	}
+	 	th {
+	    text-align: center;
+/* 	    border: 1px solid #EFEFEF; */
+	    background: #C5CAD7
+	 	}
 	 	textarea{ width:98%; border:0; resize: none;}
     </style>
 
@@ -75,9 +80,15 @@
 <%-- ${writeReq}<br/><br/> --%>
 
 <%--  <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
- <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
- <hr/>
- <h3>writeForm.jsp</h3>
+<%--  <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a> --%>
+<p class="home" style="text-align: left; margin-left:150px;">
+<a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
+<!-- <h6></h6> -->
+</p>
+<hr/>
+
+<br/><br/><br/><br/>
+<!--  <h3>writeForm.jsp</h3> -->
  <form name="writeFrm" id= "writeFrm"
  		method="post" action="<%=request.getContextPath()%>/notice/write.do">
  <input type="hidden" name="rowSize" value="${rowSize}"/> 

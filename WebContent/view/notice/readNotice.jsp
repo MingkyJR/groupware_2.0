@@ -46,6 +46,33 @@
 	    margin-left: auto;
 	    margin-right: auto;
 	 	}
+	 	th {
+	    text-align: center;
+/* 	    border: 1px solid #EFEFEF; */
+	    background: #C5CAD7
+	 	}
+	 	
+	 	#list{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	#mod{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	#del{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
         </style>
     
     
@@ -108,10 +135,14 @@
 
 
 <%--  <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
- <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
+<p class="home" style="text-align: left; margin-left:150px;">
+<a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
+</p>
  <hr/>
- <h3>readNotice.jsp</h3>
- <table border="1" bordercolor="lightgray" text-align="center">
+  
+<br/><br/>
+<!--  <h3>readNotice.jsp</h3> -->
+ <table border="1" text-align="center">
 <!--  <table border="1"> -->
  	<tr>
  		<th>게시글 번호</th>
@@ -182,15 +213,15 @@
 
  		
 <%--  		<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}">목록보기</a> --%>
- 		<button type="button" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}';">목록보기</button>
+ 		<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}';">목록보기</button>
  		<%--수정과 삭제기능은 로그인한 유저의 id와 작성자의 id가 일치하는 경우에만 노출하도록 한다. --%>
  		<%-- <c:if test="${AUTHUSER.memberid==noticeData.notice.writer.writer_id}"> --%>
  		
 <%--  		<a href="<%=request.getContextPath()%>/notice/modify.do?no=${noticeData.notice.number}&pageNo=${pageNo}&rowSize=${rowSize}">게시글 수정</a> --%>
- 		<button type="button" onclick="mdAuthCheck(${AUTHUSER.emp_grade});">게시글 수정</button>
+ 		<button type="button" id="mod" onclick="mdAuthCheck(${AUTHUSER.emp_grade});">게시글 수정</button>
  		
 <%--  		<a href="<%=request.getContextPath()%>/notice/delete.do?no=${noticeData.notice.number}">글삭제(delete용)</a> --%>
- 		<button type="button" onclick="rmAuthCheck(${AUTHUSER.emp_grade});">게시글 삭제</button>
+ 		<button type="button" id="del" onclick="rmAuthCheck(${AUTHUSER.emp_grade});">게시글 삭제</button>
 <%--  		<button type="button" onclick="rmAuthCheck(${AUTHUSER.grade});">게시글 삭제(delete)</button> --%>
  		
 <%--  		<a href="<%=request.getContextPath()%>/notice/delete2.do?no=${noticeData.notice.number}">글삭제(update용)</a> --%>
