@@ -334,12 +334,11 @@ header
 
 .header-area .main-nav .nav li.submenu {
   position: relative;
-  padding-right: 30px;
 }
 
 .header-area .main-nav .nav li.submenu:after {
   font-family: FontAwesome;
-  content: "\f107";
+  /* content: "\f107"; */
   font-size: 12px;
   color: #2a2a2a;
   position: absolute;

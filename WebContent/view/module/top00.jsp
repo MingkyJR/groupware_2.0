@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8" import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
     <script>
 
         $(function() {
@@ -38,9 +37,19 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp" class="active">메인페이지</a></li>
+                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp">메인페이지</a></li>
                             <li class="scroll-to-section"><a href="#">공지사항</a></li>
-                            <li class="scroll-to-section"><a href="#">근태관리</a></li>
+                            <li class="submenu">
+                                <a href="<%=request.getContextPath()%>/work.do">근태관리</a>
+                                <ul>
+                                    <li><a href="<%=request.getContextPath()%>/work.do">근태관리</a></li>
+                                    <li><a href="<%=request.getContextPath()%>/workEdit.do">출퇴근 수정</a></li>
+                                    <c:if test="${AUTHUSER.emp_grade eq 5}">
+                                    <li><a href="<%=request.getContextPath()%>/work_admin.do">직원 근태현황 조회</a></li>
+                                    <li><a href="#">직원 출퇴근 수정</a></li>
+                                    </c:if>
+                                </ul>
+                            </li>
                             <li class="scroll-to-section"><a href="#">중고장터</a></li>
                             <li class="scroll-to-section"><a href="#">메세지</a></li>
                              <li class="submenu">
