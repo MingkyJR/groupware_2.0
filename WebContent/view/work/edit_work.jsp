@@ -9,6 +9,7 @@
  <meta name="description" content="member board Web Application">
  <meta name="keywords" content="member, board, article, mvc">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
  <title>출퇴근 수정 요청</title>
  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -57,9 +58,11 @@
 			
 			.work_status{
 			color: white;
-			border-radius: 25px;
+			border-radius: 70px;
 			font-size: small;
 			padding: 3px;
+			padding-left: 8px;
+			padding-right: 8px;
 			}
 			.ws1{
 			background-color: #FE2E2E;
@@ -120,7 +123,7 @@
       </td>
       <td>
       <c:if test="${month.work_status eq '근태이상'}">
-      <a href="writeEdit.do?date=${month.work_reg_date}&empNo=${AUTHUSER.emp_no}"><img src="/assets/icon/pencil-square.svg"></a>
+      <a href="writeEdit.do?date=${month.work_reg_date}&empNo=${AUTHUSER.emp_no}&inTime=${month.work_in_time}"><img src="/assets/icon/pencil-square.svg"></a>
       </c:if>
       </td>
     </tr>

@@ -9,6 +9,7 @@
  <meta name="description" content="member board Web Application">
  <meta name="keywords" content="member, board, article, mvc">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
  <title>근태관리</title>
  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -63,9 +64,11 @@
 			
 			.work_status{
 			color: white;
-			border-radius: 25px;
+			border-radius: 70px;
 			font-size: small;
 			padding: 3px;
+			padding-left: 8px;
+			padding-right: 8px;
 			}
 			.ws1{
 			background-color: #FE2E2E;

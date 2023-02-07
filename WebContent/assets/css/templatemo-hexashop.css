@@ -1840,7 +1840,7 @@ Single Product Page
   float: left;
   font-size: 20px;
   margin-top: 10px;
-  color: #aaa!important;
+  /* color: #aaa!important; */
 }
 
 .total .main-border-button {
