@@ -103,11 +103,24 @@
 	.example button:hover {
 		background: #0b7dda;
 	}
+	.btnRegi {
+		margin: 10px;
+		color: white;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		background-color: #ebad34;
+	}
+
+	.btnRegi:hover {
+		background-color: #ffc500;
+	}
 </style>
 </head>
 <body>
 <%@ include file="../module/top00.jsp" %>
-	<p><a href="registe.do">게시글 등록</a></p>
+	<button class="btnRegi"><a href="registe.do" style="text-decoration: none; color: white;">게시글 등록</a></button>
 	<div class="second_container">
 	<form class="example" action="<%=request.getContextPath()%>/secondHand/searchList.do" style="text-align: center; margin: 15px 0;">
 		<input type="text" placeholder="Search.." name="keyword">

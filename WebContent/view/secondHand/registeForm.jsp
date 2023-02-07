@@ -89,6 +89,20 @@ input[type=submit]:hover {
   width: 85%;
   margin-top: 6px;
 }
+.btnCancel {
+	margin-right: 5px;
+	float: right;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: #ebad34;
+}
+
+.btnCancel:hover {
+	background-color: #ffc500;
+}
 
 /* Clear floats after the columns */
 .second_row:after {
@@ -146,6 +160,7 @@ input[type=submit]:hover {
 	  </div>
 	  <div class="second_row">
     	<input type="submit" value="등록">
+    	<input class="btnCancel" type="button" value="취소">
  	 </div>
   </form>
 </div>
