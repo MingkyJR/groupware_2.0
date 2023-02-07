@@ -6,13 +6,13 @@ import java.util.Date;
 
 public class Document {
 	private Integer do_no; // 문서번호 do_no
-	private Writer writer;
 	private int stat_no; // 상태번호 stat_no
 	private String title;// 제목title
 	private int draft_empno; // 기안사원번호 draft_empno
 	private Date draft_date;// 기안일 draft_date
 	private int approval_empno; // 결재사원번호 approval_empno
 	private Date approval_date;// 결재일 approval_date
+	private Writer writer;
 	
 	
 

@@ -41,7 +41,7 @@
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
        <style>
 		.t1{ 
-		width: 950px;
+		width:80%;
  	    margin-left: auto; 
  	    margin-right: auto; 
 /*   	    border: 1px solid #bcbcbc; */
@@ -219,24 +219,28 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
  
  
 <br/><br/><br/><br/>
-
-
 <div>
- <form name="rowSizeFrm" id="rowSizeFrm" action="<%=request.getContextPath()%>/notice/list.do" method="post">
-<span style="float:left; margin-left:280px; width:62.5%;">
- 	게시물수 : 
-	<select name = "rowSize" id = "rowSize" >
-			<option value="" disabled>선택</option>
-			<option value="1" <c:if test="${rsize == 1}">selected</c:if>>1</option>
-         	<option value="3" <c:if test="${rsize == 3}">selected</c:if>>3</option>
-         	<option value="5" <c:if test="${rsize == 5}">selected</c:if>>5</option>
-         	<option value="10" <c:if test="${rsize == 10}">selected</c:if>>10</option>
-    </select> 
- 	<button style="float:right;" type="button" id="wri" onclick="authCheck(${AUTHUSER.emp_grade});">글쓰기</button>
-	</span><br><br>
+	<form name="rowSizeFrm" id="rowSizeFrm" action="<%=request.getContextPath()%>/notice/list.do" method="post">
+		<span>
+			<span style="float:left; margin-left:10%">게시물수 : 
+				<select name = "rowSize" id = "rowSize" >
+					<option value="" disabled>선택</option>
+					<option value="1" <c:if test="${rsize == 1}">selected</c:if>>1</option>
+					<option value="3" <c:if test="${rsize == 3}">selected</c:if>>3</option>
+					<option value="5" <c:if test="${rsize == 5}">selected</c:if>>5</option>
+					<option value="10" <c:if test="${rsize == 10}">selected</c:if>>10</option>
+		    </select> 
+		   </span>
+		   <span style="float:right; margin-right:10%">
+					<button style="float:right;" type="button" id="wri" onclick="authCheck(${AUTHUSER.emp_grade});">글쓰기</button>
+				</span>
+		</span><br>
 	</form>
+</div><br><br>
+		
+	
+	
 	 <div >
-	 
  <table class="t1" border="1" style="table-layout: fixed">		
  	<thead>
  		<tr class="hang">
@@ -441,7 +445,7 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 </form>
 
  
- </div>
+
  
  
  
