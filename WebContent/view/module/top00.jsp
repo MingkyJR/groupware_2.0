@@ -74,7 +74,7 @@
                                 <ul>
                                     <li><a href="/login.do">로그인</a></li>
                                     <li><a href="/logout.do">로그아웃</a></li>
-                                    <li><a href="#">개인정보</a></li>
+                                    <li><a href="/changeMyInfo.do">개인정보</a></li>
                                 </ul>
                             </li>
                             
