@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8" import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
     <script>
 
         $(function() {
@@ -37,8 +38,13 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
+<<<<<<< HEAD
                             <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp" class="active">메인페이지</a></li>
                             <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/notice/list.do">공지사항</a></li>
+=======
+                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp">메인페이지</a></li>
+                            <li class="scroll-to-section"><a href="#">공지사항</a></li>
+>>>>>>> refs/remotes/origin/main
                             <li class="submenu">
                                 <a href="<%=request.getContextPath()%>/work.do">근태관리</a>
                                 <ul>
