@@ -219,9 +219,11 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
  
  
 <br/><br/><br/><br/>
- 
-<div class="choice">
+
+
+<div>
  <form name="rowSizeFrm" id="rowSizeFrm" action="<%=request.getContextPath()%>/notice/list.do" method="post">
+<span style="float:left; margin-left:280px; width:62.5%;">
  	게시물수 : 
 	<select name = "rowSize" id = "rowSize" >
 			<option value="" disabled>선택</option>
@@ -230,14 +232,11 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
          	<option value="5" <c:if test="${rsize == 5}">selected</c:if>>5</option>
          	<option value="10" <c:if test="${rsize == 10}">selected</c:if>>10</option>
     </select> 
- </form>
- </div>
-
- 	<div class="write">
- 	<button type="button" id="wri" onclick="authCheck(${AUTHUSER.emp_grade});">글쓰기</button>
-	</div>
-	
-	
+ 	<button style="float:right;" type="button" id="wri" onclick="authCheck(${AUTHUSER.emp_grade});">글쓰기</button>
+	</span><br><br>
+	</form>
+	 <div >
+	 
  <table class="t1" border="1" style="table-layout: fixed">		
  	<thead>
  		<tr class="hang">
@@ -352,7 +351,7 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 		
 	</div>
  </span>
- 	
+ 	</div>
 <!--  	--------------------------------------------------------------------------------------------------------------------------------------------- -->
 <%--  <table class="t2" style="table-layout: fixed">
  	<thead>
@@ -440,10 +439,9 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 <button type="submit" id="sub">검색</button>
  
 </form>
+
  
- 
- 
- 
+ </div>
  
  
  
