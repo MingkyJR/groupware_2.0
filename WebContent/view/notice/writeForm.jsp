@@ -47,14 +47,44 @@
 	    height: 600px;
 	    margin-left: auto;
 	    margin-right: auto;
+	    border-radius: 5px;
 	 	}
 	 	th {
 	    text-align: center;
 /* 	    border: 1px solid #EFEFEF; */
-	    background: #C5CAD7
+	    background: #C5CAD7;
+	   
 	 	}
 	 	textarea{ width:98%; border:0; resize: none;}
+	 	
+	 	
+	 	
+	 	#wrb{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	
+	 	#list{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	
+	 	
     </style>
+	<script>
+        	function wrformSubmit(){
+        		$("#writeFrm").submit();
+//         		alert("게시글 수정에 성공하셨습니다.");
+
+        	};
+
+	</script>
 
 </head>
 <body>
@@ -78,10 +108,12 @@
 *요청페이지:${pageNo}<br/><br/>
 *1페이지당 게시글수:${rowSize}<br/><br/> --%>
 <%-- ${writeReq}<br/><br/> --%>
-
+<%-- ${pageNo} --%>
+<%-- ${rowSize} --%>
 <%--  <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
 <%--  <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a> --%>
-<p class="home" style="text-align: left; margin-left:150px;">
+<!-- <p class="home" style="text-align: left; margin-left:150px;"> -->
+<p class="home" style="margin:0 auto; max-width: 950px;">
 <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
 <!-- <h6></h6> -->
 </p>
@@ -118,13 +150,16 @@
  	
  	 <tr>
  		<td colspan="2" style="text-align:center;">
- 		<input type="submit" value="글쓰기"/>
+<!--  		<input type="submit" value="글쓰기"/> -->
+ 		<button type="button" id="wrb" onclick="wrformSubmit()">글쓰기</button>
  		</td>
  	</tr>
  	
  	 <tr>
  		<td colspan="2" style="text-align:center;">
- 		<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=1&rowSize=${rowSize}">목록보기</a>
+<%--  		<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=1&rowSize=${rowSize}">목록보기</a> --%>
+ 		<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=1&rowSize=${rowSize}'">목록보기</button>
+<%--  		<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}'">목록보기</button> --%>
 <%--  		<a href="/notice/read.do?no=글번호&pageNo=1&rowSize=${rowSize}">글 상세조회(모델보면서 보완예정)</a> --%>
 <!--  		<a href="/notice/delete.do?no=글번호">글삭제(delete용)</a> -->
 <!--  		<a href="/notice/delete2.do?no=글번호">글삭제(update용)</a> -->

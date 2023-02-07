@@ -49,17 +49,21 @@
 		request.setAttribute("modReq", modReq);
  --%>
 <%--  <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
- <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
+ <p class="home" style="margin:0 auto; max-width: 950px;">
+<a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
+</p>
  <hr/>
- <h3>modifySuccess.jsp</h3>
+<!--  <h3>modifySuccess.jsp</h3> -->
  	 <%--
  	 <c:set var="변수명" value="변수값"/>--%>
 <%--  	 <c:set var="pageNo"  --%>
 <%--  	    value="${(empty param.pageNo)?'1':param.pageNo}"/>                       --%>
 <!--  	 http://localhost/tp/notice/list.do?pageNo=1&rowSize=3&choice=writer_id&keyword=leeid -->
+<div style="text-align:center;">
  	 	<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}">목록보기</a>
 <%--  	 	<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}?choice=${choice}&keyword=${keyword}">목록보기</a> --%>
  	 	<a href="<%=request.getContextPath()%>/notice/read.do?no=${modReq.noticeNumber}&pageNo=${pageNo}&rowSize=${rowSize}">수정한 글 보기</a>
+</div>
  	 	<%-- 수정과 삭제기능은
  	 	  로그인한 유저의 id와 작성자의 id가 일치하는 경우에만 노출하도록 한다 
  	 	<c:if test="${AUTHUSER.memberid==noticeData.notice.writer.writer_id}">
@@ -81,7 +85,7 @@
 // 			let rowSizeVal =  "<c:out value = '${rowSize}'/>";
 			alert("수정완료");
 // 			//alert("22222222222222222"+rowSizeVal);
-<%--         	location.href="<%=request.getContextPath()%>/notice/list.do?pageNo="+pageNoVal+"&rowSize="+rowSizeVal; --%>
+			<%-- location.href="<%=request.getContextPath()%>/notice/list.do?pageNo="+pageNoVal+"&rowSize="+rowSizeVal; --%>
         	
  	 	});
         </script>

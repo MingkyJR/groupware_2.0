@@ -44,24 +44,19 @@
 		width: 950px;
  	    margin-left: auto; 
  	    margin-right: auto; 
-/*   	    border: 1px solid #bcbcbc; */
+/* 		border: 1px solid black; */
   	    text-align: center;
-/*   	    border-collapse: separate; border-radius: 8px; */
- 	 	} 
- 	 	.t2{ 
-		width: 950px;
- 	    margin-left: auto; 
- 	    margin-right: auto; 
-  	    border: 1px solid #bcbcbc;
-  	    text-align: center;
+/*    	    border-collapse: separate; border-radius: 8px; */
  	 	} 
  	 	
  	 	.hang{ 
 		height:30px;
  	 	} 
+ 	 	
+ 	 	tr:hover {background-color: #dcdcdc;}
 	 	
 	 	th {
-/*  	    border: 1px solid #bcbcbc; */
+/*  	border: 1px solid #bcbcbc; */
 /* 		border: 1px solid #EFEFEF; */
 	 	}
 	 	
@@ -81,25 +76,19 @@
 	 	td {
 	    width: 120px;
 /*   	    border: 1px solid #bcbcbc; */
+		
 	 	}
 	 	
  	 	tr { 
  	    height: 60px; 
 /*  	    border: 1px solid #bcbcbc; */
+		
  	 	} 
 	 	
-/* 		#rowSizeFrm { */
-/* 		text-align: right; margin-right: auto; */
-/* 		} */
-	 	
-	 	
 	 	h1 { text-align: center; }
-/* 	 	p { text-align: right; margin-right:200px;} */
-/* 	 	p { text-align: right; margin-right: auto; margin-left: auto;} */
-/*  	 	.write {float:left; margin-left: auto;} */
-  	 	.write {float:left;}
-  	 	.choice {float:right;}
-/* 	 	.home { text-align: left; margin-left:150px;} */
+
+		#bwr {margin:0 auto; max-width:950px; inline-block;}
+		#sch {margin:0 auto; max-width:950px; inline-block;} 
 	 	#sub{
 	 	  color: white;
 		  text-align: center;
@@ -115,7 +104,7 @@
 		  border: solid 1px #191970;
 		  border-radius: 3px;
 	 	}
-/*         #C5CAD7 */
+
         </style>
         
         
@@ -141,7 +130,8 @@
  	             location.href='<%=request.getContextPath()%>/notice/list.do?rowSize=${rsize}';
  	          }else{
 <%--          	             location.replace("<%=request.getContextPath()%>/notice/write.do?rowSize=${rsize}"); --%>
- 	             location.href='<%=request.getContextPath()%>/notice/write.do?rowSize=${rsize}';
+<%--  	             location.href='<%=request.getContextPath()%>/notice/write.do?rowSize=${rsize}'; --%>
+ 	            location.href='<%=request.getContextPath()%>/notice/write.do?pageNo=${pageNo}&rowSize=${rsize}';
 	          }
  	          
 	    }
@@ -210,18 +200,27 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 
 
 <%-- <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
-<p class="home" style="text-align: left; margin-left:150px;">
+<!-- <p class="home" style="text-align: left; margin-left:150px;"> -->
+<p class="home" style="margin:0 auto; max-width: 950px;">
 <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
-<!-- <h6>공 지 사 항</h6> -->
 </p>
+
 <hr/>
-<!--  <h1>공  지  사  항</h1> -->
  
- 
+<%--  ${param.keyword} --%>
+<%--  ${param.choice} --%>
+<!-- 위나 아래나 결과는 같다 -->
+<%--  ${keyword} --%>
+<%--  ${choice} --%>
+
 <br/><br/><br/><br/>
- 
-<div class="choice">
+
  <form name="rowSizeFrm" id="rowSizeFrm" action="<%=request.getContextPath()%>/notice/list.do" method="post">
+<div id="sch" style="text-align:right;">
+<%--  <input type="hidden" name="keyword" id="keyword" value="${param.keyword}"/> --%>
+<%--   <input type="hidden" name="choice" id="choice" value="${param.choice}"/> --%>
+   <input type="hidden" name="keyword" id="keyword" value="${keyword}"/>
+  <input type="hidden" name="choice" id="choice" value="${choice}"/>
  	게시물수 : 
 	<select name = "rowSize" id = "rowSize" >
 			<option value="" disabled>선택</option>
@@ -230,15 +229,17 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
          	<option value="5" <c:if test="${rsize == 5}">selected</c:if>>5</option>
          	<option value="10" <c:if test="${rsize == 10}">selected</c:if>>10</option>
     </select> 
+</div>
  </form>
- </div>
 
- 	<div class="write">
+ <div id="bwr" style="text-align:left;">
  	<button type="button" id="wri" onclick="authCheck(${AUTHUSER.emp_grade});">글쓰기</button>
-	</div>
+</div>
+
+
+<br/>
 	
-	
- <table class="t1" border="1" style="table-layout: fixed">		
+ <table class="t1" border="1" style="table-layout: fixed;">		
  	<thead>
  		<tr class="hang">
  			<th id="nu">번호</th>
@@ -305,8 +306,8 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
  	
  	<br/><br/>
  	<%-- paging출력 부분 --%>
- <span id="page" style="text-align:center;">
- 	<div>
+ <div id="page" style="text-align:center;">
+<!--  	<div> -->
 		<c:if test="${empty keyword or (keyword eq '')}">
 	 		<%-- JSTL if조건문: 이전 출력 --%>
 	 		<c:if test="${noticePage.startPage>5}">
@@ -350,78 +351,11 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 	 		</c:if>	
 		</c:if>
 		
-	</div>
- </span>
+<!-- 	</div> -->
+ </div>
  	
 <!--  	--------------------------------------------------------------------------------------------------------------------------------------------- -->
-<%--  <table class="t2" style="table-layout: fixed">
- 	<thead>
- 		<tr class="hang">
- 			<th id="nu">번호</th>
- 			<th id="ti">제목</th>
- 			<th id="wr">작성자</th>
- 			<th id="rd">작성일</th>
- 			<th id="md">최종수정일</th>
- 			<th id="ct">조회수</th>
- 		</tr>
- 	</thead>
 
-
-
- 	<tbody>
- 	<!-- 게시글이 없는 경우 -->
- 	<!-- JSTL if조건문 이용하여 출력 -->
- 	<c:if test="${searchPage.hasNoNotices()}"> 
- 	 <tr>
- 		<td colspan="6" style="text-align:center;">결과가 없습니다.</td>
- 	</tr>
- 	</c:if>
-
-	<c:if test="${searchPage.hasNotices()}"> 
- 	<c:forEach var="item" items="${searchPage.content}">
- 	<tr>
- 		<td>${item.number}</td>
- 		<td><a href="<%=request.getContextPath()%>/notice/read.do?no=${item.number}&pageNo=${searchPage.currentPage}&rowSize=${rowSize}">${item.title}</a></td>
- 		<td>${item.writer.writer_id}</td>
-<!--  		<td>${item.regdate}(YYYY-MM-DD)</td> -->
-<!--  		<td><fmt:formatDate type="date" value="${item.regdate}" /></td> -->
- 		<td>
-<!--  			<fmt:formatDate type="date" value="${item.regdate}" /><br/> -->
-<!--  			<fmt:formatDate pattern="yyyy-MM-dd" type="date" value="${item.regdate}" /><br/> -->
-<!--  			<fmt:formatDate pattern="yyyy년 MM월 dd일" type="date" value="${item.regdate}" /><br/> -->
- 			<fmt:formatDate pattern="yyyy.MM.dd. HH:mm:ss" type="date" value="${item.regdate}" /></td>
- 		<td><fmt:formatDate pattern="yyyy.MM.dd. HH:mm:ss" type="date" value="${item.moddate}" /></td>
- 		<td>${item.read_cnt}</td>
- 	</tr>
- 	</c:forEach>
- 	</c:if>
- 	</tbody>
-
- 	</table>
- 	<!-- 반복문 이용하여 출력 끝-->
- 	
-<br/><br/>
- 	<!-- paging출력 부분 -->
- <span id="page2" style="text-align:center;">
- 	<div>
- 		<!-- JSTL if조건문: 이전 출력 -->
- 		<c:if test="${searchPage.startPage>5}">
- 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${searchPage.startPage-5}&rowSize=${rsize}">prev</a> 
- 		</c:if>	
- 			
- 		<!-- JSTL forEach조건문: 페이지 번호 출력 -->
- 		<c:forEach var="pNo"
- 			begin="${searchPage.startPage}" end="${searchPage.endPage}">
- 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pNo}&rowSize=${rsize}">[${pNo}]</a> 
- 		</c:forEach>
- 		
- 		<!-- JSTL forEach조건문: 다음 출력 -->
- 		<c:if test="${searchPage.endPage<searchPage.totalPages}">
- 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${searchPage.startPage+5}&rowSize=${rsize}">next</a> 
- 		</c:if>	
-	</div>
- </span> --%>
- 
  <br/><br/><br/><br/>
 <!--  검색기능 폼 -->
  <form name="searchFrm" id="searchFrm" action="<%=request.getContextPath()%>/notice/list.do" 

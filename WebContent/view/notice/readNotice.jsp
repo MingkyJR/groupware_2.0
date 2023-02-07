@@ -135,14 +135,15 @@
 
 
 <%--  <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
-<p class="home" style="text-align: left; margin-left:150px;">
+<!-- <p class="home" style="text-align: left; margin-left:150px;"> -->
+<p class="home" style="margin:0 auto; max-width: 950px;">
 <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
 </p>
  <hr/>
   
 <br/><br/>
 <!--  <h3>readNotice.jsp</h3> -->
- <table border="1" text-align="center">
+ <table border="1" style="text-align:center;">
 <!--  <table border="1"> -->
  	<tr>
  		<th>게시글 번호</th>
