@@ -126,15 +126,15 @@
 				//gr=999;
  	          if(gr==null || gr==1){ 
 	             alert("권한이 없습니다.");
-<%--          	             location.replace("<%=request.getContextPath()%>/notice/list.do?rowSize=${rsize}"); --%>
- 	             location.href='<%=request.getContextPath()%>/notice/list.do?rowSize=${rsize}';
+<%--          	             location.replace("<%=request.getContextPath()%>/notice/list.do?rowSize=${rowSize}"); --%>
+ 	             location.href='<%=request.getContextPath()%>/notice/list.do?rowSize=${rowSize}';
  	          }else{
-<%--          	             location.replace("<%=request.getContextPath()%>/notice/write.do?rowSize=${rsize}"); --%>
-<%--  	             location.href='<%=request.getContextPath()%>/notice/write.do?rowSize=${rsize}'; --%>
- 	            location.href='<%=request.getContextPath()%>/notice/write.do?pageNo=${pageNo}&rowSize=${rsize}';
+<%--          	             location.replace("<%=request.getContextPath()%>/notice/write.do?rowSize=${rowSize}"); --%>
+<%--  	             location.href='<%=request.getContextPath()%>/notice/write.do?rowSize=${rowSize}'; --%>
+ 	            location.href='<%=request.getContextPath()%>/notice/write.do?pageNo=${pageNo}&rowSize=${rowSize}';
 	          }
  	          
-	    }
+	    	}
         
         </script>
     
@@ -152,7 +152,7 @@ List<Notice> listNotice=~~~~;
  NoticePage noticePage<=목록+페이징처리 관련내용.
  request.setAttribute("noticePage", noticePage);
  request.setAttribute("pageNo", pageNo);
- request.setAttribute("rsize", rsize);
+ request.setAttribute("rowSize", rowSize);
  request.setAttribute("searchPage", searchPage);
  request.setAttribute("choice", choice);
  request.setAttribute("keyword", keyword);
@@ -224,10 +224,10 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
  	게시물수 : 
 	<select name = "rowSize" id = "rowSize" >
 			<option value="" disabled>선택</option>
-			<option value="1" <c:if test="${rsize == 1}">selected</c:if>>1</option>
-         	<option value="3" <c:if test="${rsize == 3}">selected</c:if>>3</option>
-         	<option value="5" <c:if test="${rsize == 5}">selected</c:if>>5</option>
-         	<option value="10" <c:if test="${rsize == 10}">selected</c:if>>10</option>
+			<option value="1" <c:if test="${rowSize == 1}">selected</c:if>>1</option>
+         	<option value="3" <c:if test="${rowSize == 3}">selected</c:if>>3</option>
+         	<option value="5" <c:if test="${rowSize == 5}">selected</c:if>>5</option>
+         	<option value="10" <c:if test="${rowSize == 10}">selected</c:if>>10</option>
     </select> 
 </div>
  </form>
@@ -287,7 +287,7 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
  	<c:forEach var="item" items="${noticePage.content}">
  	<tr>
  		<td>${item.number}</td>
- 		<td><a href="<%=request.getContextPath()%>/notice/read.do?no=${item.number}&pageNo=${noticePage.currentPage}&rowSize=${rsize}">${item.title}</a></td>
+ 		<td><a href="<%=request.getContextPath()%>/notice/read.do?no=${item.number}&pageNo=${noticePage.currentPage}&rowSize=${rowSize}">${item.title}</a></td>
  		<td>${item.writer.writer_id}</td>
 <%--  		<td>${item.regdate}(YYYY-MM-DD)</td> --%>
 <%--  		<td><fmt:formatDate type="date" value="${item.regdate}" /></td> --%>
@@ -311,18 +311,18 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 		<c:if test="${empty keyword or (keyword eq '')}">
 	 		<%-- JSTL if조건문: 이전 출력 --%>
 	 		<c:if test="${noticePage.startPage>5}">
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage-5}&rowSize=${rsize}">Prev</a> 
+	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage-5}&rowSize=${rowSize}">Prev</a> 
 	 		</c:if>	
 	 			
 	 		<%-- JSTL forEach조건문: 페이지 번호 출력 --%>
 	 		<c:forEach var="pNo"
 	 			begin="${noticePage.startPage}" end="${noticePage.endPage}">
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pNo}&rowSize=${rsize}">[${pNo}]</a> 
+	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pNo}&rowSize=${rowSize}">[${pNo}]</a> 
 	 		</c:forEach>
 	 		
 	 		<%-- JSTL forEach조건문: 다음 출력 --%>
 	 		<c:if test="${noticePage.endPage<noticePage.totalPages}">
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage+5}&rowSize=${rsize}">Next</a> 
+	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage+5}&rowSize=${rowSize}">Next</a> 
 	 		</c:if>	
 		</c:if>
 		
@@ -333,18 +333,18 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 		 	<c:if test="${noticePage.hasNotices()}"> 
 			<%-- JSTL if조건문: 이전 출력 --%>
 	 		<c:if test="${noticePage.startPage>5}">
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage-5}&rowSize=${rsize}&choice=${choice}&keyword=${keyword}">Prev</a> 
+	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage-5}&rowSize=${rowSize}&choice=${choice}&keyword=${keyword}">Prev</a> 
 	 		</c:if>	
 	 			
 	 		<%-- JSTL forEach조건문: 페이지 번호 출력 --%>
 	 		<c:forEach var="pNo"
 	 			begin="${noticePage.startPage}" end="${noticePage.endPage}">
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pNo}&rowSize=${rsize}&choice=${choice}&keyword=${keyword}">[${pNo}]</a> 
+	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pNo}&rowSize=${rowSize}&choice=${choice}&keyword=${keyword}">[${pNo}]</a> 
 	 		</c:forEach>
 	 		
 	 		<%-- JSTL forEach조건문: 다음 출력 --%>
 	 		<c:if test="${noticePage.endPage<noticePage.totalPages}">
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage+5}&rowSize=${rsize}&choice=${choice}&keyword=${keyword}">Next</a>
+	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage+5}&rowSize=${rowSize}&choice=${choice}&keyword=${keyword}">Next</a>
 	 		 </c:if>
 	 		 <br/><br/>
 	 		 <a href="<%=request.getContextPath()%>/notice/list.do">전체목록보기</a>	 
@@ -361,7 +361,7 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
  <form name="searchFrm" id="searchFrm" action="<%=request.getContextPath()%>/notice/list.do" 
  		method="post" style="text-align:center;">
  <input type="hidden" name="pageNo" id="pageNo" value="${pageNo}"/>
- <input type="hidden" name="rowSize" id="rowSize" value="${rsize}"/> 
+ <input type="hidden" name="rowSize" id="rowSize" value="${rowSize}"/> 
  <select name="choice" id="choice"> <!-- 높이:20 중간맞춤 -->
 <!--     <option value="sel">선택</option> -->
     <option value="title" <c:if test="${choice == 'title'}">selected</c:if>>제목</option>

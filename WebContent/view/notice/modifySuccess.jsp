@@ -40,6 +40,27 @@
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
 
 </head>
+	<style>
+		#wrb{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	
+	 	#list{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	</style>
+
+
+
+
 <body>
 <%@ include file="../module/top00.jsp" %>
 
@@ -60,9 +81,11 @@
 <%--  	    value="${(empty param.pageNo)?'1':param.pageNo}"/>                       --%>
 <!--  	 http://localhost/tp/notice/list.do?pageNo=1&rowSize=3&choice=writer_id&keyword=leeid -->
 <div style="text-align:center;">
- 	 	<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}">목록보기</a>
-<%--  	 	<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}?choice=${choice}&keyword=${keyword}">목록보기</a> --%>
- 	 	<a href="<%=request.getContextPath()%>/notice/read.do?no=${modReq.noticeNumber}&pageNo=${pageNo}&rowSize=${rowSize}">수정한 글 보기</a>
+<%--  	 	<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}">목록보기</a> --%>
+ 	 	<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}'">목록보기</button>
+<%--  	 	<a href="<%=request.getContextPath()%>/notice/read.do?no=${modReq.noticeNumber}&pageNo=${pageNo}&rowSize=${rowSize}">수정한 글 보기</a> --%>
+ 	 	<button type="button" id="wrb" onclick="location.href='<%=request.getContextPath()%>/notice/read.do?no=${modReq.noticeNumber}&pageNo=${pageNo}&rowSize=${rowSize}'">작성한 글 보기</button>
+ 	 	
 </div>
  	 	<%-- 수정과 삭제기능은
  	 	  로그인한 유저의 id와 작성자의 id가 일치하는 경우에만 노출하도록 한다 

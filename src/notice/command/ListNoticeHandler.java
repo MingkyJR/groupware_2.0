@@ -52,14 +52,14 @@ public class ListNoticeHandler implements CommandHandler {
 		
 		String strRowSize = request.getParameter("rowSize");//한페이지당 보여지는 게시물 수
 //		int size = Integer.parseInt(strRowSize);-->>원래 에러 나는 형태.... nullpoint exception 뜬다.
-		int rsize = 3;
+		int rowSize = 3;
 //		if(strRowSize==null) {
-//			rsize=3;
+//			rowSize=3;
 //		}else {
-//			rsize = Integer.parseInt(strRowSize);			
+//			rowSize = Integer.parseInt(strRowSize);			
 //		}
 		if(strRowSize!=null) {
-			rsize = Integer.parseInt(strRowSize);			
+			rowSize = Integer.parseInt(strRowSize);			
 		}
 		
 		
@@ -90,9 +90,9 @@ public class ListNoticeHandler implements CommandHandler {
 		//System.out.println("~~~~~~~~~~~~~~~~~"+pageNo);
 		NoticePage noticePage = null;
 		if(keyword==null || keyword=="") {
-			noticePage = listNoticeService.getNoticePage(pageNo, rsize);	//원래소스
+			noticePage = listNoticeService.getNoticePage(pageNo, rowSize);	//원래소스
 		}else {
-			noticePage = listNoticeService.getNoticePage(choice, keyword, pageNo, rsize);
+			noticePage = listNoticeService.getNoticePage(choice, keyword, pageNo, rowSize);
 		}
 
 		//System.out.println("게시글 수"+noticePage); //list타입에서 NoticePage로 바뀌어서 이제 .size 할 수 없다.
@@ -101,7 +101,7 @@ public class ListNoticeHandler implements CommandHandler {
 		//request.setAttribute("listNotice", listNotice);
 		request.setAttribute("noticePage", noticePage);
 		request.setAttribute("pageNo", pageNo);
-		request.setAttribute("rsize", rsize);
+		request.setAttribute("rowSize", rowSize);
 		request.setAttribute("choice", choice);
 		request.setAttribute("keyword", keyword);
 		

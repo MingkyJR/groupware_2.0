@@ -52,8 +52,26 @@ public class WriteNoticeHandler implements CommandHandler {
 		User authUser = loginedUser(request); //원래소스
 //		User authUser = new User(10, "user12", "hong", 1);
 //		request.getSession().setAttribute("AUTHUSER", authUser);
+		
+		String strRsize=request.getParameter("rowSize"); //1페이지당 보여줄 페이지수
+		int rowSize=3;
+		if(strRsize!=null) {
+			rowSize = Integer.parseInt(strRsize);			
+		}
+//		int rowSize=3;
+		
+		String strPageNo = request.getParameter("pageNo");//보고싶은 페이지
+		int pageNo = 1;
+		if(strPageNo!=null) {
+			pageNo=Integer.parseInt(strPageNo);
+		}
+		
+		
+		
 		request.setAttribute("AUTHUSER", authUser); //원래 소스
-		request.setAttribute("rowSize", 3); //로우사이즈 기본3
+		request.setAttribute("rowSize", rowSize); //로우사이즈 기본3
+		request.setAttribute("pageNo", pageNo); //
+		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%rowSize"+rowSize);
 		return FORM_VIEW;
 	}
 	//★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
@@ -82,8 +100,28 @@ public class WriteNoticeHandler implements CommandHandler {
 
 		// 파라미터받기
 		// String writer_name = request.getParameter("wrtier_name"); //작성자명
-		String rowSize=request.getParameter("rowSize"); //1페이지당 보여줄 페이지수
-		System.out.println("rowSize="+rowSize);
+		//String rowSize=request.getParameter("rowSize"); //1페이지당 보여줄 페이지수  //원래 소스
+		//System.out.println("rowSize="+rowSize); //원래소스
+		String strRowSize = request.getParameter("rowSize");//한페이지당 보여지는 게시물 수
+//		int size = Integer.parseInt(strRowSize);-->>원래 에러 나는 형태.... nullpoint exception 뜬다.
+		int rowSize = 3;
+//		if(strRowSize==null) {
+//			rowSize=3;
+//		}else {
+//			rowSize = Integer.parseInt(strRowSize);			
+//		}
+		if(strRowSize!=null) {
+			rowSize = Integer.parseInt(strRowSize);			
+		}
+		
+		
+		String strPageNo = request.getParameter("pageNo");//보고싶은 페이지
+		int pageNo = 1;
+		if(strPageNo!=null) {
+			pageNo=Integer.parseInt(strPageNo);
+		}
+		
+		
 		//로그인한 유저정보는 세션에서 받자
 		User authUser = loginedUser(request);
 		
@@ -105,6 +143,7 @@ public class WriteNoticeHandler implements CommandHandler {
 		int newNoticeNo = writeNoticeService.write(writeReq); //Integer 타입에서 언박싱된것 이건 큰것에서 작은것으로 ~! 이건 자동 언박싱 또는 자동형변환이다.
 		request.setAttribute("newNoticeNo", newNoticeNo); //-->그런데 다시 오브젝트 타입... 이럴거면 언박싱하는 의미가...
 		request.setAttribute("rowSize", rowSize); //로우사이즈
+		request.setAttribute("pageNo", pageNo); //
 		
 		return "/view/notice/newNoticeSuccess.jsp";
 //			return FORM_VIEW;

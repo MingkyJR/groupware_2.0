@@ -40,6 +40,24 @@
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
 
 </head>
+	<style>
+		#wrb{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	
+	 	#list{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	</style>
+
 <body>
 <%@ include file="../module/top00.jsp" %>
 
@@ -61,8 +79,10 @@
  	 <c:set var="pageNo" 
  	    value="${(empty param.pageNo)?'1':param.pageNo}"/>                      
 <div style="text-align:center;"> 	 
- 	 	<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=1&rowSize=${rowSize}">목록보기</a>
- 	 	<a href="<%=request.getContextPath()%>/notice/read.do?no=${newNoticeNo}&pageNo=1&rowSize=${rowSize}">작성한 글 보기</a>
+<%--  	 	<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=1&rowSize=${rowSize}">목록보기</a> --%>
+ 	 	<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=1&rowSize=${rowSize}'">목록보기</button>
+<%--  	 	<a href="<%=request.getContextPath()%>/notice/read.do?no=${newNoticeNo}&pageNo=1&rowSize=${rowSize}">작성한 글 보기</a> --%>
+ 	 	<button type="button" id="wrb" onclick="location.href='<%=request.getContextPath()%>/notice/read.do?no=${newNoticeNo}&pageNo=1&rowSize=${rowSize}'">작성한 글 보기</button>
 </div>
 
  	 	<script>
