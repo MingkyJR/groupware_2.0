@@ -14,9 +14,6 @@ import auth.service.User;
 import mvc.command.CommandHandler;
 
 
-//p606
-//이 컨트롤러 클래스는 로그인요청에 따라 호출되는 클래스이다
-//요청주소   http://ip주소/컨패/login.do
 public class LoginHandler implements CommandHandler {
 	
 	private static final String FORM_VIEW="/view/loginForm.jsp";
