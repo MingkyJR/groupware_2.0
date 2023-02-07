@@ -22,7 +22,7 @@
 <body>
 	
 	<div class="header">
-		<h2>직원등록</h2>
+		<img id="img" src="/assets/images/logo_2x.png">
 	</div>
 		<form action="/join.do" method="post">
 		<div class="container">
@@ -101,7 +101,7 @@
 					<option value="qa">QA팀</option>
 					<option value="business">사업부</option>
 				</select>
-				직급선택*  
+				<h3>직급선택*</h3>  
 				<select size="1" name="emp_position" id="emp_position">
 					<option value="1">사원</option>
 					<option value="2">선임</option>
@@ -115,7 +115,7 @@
 					<input type="submit" value="등록">
 					<input type="reset" value="취소"> <br/>
 				</div>
-				<a href="<%=request.getContextPath()%>/index.jsp">로그인페이지</a>
+				<h3  id="footertxt" ><a href="<%=request.getContextPath()%>/index.jsp">로그인페이지</a></h3>
 			</div>
 		</form>
 	

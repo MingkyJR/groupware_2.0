@@ -52,7 +52,7 @@ $(document).ready(function(){
 				
 				<div class="field">
 					<h3>현재 아이디 </h3>
-					<c:out value="${AUTHUSER.emp_id}"></c:out><br/>
+					<h3><c:out value="${AUTHUSER.emp_id}"></c:out></h3>
 				</div> 
 				
 				<div class="field">
@@ -123,7 +123,7 @@ $(document).ready(function(){
 					<option value="qa">QA팀</option>
 					<option value="business">사업부</option>
 				</select>
-				직급선택*  
+				<h3>직급선택*</h3>  
 				<select size="1" name="emp_position" id="emp_position">
 					<option value="1">사원</option>
 					<option value="2">선임</option>
@@ -137,7 +137,7 @@ $(document).ready(function(){
 					<input type="submit" value="등록">
 					<input type="reset" value="취소"> <br/>
 				</div>
-				<a href="<%=request.getContextPath()%>/index.jsp">로그인페이지</a>
+				<h3  id="footertxt" >	<a href="<%=request.getContextPath()%>/view/main.jsp">메인페이지</a> </h3>
 			</div>
 		</form>
 	
