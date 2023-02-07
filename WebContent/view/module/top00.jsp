@@ -37,8 +37,8 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp">메인페이지</a></li>
-                            <li class="scroll-to-section"><a href="#">공지사항</a></li>
+                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp" class="active">메인페이지</a></li>
+                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/notice/list.do">공지사항</a></li>
                             <li class="submenu">
                                 <a href="<%=request.getContextPath()%>/work.do">근태관리</a>
                                 <ul>

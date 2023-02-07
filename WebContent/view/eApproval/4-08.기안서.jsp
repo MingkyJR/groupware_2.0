@@ -117,10 +117,9 @@ textarea {
 	width: 100%;
 }
 </style> 
-<br><br><br><br><br><br><br><br>
+<br>
 
-<p>기안서</p><br><br><br>
-${AUTHUSER}
+<p>기안서</p><br>
 <form name="writeFrm" id="writeFrm" method="post"
 			action="<%=request.getContextPath()%>/document/writeDocument.do">
 			<input type="hidden" name="rowSize" value="${rowSize}"/>

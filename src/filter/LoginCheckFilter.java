@@ -12,10 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-//로그인 여부 검사 필터역할을 하는 클래스 p612
-/*로그인 여부를 검사한다.
- *로그인을 하지 않았으면 로그인 화면으로 이동시킨다
- *로그인을 했다면 요청한 기능을 실행한다*/
 public class LoginCheckFilter implements Filter {
 
 	@Override

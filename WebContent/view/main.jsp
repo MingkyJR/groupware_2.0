@@ -36,7 +36,7 @@
                                 <h4>공지사항</h4>
                                 <span>사내이벤트 &amp; 경조사</span>
                                 <div class="main-border-button">
-                                    <a href="#">바로가기</a>
+                                    <a href="<%=request.getContextPath()%>/notice/list.do">바로가기</a>
                                 </div>
                             </div>
                             <img src="./../assets/images/gray.jpg" alt="">

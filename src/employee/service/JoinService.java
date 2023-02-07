@@ -12,34 +12,22 @@ import employee.dao.EmployeeDAO;
 import employee.model.Employee;
 
 
-//p596
-//이 클래스는 서비스클래스로서 JoinHandler컨트롤러에 의해서 호출되는 
-//회원가입 관련 여러 기능을 제공
-// 	컨트롤러   <->     서비스    <-> 	DAO		<->  DB
-// JoinHandler <->  Join Service <->  MemberDAO <->  DB
-//드라이버로드 - conn얻기 - 객체준비 - 쿼리실행 - 반납
 
 public class JoinService {
 	
 	
-	//필드
 	private EmployeeDAO employeeDAO = new EmployeeDAO();
-	//생성자
 	
 	
 	public void join(JoinRequest joinReq) {
-		System.out.println("JoinService-join() joinReq= "+joinReq);
 		
-		//id중복검사기능가진 DAO메서드호출-p596. 22라인 
 		Connection conn = null;
 		Employee employee = null;
 		try {
 			conn = ConnectionProvider.getConnection();
 			conn.setAutoCommit(false);//autoCommit기능 해제
 			
-			//user가 입력한 id를 사용하는 기존member정보가 담긴  Member객체받는다
 			employee = employeeDAO.selectById(joinReq.getEmp_id(),conn);
-			System.out.println("JoinService-selectById()리턴받은 employee="+employee);
 			if(employee!=null){ //id를 이미 사용중인 기존회원이 있으므로 rollback()처리를 하고 id중복에러 발생
 				JdbcUtil.rollback(conn);
 				throw new DuplicatedIdException();
