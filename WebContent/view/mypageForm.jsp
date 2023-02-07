@@ -49,38 +49,82 @@ $(document).ready(function(){
 		<form action="/changeMyInfo.do" method="post">
 		<div class="container">
 			<div class="contant">
-				<h4>현재 아이디  :  <c:out value="${AUTHUSER.emp_id}"></c:out></h4> 
-				<label>비밀번호* <input type="password" id="curPwd" name="curPwd" required="required"> </label> <c:if test="${errors.badCurPwd}">비밀번호가 일치하지 않습니다</c:if> <br/>
-				<label>새 비밀번호* <input type="password" id="newPwd" name="newPwd" required="required"> </label> <br/> 
-				<label>한글이름* <input type="text" id="new_kname" name="new_kname" required="required" value="${AUTHUSER.emp_kname}">  </label> <br/>
-				<label>영문이름* <input type="text" id="new_ename" name="new_ename" placeholder="영문으로만 입력해주세요"  pattern="[a-zA-Z]+$" value="${AUTHUSER.emp_ename}" required="required"> </label> <br/>
- 				우편번호* <input type="text" id="new_emp_postcode" name="new_emp_postcode"  pattern="[0-9]+" value="${AUTHUSER.emp_postcode}">
-									<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-				주소* 		<input type="text" id="new_sample6_address" name="new_sample6_address" ><br>				
-				상세주소* <input type="text" id="new_sample6_detailAddress" name="new_sample6_detailAddress" ><br>
-				참고항목* <input type="text" id="new_sample6_extraAddress" name="new_sample6_extraAddress"><br>
-				<label>생년월일* <input type="text" id="new_birthday" name="new_birthday" placeholder="6자리 숫자로 입력해주세요" pattern="[0-9]+" maxlength="6" value="${AUTHUSER.emp_birthday}"  required="required"> </label> <br/>
-				<label>연락처* <input type="text" id="new_phonenumber" name="new_phonenumber" placeholder="숫자만 입력해주세요" pattern="[0-9]+" maxlength="11" value="${AUTHUSER.emp_phonenumber}" required="required"> </label> <br/>
-				<label>이메일주소* <input type="text" id="emp_email_id" name="emp_email_id" size="10" required="required">
-  				@
-				<input type="text" name="emp_email_d" id="emp_email_d" required="required">
-				<select name="email_dd" id="email_dd">
+				
+				<div class="field">
+					<h3>현재 아이디 </h3>
+					<c:out value="${AUTHUSER.emp_id}"></c:out><br/>
+				</div> 
+				
+				<div class="field">
+					<h3>비밀번호* </h3> 
+					<input type="password" id="curPwd" name="curPwd" required="required"><br/>  
+					<c:if test="${errors.badCurPwd}">비밀번호가 일치하지 않습니다</c:if>
+				</div>
+				
+				<div class="field"> 
+					<h3>새 비밀번호* </h3>
+					<input type="password" id="newPwd" name="newPwd" required="required">  <br/>
+				</div>
+				
+				<div class="field">
+					<h3>한글이름*</h3> 
+					<input type="text" id="new_kname" name="new_kname" required="required" value="${AUTHUSER.emp_kname}"> <br/>
+				</div>
+				
+				<div class="field">
+					<h3>영문이름*</h3> 
+					<input type="text" id="new_ename" name="new_ename" placeholder="영문으로만 입력해주세요"  pattern="[a-zA-Z]+$" value="${AUTHUSER.emp_ename}" required="required"> <br/>
+				</div>
+				
+				<div class="field postcode">
+ 					<h3>우편번호*</h3> 
+ 					<input type="text" id="new_emp_postcode" name="new_emp_postcode"  pattern="[0-9]+" value="${AUTHUSER.emp_postcode}">
+					<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+				</div>
+				
+				<div class="field">
+					<h3>주소*</h3>
+					<input type="text" id="sample6_address" name="sample6_address"> <br/>
+					<h3>상세주소*</h3> 
+					<input type="text" id="sample6_detailAddress" name="sample6_detailAddress" > <br/>
+					<h3>참고항목*</h3> 
+					<input type="text" id="sample6_extraAddress" name="sample6_extraAddress">
+				</div>
+				
+				<div class="field">
+					<h3>생년월일* </h3>
+					<input type="text" id="new_birthday" name="new_birthday" placeholder="6자리 숫자로 입력해주세요" pattern="[0-9]+" maxlength="6" value="${AUTHUSER.emp_birthday}" required="required">
+				</div>
+				
+				<div class="field">
+					<h3>연락처*</h3> 
+					<input type="text" id="new_phonenumber" name="new_phonenumber" placeholder="숫자만 입력해주세요" pattern="[0-9]+" maxlength="11" value="${AUTHUSER.emp_phonenumber}" required="required">
+				</div>
+				
+				<div class="email">
+					<h3>이메일주소*</h3> 
+					<input type="text" id="emp_email_id" name="emp_email_id" size="10" required="required">
+					<div id="and"><h3 >@</h3></div>
+					<input type="text" name="emp_email_d" id="emp_email_d" required="required"> <br/>
+					<select name="email_dd" id="email_dd">
 				    	<option value="">직접입력</option>
 				    	<option value="naver.com">naver.com</option>
 				    	<option value="daum.net">daum.net </option>
 				    	<option value="gmail.com">gmail.com </option>
 				    	<option value="nate.com">nate.com </option>
 		   	</select>
-				 </label> <br/>
-				<label>부서선택* </label> 
-				<select size="1" name ="new_dept_name" id="new_dept_name">
+			 </div>
+			 
+			 <div class="field">
+				<h3>부서선택*</h3>  
+				<select size="1" name ="dept_name" id="dept_name">
 					<option value="management">경영지원실</option>
 					<option value="development">기술개발부</option>
 					<option value="qa">QA팀</option>
 					<option value="business">사업부</option>
 				</select>
-				<label>직급선택* </label> 
-				<select size="1" name="new_position" id="new_position">
+				직급선택*  
+				<select size="1" name="emp_position" id="emp_position">
 					<option value="1">사원</option>
 					<option value="2">선임</option>
 					<option value="3">책임</option>
@@ -89,10 +133,12 @@ $(document).ready(function(){
 				</select>
 				</div>
 			</div>
-			<input type="submit" value="등록">
-			<input type="reset" value="취소"> <br/>
-			<a href="<%=request.getContextPath()%>/index.jsp">로그인페이지</a>
-		
+				<div class="footer">
+					<input type="submit" value="등록">
+					<input type="reset" value="취소"> <br/>
+				</div>
+				<a href="<%=request.getContextPath()%>/index.jsp">로그인페이지</a>
+			</div>
 		</form>
 	
 <script>
