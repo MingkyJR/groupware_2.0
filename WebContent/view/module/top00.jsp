@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8" import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
     <script>
 
         $(function() {
@@ -50,7 +51,7 @@
                                     </c:if>
                                 </ul>
                             </li>
-                            <li class="scroll-to-section"><a href="#">중고장터</a></li>
+                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/secondHand/list.do">중고장터</a></li>
                             <li class="scroll-to-section"><a href="#">메세지</a></li>
                              <li class="submenu">
                                 <a href="javascript:;">전자결재</a>
