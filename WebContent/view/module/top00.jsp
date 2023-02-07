@@ -2,9 +2,7 @@
 	pageEncoding="UTF-8" import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
     <script>
-
         $(function() {
             var selectedClass = "";
             $("p").click(function(){
@@ -18,14 +16,11 @@
                 
             });
         });
-
     </script>
-    
     <!-- ***** Preloader Start ***** -->
     <div id="preloader"></div>  
     <!-- ***** Preloader End ***** -->
-    
-       <!-- ***** Header Area Start ***** -->
+    <!-- ***** Header Area Start ***** -->
     <header class="header-area header-area">
         <div class="container">
             <div class="row">
@@ -38,15 +33,24 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-<<<<<<< HEAD
                             <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp" class="active">메인페이지</a></li>
                             <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/notice/list.do">공지사항</a></li>
-=======
-                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp">메인페이지</a></li>
-                            <li class="scroll-to-section"><a href="#">공지사항</a></li>
->>>>>>> refs/remotes/origin/main
-                            <li class="submenu">
-                                <a href="<%=request.getContextPath()%>/work.do">근태관리</a>
+                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/secondHand/list.do">중고장터</a></li>
+                            <li class="submenu"><a href="javascript:;">전자결재</a>
+			                        <c:if test="${!empty AUTHUSER && (AUTHUSER.emp_grade ne 5)}">
+			                        <ul>
+			                           <li><a href="<%=request.getContextPath()%>/view/eApproval/4-00.통합페이지.jsp">통합페이지</a></li>
+			                           <li><a href="<%=request.getContextPath()%>/document/writeDocument.do">전자결재</a></li>
+			                           <li><a href="<%=request.getContextPath()%>/view/eApproval/4-12.대기문커버리스트.jsp">결재대기 </a></li>
+			                           <li><a href="<%=request.getContextPath()%>/view/eApproval/4-13.승인문커버리스트.jsp">승인결과 </a></li>
+			                        </ul>
+			                        </c:if>
+			                        <c:if test="${not empty AUTHUSER && (AUTHUSER.emp_grade eq 5)}">
+			                        <ul>
+			                           <li><a href="<%=request.getContextPath()%>/view/eApproval/4-00.통합페이지2.jsp">전자결재</a></li>
+			                        </ul>
+			                        </c:if>
+			                      <li class="submenu"><a href="<%=request.getContextPath()%>/work.do">근태관리</a>
                                 <ul>
                                     <li><a href="<%=request.getContextPath()%>/work.do">근태관리</a></li>
                                     <li><a href="<%=request.getContextPath()%>/workEdit.do">출퇴근 수정</a></li>
@@ -56,30 +60,12 @@
                                     </c:if>
                                 </ul>
                             </li>
-                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/secondHand/list.do">중고장터</a></li>
-                            <li class="scroll-to-section"><a href="#">메세지</a></li>
-                             <li class="submenu">
-                                <a href="javascript:;">전자결재</a>
-                  <c:if test="${!empty AUTHUSER && (AUTHUSER.emp_grade ne 5)}">
-                                <ul>
-                                    <li><a href="<%=request.getContextPath()%>/view/eApproval/4-00.통합페이지.jsp">통합페이지</a></li>
-                                    <li><a href="<%=request.getContextPath()%>/document/writeDocument.do">전자결재</a></li>
-                                    <li><a href="<%=request.getContextPath()%>/view/eApproval/4-12.대기문커버리스트.jsp">결재대기 </a></li>
-                                    <li><a href="<%=request.getContextPath()%>/view/eApproval/4-13.승인문커버리스트.jsp">승인결과 </a></li>
-                                </ul>
-                  </c:if>
-                  <c:if test="${not empty AUTHUSER && (AUTHUSER.emp_grade eq 5)}">
-                                <ul>
-                                    <li><a href="<%=request.getContextPath()%>/view/eApproval/4-00.통합페이지2.jsp">전자결재</a></li>
-                                </ul>
-                  </c:if>
-                            </li>
                             <li class="submenu">
                                 <a href="javascript:;">마이페이지</a>
                                 <ul>
                                     <li><a href="/login.do">로그인</a></li>
                                     <li><a href="/logout.do">로그아웃</a></li>
-                                    <li><a href="#">개인정보</a></li>
+                                    <li><a href="/changeMyInfo.do">개인정보</a></li>
                                 </ul>
                             </li>
                             
