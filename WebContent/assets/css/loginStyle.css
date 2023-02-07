@@ -22,3 +22,21 @@
 	vertical-align:middle;
 	
 }
+
+.contents button[type=submit]{
+	background-color: #515e93;
+	border:1px solid #dadada;
+	padding: 10px;
+	color:#fff;
+	width: 48%;
+	cursor: pointer;
+}
+
+.contents button[type=button]{
+	background-color: #ebad34;
+	border:1px solid #dadada;
+	padding: 10px;
+	color:#fff;
+	width: 48%;
+	cursor: pointer;
+}
