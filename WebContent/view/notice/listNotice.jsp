@@ -206,6 +206,7 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 </p>
 
 <hr/>
+<!--  <h1>공  지  사  항</h1> -->
  
  
 <br/><br/><br/><br/>
