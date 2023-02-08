@@ -40,45 +40,12 @@
     
     <!-- Global Init -->
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
-    <style>
-    .total {
-		 border: 2px solid #c7c7c7;
-		 min-height:365px;
-		 padding-top: 8px;
-		 margin-bottom: 10px;
-		 }
-		 
-		 .page{
-			text-align: center;
-			border-bottom: 1px solid #c7c7c7;
-			}
-			.chevron{
-			width : 25px;
-			}
-			
-			.work_status{
-			color: white;
-			border-radius: 70px;
-			font-size: small;
-			padding: 3px;
-			padding-left: 8px;
-			padding-right: 8px;
-			}
-			.ws1{
-			background-color: #FE2E2E;
-			color: white;
-			}
-			.ws2{
-			background-color: #2E9AFE;
-			color: white;
-			}
-    
-    </style>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/work/work.css">
     
 </head>
 <body>
 <%@ include file="../module/top00.jsp" %>
-<h2>출퇴근 수정 요청 페이지</h2>
+
 <div class="container" style="margin-top: 10px;">
   <div class="row">
   	<!-- 출퇴근 버튼, 정보 영역 -->
@@ -86,11 +53,12 @@
     <!-- 월별 누적 근태현황 -->
    
     <div class="col total">
+    <h2>출퇴근 수정 요청</h2>
       <div class="page">
       <h2>
-      <a href="work.do?pageMon=${pageAtt.mon - 1}&pageYear=${pageAtt.year}"><img src="/assets/icon/chevron-left.svg" class="chevron"></a>
+      <a href="workEdit.do?pageMon=${pageAtt.mon - 1}&pageYear=${pageAtt.year}"><img src="/assets/icon/chevron-left.svg" class="chevron"></a>
       <span>${pageAtt.year}.${pageAtt.mon}</span>
-      <a href="work.do?pageMon=${pageAtt.mon + 1}&pageYear=${pageAtt.year}"><img src="/assets/icon/chevron-right.svg" class="chevron"></a>
+      <a href="workEdit.do?pageMon=${pageAtt.mon + 1}&pageYear=${pageAtt.year}"><img src="/assets/icon/chevron-right.svg" class="chevron"></a>
       </h2>
       </div>
     <table class="table">
@@ -102,7 +70,7 @@
       <th scope="col">근무시간</th>
       <th scope="col">초과시간</th>
       <th scope="col">상태</th>
-      <th scope="col"></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -119,6 +87,9 @@
       </c:if>
       <c:if test="${month.work_status eq '정상처리'}">
       <span class="work_status ws2">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '요청중'}">
+      <span class="work_status ws3">${month.work_status}</span>
       </c:if>
       </td>
       <td>

@@ -38,6 +38,7 @@
     
     <!-- Global Init -->
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
+    <%-- <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/work/work.css"> --%>
     <style>
     th{
     background-color: #f2f7ff;
@@ -51,9 +52,9 @@
 <form method="post">
 <div class="container" style="margin-top: 10px;">
 	<div class="row">
-	 <div class="col total">
+	 <div class="col">
 	 <h3 style="border-bottom: solid black; padding-bottom: 5px;">출퇴근 수정요청</h3>
-	 <h4 style="padding-bottom: 10px; padding-top: 10px;">조정 정보</h4>
+	 <h4 style="padding-bottom: 10px; padding-top: 25px;">조정 정보</h4>
 		<table class="table table-bordered">
 		  <tbody>
 		    <tr>
@@ -62,14 +63,15 @@
 		    </tr>
 		    <tr>
 		      <th scope="row">수정요청 시간</th>
-		      <td><input type="time" name="NewInTime" value="${inTime}" min="08:30" max="18:00"> ~ <input type="time" name="outTime"></td>
+		      <td><input type="time" name="newInTime" value="${inTime}" min="08:30" max="18:00"> ~ <input type="time" name="newOutTime"></td>
 		    </tr>
 		    <tr>
 		      <th scope="row" style="line-height: 252px;">사유</th>
-		      <td><textarea rows="10" style="width: 100%; resize: none;"></textarea></td>
+		      <td><textarea name="reason" rows="10" style="width: 100%; resize: none;"></textarea></td>
 		    </tr>
 		  </tbody>
 		</table>
+		<input type="hidden" name="date" value="${date}">
 		<input type="submit">
 	 </div>
 	</div>
