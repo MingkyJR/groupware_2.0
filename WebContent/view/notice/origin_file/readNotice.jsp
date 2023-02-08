@@ -1,83 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="u" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
- <meta charset="UTF-8">
- <meta name="description" content="member board Web Application">
- <meta name="keywords" content="member, board, article, mvc">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title></title>
- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/templatemo-hexashop.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/owl-carousel.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/lightbox.css">
-    
-    
-    <script src="<%=request.getContextPath()%>/assets/js/jquery-2.1.0.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="<%=request.getContextPath()%>/assets/js/popper.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/bootstrap.min.js"></script>
-
-    <!-- Plugins -->
-    <script src="<%=request.getContextPath()%>/assets/js/owl-carousel.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/accordions.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/datepicker.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/scrollreveal.min.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/waypoints.min.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/jquery.counterup.min.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/imgfix.min.js"></script> 
-    <script src="<%=request.getContextPath()%>/assets/js/slick.js"></script> 
-    <script src="<%=request.getContextPath()%>/assets/js/lightbox.js"></script> 
-    <script src="<%=request.getContextPath()%>/assets/js/isotope.js"></script> 
-    
-    <!-- Global Init -->
-    <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
-       <style>
+  <meta charset="UTF-8">
+  <meta name="description" content="member board Web Application">
+  <meta name="keywords" content="member, board, notice, mvc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Insert title here</title>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <style>
 		table {
 	    width: 800px;
 	    height: 600px;
 	    margin-left: auto;
 	    margin-right: auto;
 	 	}
-	 	th {
-	    text-align: center;
-/* 	    border: 1px solid #EFEFEF; */
-	    background: #C5CAD7
-	 	}
-	 	
-	 	#list{
-	 	  color: white;
-		  text-align: center;
-		  background: #7C8EBF;
-		  border: solid 1px #191970;
-		  border-radius: 3px;
-	 	}
-	 	#mod{
-	 	  color: white;
-		  text-align: center;
-		  background: #7C8EBF;
-		  border: solid 1px #191970;
-		  border-radius: 3px;
-	 	}
-	 	#del{
-	 	  color: white;
-		  text-align: center;
-		  background: #7C8EBF;
-		  border: solid 1px #191970;
-		  border-radius: 3px;
-	 	}
         </style>
-    
-    
-    
-
         <script>
         	$(document).ready(function(){
 
@@ -117,12 +59,8 @@
 <%--         	location.href="<%=request.getContextPath()%>/notice/list.do"; // --%>
         </script>
         
-
 </head>
 <body>
-<%@ include file="../module/top00.jsp" %>
-
-
 <%-- 컨트롤러에 의해 아래와 같이 Model 받았다.
 		request.setAttribute("noticeData", noticeData);//notice테이블과 notice_content테이블
 		request.setAttribute("pageNo", pageNo);//요청페이지
@@ -132,18 +70,14 @@
 *1페이지당 게시글수:${rowSize}<br/><br/>--%>
 
 <%-- ${AUTHUSER.emp_grade} --%>
-
+<%-- ${AUTHUSER.emp_id} --%>
+<%-- ${noticeData.notice.writer.writer_id} --%>
 
 <%--  <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
-<!-- <p class="home" style="text-align: left; margin-left:150px;"> -->
-<p class="home" style="margin:0 auto; max-width: 950px;">
-<a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
-</p>
+ <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
  <hr/>
-  
-<br/><br/>
-<!--  <h3>readNotice.jsp</h3> -->
- <table border="1" style="text-align:center;">
+ <h3>readNotice.jsp</h3>
+ <table border="1" bordercolor="lightgray" text-align="center">
 <!--  <table border="1"> -->
  	<tr>
  		<th>게시글 번호</th>
@@ -214,17 +148,17 @@
 
  		
 <%--  		<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}">목록보기</a> --%>
- 		<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}';">목록보기</button>
+ 		<button type="button" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}';">목록보기</button>
  		<%--수정과 삭제기능은 로그인한 유저의 id와 작성자의 id가 일치하는 경우에만 노출하도록 한다. --%>
  		<%-- <c:if test="${AUTHUSER.memberid==noticeData.notice.writer.writer_id}"> --%>
- 		<c:if test="${AUTHUSER.emp_id==noticeData.notice.writer.writer_id}">
+<%--  		<c:if test="${AUTHUSER.emp_id==noticeData.notice.writer.writer_id}"> --%>
 <%--  		<a href="<%=request.getContextPath()%>/notice/modify.do?no=${noticeData.notice.number}&pageNo=${pageNo}&rowSize=${rowSize}">게시글 수정</a> --%>
- 		<button type="button" id="mod" onclick="mdAuthCheck(${AUTHUSER.emp_grade});">게시글 수정</button>
+ 		<button type="button" onclick="mdAuthCheck(${AUTHUSER.emp_grade});">게시글 수정</button>
  		
 <%--  		<a href="<%=request.getContextPath()%>/notice/delete.do?no=${noticeData.notice.number}">글삭제(delete용)</a> --%>
- 		<button type="button" id="del" onclick="rmAuthCheck(${AUTHUSER.emp_grade});">게시글 삭제</button>
+ 		<button type="button" onclick="rmAuthCheck(${AUTHUSER.emp_grade});">게시글 삭제</button>
 <%--  		<button type="button" onclick="rmAuthCheck(${AUTHUSER.grade});">게시글 삭제(delete)</button> --%>
- 		</c:if>
+<%--  		</c:if> --%>
 <%--  		<a href="<%=request.getContextPath()%>/notice/delete2.do?no=${noticeData.notice.number}">글삭제(update용)</a> --%>
 <%--  		<button type="button" onclick="rmAuthCheck2(${AUTHUSER.grade});">게시글 삭제(update)</button>  //기능상 필요없어서 막아놓기 --%>
  		<%-- </c:if>--%>
@@ -293,12 +227,27 @@
  
  
  
-<%@ include file="../module/bottom00.jsp" %>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 </body>
 </html>
-
-
-
-
-
-

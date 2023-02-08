@@ -280,8 +280,13 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
  	<c:forEach var="item" items="${noticePage.content}">
  	<tr>
  		<td>${item.number}</td>
+<<<<<<< HEAD
  		<td><a href="<%=request.getContextPath()%>/notice/read.do?no=${item.number}&pageNo=${noticePage.currentPage}&rowSize=${rsize}">${item.title}</a></td>
  		<td>${item.writer.writer_id}</td>
+=======
+ 		<td><a href="<%=request.getContextPath()%>/notice/read.do?no=${item.number}&pageNo=${noticePage.currentPage}&rowSize=${rowSize}">${item.title}</a></td>
+ 		<td>${item.writer.writer_name}</td>
+>>>>>>> refs/remotes/origin/notice
 <%--  		<td>${item.regdate}(YYYY-MM-DD)</td> --%>
 <%--  		<td><fmt:formatDate type="date" value="${item.regdate}" /></td> --%>
  		<td>
@@ -425,7 +430,7 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
  <select name="choice" id="choice"> <!-- 높이:20 중간맞춤 -->
 <!--     <option value="sel">선택</option> -->
     <option value="title" <c:if test="${choice == 'title'}">selected</c:if>>제목</option>
-    <option value="writer_id" <c:if test="${choice == 'writer_id'}">selected</c:if>>작성자</option>
+    <option value="writer_name" <c:if test="${choice == 'writer_name'}">selected</c:if>>작성자</option>
 <!--     <option value="content">내용</option> -->
 </select>
 <lebel class="hidden"></lebel>	<!-- ?choice=title&keyword=~~~ -->
