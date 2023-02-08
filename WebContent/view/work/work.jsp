@@ -148,7 +148,6 @@
       <span class="work_status ws3">${month.work_status}</span>
       </c:if>
       </td>
-      </td>
     </tr>
   	</c:forEach>
   </tbody>

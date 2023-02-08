@@ -60,6 +60,7 @@
       <span>${pageAtt.year}.${pageAtt.mon}</span>
       <a href="workEdit.do?pageMon=${pageAtt.mon + 1}&pageYear=${pageAtt.year}"><img src="/assets/icon/chevron-right.svg" class="chevron"></a>
       </h2>
+      <p style="text-align: left;">${AUTHUSER.emp_kname}님의 ${pageAtt.year}년 ${pageAtt.mon}월 출퇴근 기록</p>
       </div>
     <table class="table">
   <thead>
