@@ -27,13 +27,13 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="<%=request.getContextPath()%>/view/main.jsp" class="logo" >
+                        <a href="<%=request.getContextPath()%>/chat.do" class="logo" >
                             <img  src="<%=request.getContextPath()%>/assets/images/logo.png">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp" class="active">메인페이지</a></li>
+                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/chat.do" class="active">메인페이지</a></li>
                             <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/notice/list.do">공지사항</a></li>
                             <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/secondHand/list.do">중고장터</a></li>
                             <li class="submenu"><a href="javascript:;">전자결재</a>
@@ -68,7 +68,7 @@
                                     </c:if>
                                 </ul>
                             </li>
-                            
+                               <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/report/page1.jsp">마음의소리</a></li>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>

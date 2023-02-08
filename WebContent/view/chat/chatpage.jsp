@@ -21,54 +21,162 @@
      </head>
  
  
-</head>
+<style>
+.container1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.app1{
+  position: relative;
+  width: 320px;
+  height: 568px;
+  border-radius: 16px;
+  background-color: rgb(171, 193, 209);
+}
+
+.app1  > h1{
+  font-size: 2em;
+  text-align: center;
+  margin: 10px 5px;
+  border-bottom: 0.5px solid rgb(234, 234, 234);
+}
+
+ul1{
+  max-height: 420px;
+  overflow: auto;
+}
+
+ul1 > li{
+  cursor: pointer;
+  position: relative;
+  left: 60px;
+  list-style-type: none;
+  width: 200px;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 6px;
+  background-color: rgb(254, 229, 77);
+  border-radius: 8px;
+}
+
+ul1 > li::after{
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 0;
+  height: 0; 
+  border-bottom: 16px solid transparent;
+  border-left: 16px solid rgb(254, 229, 77);
+}
+
+ul1 > li > span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px; 
+  height: 16px;
+  border-radius: 8px;
+  background-color: rgb(234, 234, 234);
+  position: absolute;
+  left: -20px;
+  bottom: 2px;
+}
+
+form{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  bottom: 0;
+}
+input{
+  font-size: 1.4em;
+  margin: 0;
+  border: none;
+  height: 45px;
+}
+input[type="text"]{
+  width:70%;
+  padding-left: 10px;
+}
+input[type="text"]:focus{
+  outline: none;
+}
+input[type="submit"]{
+  cursor: pointer;
+  width: 80px;
+  border-radius: 8px;
+  background-color: rgb(254, 229, 77);
+}
+
+.done{
+  color: rgb(93, 93, 93);
+  background-color: rgb(234, 234, 234);
+}
+
+.done::after{
+  border-left: 16px solid rgb(234, 234, 234);
+}
+
+</style>
 <body>
 <%--
 request.setAttribute("AUTHUSER", AUTHUSER);
 
  --%>
- ${AUTHUSER} 
 <!-- ***** Main Banner Area Start ***** -->
   <%@ include file="../module/top00.jsp" %>
+ 
 <section id="men" style="margin-top:-100px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
                     <div class="section-heading">
-                        <h3><strong>Astro Company</strong></h3>
+                        <h2 style="background: #505D93;background: linear-gradient(to right, #505D93 0%, #ABABAB 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+                          <strong>Astro Company</strong>
+                        </h2>
                      </div>
                 </div>
             </div>
         </div>
-        <div class="container" style="margin-top:-50px;">
+        <div class="container" style="margin-top:-50px; float:inherit;">
             <div class="row">
-                <div class="col-lg-10">
+                <div class="col-lg-12">
                     <div class="men-item-carousel">
                         <div class="owl-men-item owl-carousel">
                             <div class="item">
                                 <div class="thumb">
-                                    <img src="./../assets/images/sell.png" alt="">
+                                    <img src="./../assets/images/sell1.png" alt="">
                                 </div>
                                 <div class="down-content">
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="thumb">
-                                    <img src="./../assets/images/sell.png" alt="">
+                                    <img src="./../assets/images/sell2.png" alt="">
                                 </div>
                                 <div class="down-content">
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="thumb">
-                                    <img src="./../assets/images/sell.png" alt="">
+                                    <img src="./../assets/images/sell3.png" alt="">
                                 </div>
                                 <div class="down-content">
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="thumb">
-                                    <img src="./../assets/images/sell.png" alt="">
+                                    <img src="./../assets/images/sell4.png" alt="">
+                                </div>
+                                <div class="down-content">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="thumb">
+                                    <img src="./../assets/images/sell5.png" alt="">
                                 </div>
                                 <div class="down-content">
                                 </div>
@@ -99,12 +207,18 @@ request.setAttribute("AUTHUSER", AUTHUSER);
                         
                     </div>
                 </div>
-                <div class="col-lg-4">
+               <div class="col-lg-4">
                     <div class="service-item">
-                        <h4>근태관리</h4><br>
-                        <p>출퇴근관리<br> 출근 / 퇴근 </p><br><br><br>
-                        <h4>전자결재</h4><br>
-                        <p>대기문서<br>반려문서<br>승인문서<br> </p>
+                    <div class="container1">
+									    <div class="app1">
+									      <h1>메 모 장</h1>
+									      <ul id="todo-list" class="ul1">
+									      </ul>
+									      <form id="todo-form">
+									        <input name="todo" type="text" placeholder="작성란" maxlength="16" autocomplete="off"><input type="submit" value="추가">
+									      </form>
+									    </div>
+									  </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -187,8 +301,8 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 	
 
 	var textarea = document.getElementById("messageWindow");
-	//var webSocket = new WebSocket('ws://localhost/webChatServer');
-	var webSocket = new WebSocket('ws://172.30.1.84/webChatServer');
+	var webSocket = new WebSocket('ws://localhost/webChatServer');
+	//var webSocket = new WebSocket('ws://172.30.1.84/webChatServer');
 	var inputMessage = document.getElementById('inputMessage');
 	
 	webSocket.onerror = function(e){
@@ -259,6 +373,82 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 		});
 		
 	})
+	
+	     
+    // 요소 선택 및 배열 선언
+       const todoList = document.getElementById('todo-list')
+       const todoForm = document.getElementById('todo-form')
+       let todoArr = [];
+
+       // displayTodos 함수
+       function displayTodos(){
+         todoList.innerHTML = ""
+         todoArr.forEach((aTodo) => {
+           const todoItem = document.createElement('li')
+           const todoDelBtn = document.createElement('span')
+           todoDelBtn.innerText = 'x'
+           todoDelBtn.title = '클릭시 삭제'
+           todoItem.innerText = aTodo.todoText
+           todoItem.title = '클릭시 완료'
+           todoItem.classList.add(aTodo.todoDone ? 'done' : 'yet')
+           todoItem.appendChild(todoDelBtn)
+           todoDelBtn.addEventListener('click', function(){
+             handleTodoDelBtnClick(aTodo.todoId)
+           })
+           todoItem.addEventListener('click', function(){
+             handleTodoItemClick(aTodo.todoId)
+           })
+           todoList.appendChild(todoItem)
+         });
+       }
+
+       // handleTodoDelBtnClick 함수
+       function handleTodoDelBtnClick(clickedId){
+         todoArr = todoArr.filter(function(aTodo){
+           return aTodo.todoId !== clickedId
+         })
+         displayTodos()
+         saveTodos()
+       }
+
+       // handleTodoItemClick 함수
+       function handleTodoItemClick(clickedId){
+         todoArr = todoArr.map(function(aTodo){
+           return aTodo.todoId !== clickedId ? 
+           aTodo : { ...aTodo, todoDone: !aTodo.todoDone } 
+         })
+         displayTodos()
+         saveTodos()
+       }
+
+       // saveTodos 함수
+       function saveTodos(){
+         const todoSting = JSON.stringify(todoArr)
+         localStorage.setItem('myTodos', todoSting)
+       }
+
+       // loadTodos 함수
+       function loadTodos(){
+         const myTodos = localStorage.getItem('myTodos') 
+         todoArr = myTodos !== null ? JSON.parse(myTodos) : todoArr
+         displayTodos()
+       }
+
+       // 할일 입력 후 제출하면 발생하는 이벤트 핸들링
+       todoForm.addEventListener('submit', function(e){
+         e.preventDefault()
+         const toBeAdded = {
+           todoText: todoForm.todo.value,
+           todoId: new Date().getTime(),
+           todoDone: false
+         }
+         todoForm.todo.value = ""
+         todoArr.push(toBeAdded)
+         displayTodos()
+         saveTodos()
+       })
+
+       loadTodos() 
 </script>
 </html>
 
