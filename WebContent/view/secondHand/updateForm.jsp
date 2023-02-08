@@ -39,60 +39,63 @@
     <!-- Global Init -->
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
 <style>
+body{
+	background-color: #f2f2f2;
+}
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 input[type=text], select, textarea, input[type=number] {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
 }
 
 label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
+	padding: 12px 12px 12px 0;
+	display: inline-block;
 }
 
 input[type=submit] {
-  background-color: #505D93;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
+	background-color: #505D93;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+	background-color: #45a049;
 }
 
 .second_container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
 }
 
 .col-25 {
-  float: left;
-  width: 15%;
-  text-align: center;
+	float: left;
+	width: 15%;
+	text-align: center;
 }
 
 .col-75 {
-  float: left;
-  width: 85%;
-  margin-top: 6px;
+	float: left;
+	width: 85%;
+	margin-top: 6px;
 }
 
 /* Clear floats after the columns */
 .second_row:after {
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */

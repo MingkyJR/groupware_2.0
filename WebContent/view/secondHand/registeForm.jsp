@@ -39,6 +39,9 @@
     <!-- Global Init -->
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
 <style>
+body{
+	background-color: #f2f2f2;
+}
 * {
   box-sizing: border-box;
 }
@@ -119,10 +122,16 @@ input[type=submit]:hover {
   }
 }
 </style>
+<script>
+	$(document).ready(function(){
+		$("#btnCancel").click(function(){
+			location.href="<%=request.getContextPath()%>/secondHand/list.do";
+		});
+	});
+</script>
 </head>
 <%@ include file="../module/top00.jsp" %>
 <body>
-	${AUTHUSER.emp_id}
 <div class="second_container">
   <form action="<%=request.getContextPath() %>/secondHand/registe.do" method="post" enctype="multipart/form-data" >
 	  <input type="hidden" name="empID" value="${AUTHUSER.emp_id}"/>
@@ -160,7 +169,7 @@ input[type=submit]:hover {
 	  </div>
 	  <div class="second_row">
     	<input type="submit" value="등록">
-    	<input class="btnCancel" type="button" value="취소">
+    	<input class="btnCancel" id="btnCancel" type="button" value="취소">
  	 </div>
   </form>
 </div>

@@ -49,7 +49,8 @@
 			                           <li><a href="<%=request.getContextPath()%>/view/eApproval/4-00.통합페이지2.jsp">전자결재</a></li>
 			                        </ul>
 			                        </c:if>
-			                      <li class="submenu"><a href="<%=request.getContextPath()%>/work.do">근태관리</a>
+			                  <li class="submenu">
+                                <a href="<%=request.getContextPath()%>/work.do">근태관리</a>
                                 <ul>
                                     <li><a href="<%=request.getContextPath()%>/work.do">근태관리</a></li>
                                     <li><a href="<%=request.getContextPath()%>/workEdit.do">출퇴근 수정</a></li>
@@ -59,12 +60,14 @@
                                     </c:if>
                                 </ul>
                             </li>
-                            <li class="submenu">
+                               <li class="submenu">
                                 <a href="javascript:;">마이페이지</a>
-                                 <ul>
-                                    <li><a href="/login.do">로그인</a></li>
-                                    <li><a href="/logout.do">로그아웃</a></li>
-                                    <li><a href="/changeMyInfo.do">개인정보</a></li>
+                                <ul>
+                                 		<li><a href="/logout.do">로그아웃</a></li>
+                                    <li><a href="../view/mypageForm.jsp">회원정보수정</a></li>
+                                    <c:if test="${AUTHUSER.emp_grade eq 5}">
+                                    <li><a href="#">회원정보관리</a></li>
+                                    </c:if>
                                 </ul>
                             </li>
                                <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/report/page1.jsp">마음의소리</a></li>
