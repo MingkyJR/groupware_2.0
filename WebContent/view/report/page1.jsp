@@ -57,8 +57,8 @@
 				<div class="col-lg-4">
 					<div class="service-item">
 						<div class="section-heading">
-							<h2>회사내 개인문의</h2>
-							<br> <span>사내에 불미스러운 일과 직접적으로 말할수 없는 이야기를 사장님과 직접
+							<h2>마음의 소리</h2>
+							<br> <span>사내에 불미스러운 일과 직접적으로 말할 수 <br> 없는 이야기를 사장님과 직접
 								상담하세요</span>
 						</div>
 
@@ -101,13 +101,13 @@
 						<ul>
 							<li><strong>주소></strong><br>
 							<p>종로구, 249번지 24</p></li>
-							<li><strong>전화번호</strong><br>
+							<li><strong>전화번호></strong><br>
 								<p>010-020-0340</p></li>
-							<li><strong>사무실위치</strong><br>
+							<li><strong>사무실위치></strong><br>
 								<p>6층 사장실</p></li>
-							<li><strong>근무시간</strong><br>
+							<li><strong>근무시간></strong><br>
 								<p>08:30 AM - 5:30 PM</p></li>
-							<li><strong>Email</strong><br>
+							<li><strong>Email></strong><br>
 								<p>info@company.com</p></li>
 						</ul>
 					</div>

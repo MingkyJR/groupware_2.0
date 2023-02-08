@@ -1,283 +1,398 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
- <meta charset="UTF-8">
- <meta name="description" content="member board Web Application">
- <meta name="keywords" content="member, board, article, mvc">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title></title>
- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
- <link rel="stylesheet" href="assets/css/chat.css">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/templatemo-hexashop.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/owl-carousel.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/lightbox.css">
-     </head>
- 
- 
+<meta charset="UTF-8">
+<meta name="description" content="member board Web Application">
+<meta name="keywords" content="member, board, article, mvc">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<link rel="stylesheet" href="assets/css/chat.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/assets/css/font-awesome.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/templatemo-hexashop.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/owl-carousel.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/lightbox.css">
+</head>
+
+
 <style>
-.container1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+.container1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 }
 
-.app1{
-  position: relative;
-  width: 320px;
-  height: 568px;
-  border-radius: 16px;
-  background-color: rgb(171, 193, 209);
+.app1 {
+	margin-top:45px;
+	position: relative;
+	width: 260px;
+	height: 450px;
+	border:gray 0.5px;
+	border-color: solid;
+	border-radius: 10px;
+	background-color: rgb(171, 193, 209);
 }
 
-.app1  > h1{
-  font-size: 2em;
-  text-align: center;
-  margin: 10px 5px;
-  border-bottom: 0.5px solid rgb(234, 234, 234);
+.app1>h1 {
+	font-size: 2em;
+	text-align: center;
+	margin: 10px 5px;
+	border-bottom: 0.5px solid rgb(234, 234, 234);
 }
 
-ul1{
-  max-height: 420px;
-  overflow: auto;
+ul1 {
+	max-height: 420px;
+	overflow: auto;
 }
 
-ul1 > li{
-  cursor: pointer;
-  position: relative;
-  left: 60px;
-  list-style-type: none;
-  width: 200px;
-  height: 40px;
-  margin-bottom: 10px;
-  padding: 6px;
-  background-color: rgb(254, 229, 77);
-  border-radius: 8px;
+ul1>li {
+	cursor: pointer;
+	position: relative;
+	left: 60px;
+	list-style-type: none;
+	width: 200px;
+	height: 40px;
+	margin-bottom: 10px;
+	padding: 6px;
+	background-color: rgb(254, 229, 77);
+	border-radius: 8px;
 }
 
-ul1 > li::after{
-  content: "";
-  position: absolute;
-  top: 10px;
-  right: -10px;
-  width: 0;
-  height: 0; 
-  border-bottom: 16px solid transparent;
-  border-left: 16px solid rgb(254, 229, 77);
+ul1>li::after {
+	content: "";
+	position: absolute;
+	top: 10px;
+	right: -10px;
+	width: 0;
+	height: 0;
+	border-bottom: 16px solid transparent;
+	border-left: 16px solid rgb(254, 229, 77);
 }
 
-ul1 > li > span{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 16px; 
-  height: 16px;
-  border-radius: 8px;
-  background-color: rgb(234, 234, 234);
-  position: absolute;
-  left: -20px;
-  bottom: 2px;
+ul1>li>span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	background-color: rgb(234, 234, 234);
+	position: absolute;
+	left: -20px;
+	bottom: 2px;
 }
 
-form{
-  background-color: rgb(255, 255, 255);
-  position: absolute;
-  bottom: 0;
-}
-input{
-  font-size: 1.4em;
-  margin: 0;
-  border: none;
-  height: 45px;
-}
-input[type="text"]{
-  width:70%;
-  padding-left: 10px;
-}
-input[type="text"]:focus{
-  outline: none;
-}
-input[type="submit"]{
-  cursor: pointer;
-  width: 80px;
-  border-radius: 8px;
-  background-color: rgb(254, 229, 77);
+form {
+	background-color: rgb(240, 240, 240);
+	position: absolute;
+	bottom: 0;
 }
 
-.done{
-  color: rgb(93, 93, 93);
-  background-color: rgb(234, 234, 234);
+input {
+	margin: 0;
+	border: none;
+	height: 45px;
 }
 
-.done::after{
-  border-left: 16px solid rgb(234, 234, 234);
+.input1 {
+	margin: 0;
+	border: none;
+	width: 216px;
+	height: 45px;
 }
 
+input1[type="text"] {
+	width: 100%;
+}
+
+input1[type="text"]:focus {
+	outline: none;
+}
+
+input1[type="submit"] {
+	cursor: pointer;
+	border-radius: 8px;
+	background-color: rgb(254, 229, 77);
+}
+
+.done {
+	color: rgb(93, 93, 93);
+	background-color: rgb(234, 234, 234);
+}
+
+.done::after {
+	border-left: 16px solid rgb(234, 234, 234);
+}
+
+table {
+	border-collapse: collapse;
+	border-radius: 10px;
+	border-style: hidden;
+
+	box-shadow: 0 0 0 1px #D5D5D5;
+}
+
+.tg {
+	border-color:gray;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.tg td {
+	border-color:gray;
+	border-style: solid;
+	border-width: 1px;
+	font-size: 14px;
+	overflow: hidden;
+	padding: 10px 5px;
+	word-break: normal;
+}
+
+.tg th {
+		border-color:gray;
+	border-style: solid;
+	border-width: 1px;
+	font-size: 14px;
+	font-weight: normal;
+	overflow: hidden;
+	padding: 10px 5px;
+	word-break: normal;
+}
+
+.tg .tg-c3ow {
+	border-color: inherit;
+	text-align: center;
+	vertical-align: top
+}
+
+.tg .tg-qla2 {
+	background-color: #D9D6FF;
+	border-color: inherit;
+	text-align: center;
+	vertical-align: top
+}
+
+.tg .tg-0pky {
+	border-color: inherit;
+	text-align: left;
+	vertical-align: top
+}
+.main11{
+		margin-top:200px;
+    height: 600px;
+    border: 0.5px solid gray;
+    border-radius:10px;
+    margin: 0px;
+    display: inline-block;
+    background: #9bbbd4;
+}
 </style>
 <body>
-<%--
+	<%--
 request.setAttribute("AUTHUSER", AUTHUSER);
 
  --%>
-<!-- ***** Main Banner Area Start ***** -->
-  <%@ include file="../module/top00.jsp" %>
- 
-<section id="men" style="margin-top:-100px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="section-heading">
-                        <h2 style="background: #505D93;background: linear-gradient(to right, #505D93 0%, #ABABAB 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
-                          <strong>Astro Company</strong>
-                        </h2>
-                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="container" style="margin-top:-50px; float:inherit;">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="men-item-carousel">
-                        <div class="owl-men-item owl-carousel">
-                            <div class="item">
-                                <div class="thumb">
-                                    <img src="./../assets/images/sell1.png" alt="">
-                                </div>
-                                <div class="down-content">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <img src="./../assets/images/sell2.png" alt="">
-                                </div>
-                                <div class="down-content">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <img src="./../assets/images/sell3.png" alt="">
-                                </div>
-                                <div class="down-content">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <img src="./../assets/images/sell4.png" alt="">
-                                </div>
-                                <div class="down-content">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <img src="./../assets/images/sell5.png" alt="">
-                                </div>
-                                <div class="down-content">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<!-- ***** Main Banner Area Start ***** -->
+	<%@ include file="../module/top00.jsp"%>
 
-    <!-- ***** Main Banner Area Start ***** -->
-     <section class="our-services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10">
-                    <div class="section-heading">
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="service-item">
-                        <h4>현재 접속자</h4>
-                        <img src="./../assets/images/프로필.PNG" alt="">
-                        <p>사원이름:${AUTHUSER.emp_kname}  <br>
-                        사원번호:${AUTHUSER.emp_no}<br>
-                        직급:${AUTHUSER.emp_position}<br>
-                        부서:${AUTHUSER.dept_name}<br></p>
-                        
-                    </div>
-                </div>
-               <div class="col-lg-4">
-                    <div class="service-item">
-                    <div class="container1">
-									    <div class="app1">
-									      <h1>메 모 장</h1>
-									      <ul id="todo-list" class="ul1">
-									      </ul>
-									      <form id="todo-form">
-									        <input name="todo" type="text" placeholder="작성란" maxlength="16" autocomplete="off"><input type="submit" value="추가">
-									      </form>
-									    </div>
-									  </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-
-	<div id="main-container">
-		<div id="chat-container">
-		<c:forEach  var="item" items="${mVOList}">
-			<div class="my-chat-box">
-				<c:if test="${name==item.name}">
-					<div class="chat my-chat">
-						<c:out value="${item.content}"/></div>
-							<div class="chat-info">
-					<fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss" value="${item.sendTime}" /><br/>
-							</div>
-				</c:if>
+	<section id="men" style="margin-top: -100px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5">
+					<div class="section-heading">
+						<h2
+							style="background: #505D93; background: linear-gradient(to right, #505D93 0%, #ABABAB 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+							<strong>Astro Company</strong>
+						</h2>
+					</div>
 				</div>
-				<div class="chat-box">
-					<c:if test="${name!=item.name}">
-					<div class="chat">
-					<c:out value="${item.name}:${item.content}"/></div>
-					<div class="chat-info chat-box">
-					<fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss" value="${item.sendTime}" /><br/>
-					</div>
-					</c:if>
-					</div>
-		</c:forEach>
+			</div>
 		</div>
-		<div id="bottom-container">
-			<input name="inputMessage" id="inputMessage" type="text" class="inputMessage">
-			<input id="btn-submit" type="submit" value="전송" >
+		<div class="container" style="margin-top: -50px; float: inherit;">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="men-item-carousel">
+						<div class="owl-men-item owl-carousel">
+							<div class="item">
+								<div class="thumb">
+									<img src="./../assets/images/sell1.png" alt="">
+								</div>
+								<div class="down-content"></div>
+							</div>
+							<div class="item">
+								<div class="thumb">
+									<img src="./../assets/images/sell2.png" alt="">
+								</div>
+								<div class="down-content"></div>
+							</div>
+							<div class="item">
+								<div class="thumb">
+									<img src="./../assets/images/sell3.png" alt="">
+								</div>
+								<div class="down-content"></div>
+							</div>
+							<div class="item">
+								<div class="thumb">
+									<img src="./../assets/images/sell4.png" alt="">
+								</div>
+								<div class="down-content"></div>
+							</div>
+							<div class="item">
+								<div class="thumb">
+									<img src="./../assets/images/sell5.png" alt="">
+								</div>
+								<div class="down-content"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	 </div>
-                </div>
-            </div>
-        
-    </section>
+	</section>
+
+	<!-- ***** Main Banner Area Start ***** -->
+	<section class="our-services">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10">
+					<div class="section-heading"></div>
+				</div>
+				<div class="col-lg-4">
+					<div class="service-item">
+						<h4></h4>
+
+						<table class="tg"
+							style="table-layout: fixed; margin-top:47px; width: 260px border-radius: 10px;">
+							<colgroup>
+								<col style="width: 100px">
+								<col style="width: 200px">
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="tg-c3ow" colspan="2" rowspan="2"><img
+										style="border-radius: 200px;" src="./../assets/images/프로필.PNG"
+										alt=""></th>
+								</tr>
+								<tr>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="tg-qla2">사원이름</td>
+									<td class="tg-0pky">${AUTHUSER.emp_kname}</td>
+								</tr>
+								<tr>
+									<td class="tg-qla2">사원번호</td>
+									<td class="tg-0pky">${AUTHUSER.emp_no}</td>
+								</tr>
+								<tr>
+									<td class="tg-qla2">직급</td>
+									<td class="tg-0pky">${AUTHUSER.emp_position}</td>
+								</tr>
+								<tr>
+									<td class="tg-qla2" style="border-bottom-left-radius: 10px">부서</td>
+									<td class="tg-0pky">${AUTHUSER.dept_name}</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="service-item">
+						<div class="container1">
+							<div class="app1">
+								<h1 style="color:gray;">Note</h1>
+								<ul id="todo-list" class="ul1">
+								</ul>
+								<form id="todo-form">
+									<input class="input1" name="todo" type="text" placeholder="작성란" maxlength="25"
+										autocomplete="off"><input type="submit" value="추가">
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div id="main11" style="margin-top:74px;">
+						<div id="chat-container">
+							<c:forEach var="item" items="${mVOList}">
+								<div class="my-chat-box">
+									<c:if test="${name==item.name}">
+										<div class="chat my-chat">
+											<c:out value="${item.content}" />
+										</div>
+										<div class="chat-info">
+											<fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss"
+												value="${item.sendTime}" />
+											<br />
+										</div>
+									</c:if>
+								</div>
+								<div class="chat-box">
+									<c:if test="${name!=item.name}">
+										<div class="chat">
+											<c:out value="${item.name}:${item.content}" />
+										</div>
+										<div class="chat-info chat-box">
+											<fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss"
+												value="${item.sendTime}" />
+											<br />
+										</div>
+									</c:if>
+								</div>
+							</c:forEach>
+						</div>
+						<div id="bottom-container">
+							<input name="inputMessage" id="inputMessage" type="text"
+								class="inputMessage"> <input id="btn-submit"
+								type="submit" value="전송">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
 	<!-- jQuery -->
-    <script src="<%=request.getContextPath()%>/assets/js/jquery-2.1.0.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/jquery-2.1.0.min.js"></script>
 
-    <!-- Bootstrap -->
-    <script src="<%=request.getContextPath()%>/assets/js/popper.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/bootstrap.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="<%=request.getContextPath()%>/assets/js/popper.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/bootstrap.min.js"></script>
 
-    <!-- Plugins -->
-    <script src="<%=request.getContextPath()%>/assets/js/owl-carousel.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/accordions.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/datepicker.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/scrollreveal.min.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/waypoints.min.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/jquery.counterup.min.js"></script>
-    <script src="<%=request.getContextPath()%>/assets/js/imgfix.min.js"></script> 
-    <script src="<%=request.getContextPath()%>/assets/js/slick.js"></script> 
-    <script src="<%=request.getContextPath()%>/assets/js/lightbox.js"></script> 
-    <script src="<%=request.getContextPath()%>/assets/js/isotope.js"></script> 
-    
-    <!-- Global Init -->
-    <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
-				<script>
+	<!-- Plugins -->
+	<script src="<%=request.getContextPath()%>/assets/js/owl-carousel.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/accordions.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/datepicker.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/scrollreveal.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/waypoints.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/js/jquery.counterup.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/imgfix.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/slick.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/lightbox.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/isotope.js"></script>
+
+	<!-- Global Init -->
+	<script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
+	<script>
 
        $(function() {
            var selectedClass = "";
@@ -293,7 +408,7 @@ request.setAttribute("AUTHUSER", AUTHUSER);
        });
     </script>
 
-	<%@ include file="../module/bottom00.jsp" %> 
+	<%@ include file="../module/bottom00.jsp"%>
 </body>
 
 
