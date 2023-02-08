@@ -4,7 +4,6 @@ import java.util.Date;
 
 
 public class DocumentContent {
-	// 필드
 	private int do_no; // 양식번호 form_no
 	private String form_name; // 양식명 form_name
 	private int create_empno; // 작성사원 번호
@@ -14,8 +13,6 @@ public class DocumentContent {
 	private String sugg; // 건의사항 Sugg
 	private String uniq; // 특이사항 Uniq
 	private String comm; // 코멘트 Uniq
-
-
 
 	public DocumentContent(int do_no, String form_name, int create_empno, Date create_date, String title, String plans,
 			String sugg, String uniq, String comm) {

@@ -26,12 +26,9 @@ public class PassDocumentHandler implements CommandHandler {
 			rsize = Integer.parseInt(strRowSize);
 		}
 
-		// ArticlePage: 목록+페이징처리 관련 내용
-
 		DocumentPage documentPage = passDocumentService.getDocumentPage(pageNo, rsize);
 		request.setAttribute("documentPage", documentPage);
 		request.setAttribute("rsize", rsize);
-
 		return "/view/eApproval/4-07.승인문서리스트.jsp";
 	}
 

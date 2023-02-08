@@ -15,10 +15,10 @@ public class PassDocumentService {
 		try {
 			Connection conn = ConnectionProvider.getConnection();
 
-			int total = documentDAO.passCount(conn);//전체게시물수
+			int total = documentDAO.passCount(conn);
 			List<Document> passdocumentList = documentDAO.pass(conn,(pageNo-1)*size,size);
 			return new DocumentPage(total, pageNo, 
-					   size, passdocumentList);//p651 21라인
+					   size, passdocumentList);
 		
 		}catch(SQLException e) {
 			throw new RuntimeException();

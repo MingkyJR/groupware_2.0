@@ -20,7 +20,6 @@ public class ListSelfDocumentHandler implements CommandHandler {
 		int empNo = user.getEmp_no();
 		System.out.println(empNo);
 		
-		
 		String strPageNo = request.getParameter("pageNo"); // 보고싶은페이지
 		int pageNo = 1;
 		if (strPageNo != null) {
@@ -33,17 +32,14 @@ public class ListSelfDocumentHandler implements CommandHandler {
 			rsize = Integer.parseInt(strRowSize);
 		}
 		
-		
 		DocumentPage documentPage = listSelfDocumentService.getDocumentPage(pageNo,empNo,rsize);
 		request.setAttribute("empno", empNo);
 		request.setAttribute("documentPage", documentPage);
 		request.setAttribute("rsize", rsize);
-
 		return "/view/eApproval/4-01.문서리스트.jsp";
 	}
 		public User loginedUser(HttpServletRequest request) {
 		User authUser = (User) request.getSession().getAttribute("AUTHUSER");
 		return authUser;
-
 	}
 }

@@ -21,7 +21,6 @@ public class ModifyDocumentHandler implements CommandHandler {
 	private static final String FORM_VIEW = "/view/eApproval/4-02.문서수정.jsp";
 
 	private ReadDocumentService readService = new ReadDocumentService();
-	// 수정처리를 위한 서비스
 	private ModifyDocumentService modifyService = new ModifyDocumentService();
 
 	@Override
@@ -34,7 +33,6 @@ public class ModifyDocumentHandler implements CommandHandler {
 		} else if (request.getMethod().equalsIgnoreCase("POST")) {
 			return processSubmit(request, response);// 수정처리요청
 		} else {
-
 			response.setStatus(HttpServletResponse.SC_METHOD_NOT_ALLOWED);
 			return null;
 		}
@@ -69,8 +67,6 @@ public class ModifyDocumentHandler implements CommandHandler {
 
 			DocumentData documentData = readService.getDocument(no);
 			User authUser = (User) request.getSession().getAttribute("AUTHUSER");
-
-			// 조건2)
 
 			if (!canModify(authUser, documentData)) {// 수정불가이면
 				response.sendError(HttpServletResponse.SC_FORBIDDEN);
@@ -124,7 +120,6 @@ public class ModifyDocumentHandler implements CommandHandler {
 
 		ModifyRequest modReq = new ModifyRequest(authUser.getEmp_no(), no, title, plans, Sugg, Uniq, comm);
 
-		// 3.Model & 4.View -p670 53라인
 		request.setAttribute("modReq", modReq);
 
 		Map<String, Boolean> errors = new HashMap<String, Boolean>();
@@ -136,8 +131,6 @@ public class ModifyDocumentHandler implements CommandHandler {
 		try {
 
 			modifyService.modifiy(modReq);
-
-			// 4.View
 
 			return "/view/eApproval/4-05.문서수정성공.jsp";
 
@@ -151,16 +144,10 @@ public class ModifyDocumentHandler implements CommandHandler {
 
 	}// processSubmit()끝
 
-	// 수정권한체크
-
 	private boolean canModify(User authUser, DocumentData documentData) {
-		// 로그인한유저정보에서 id를 가져오기
 		int userId = authUser.getEmp_no();
 		Integer userid = new Integer(userId);
-		// 작성자정보에서 id를 가져오기
 		int writerId = documentData.getDocument().getDraft_empno();
-
-		// "로그인한userid".equals("작성자id")
 		return userid.equals(writerId);
 	}// canModify()끝
 

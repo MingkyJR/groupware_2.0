@@ -2,8 +2,6 @@ package document.model;
 
 import java.util.Date;
 
-
-
 public class Document {
 	private Integer do_no; // 문서번호 do_no
 	private int stat_no; // 상태번호 stat_no
@@ -13,9 +11,6 @@ public class Document {
 	private int approval_empno; // 결재사원번호 approval_empno
 	private Date approval_date;// 결재일 approval_date
 	private Writer writer;
-	
-	
-
 
 	public Document(Integer do_no, Writer writer, int stat_no, String title, int draft_empno, Date draft_date,
 			int approval_empno, Date approval_date) {
@@ -29,21 +24,12 @@ public class Document {
 		this.approval_date = approval_date;
 	}
 
-
 	public Document(Integer do_no, int stat_no, String title, int draft_empno, Date draft_date) {
 		this.do_no = do_no;
 		this.stat_no = stat_no;
 		this.title = title;
 		this.draft_empno = draft_empno;
 		this.draft_date = draft_date;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Document [do_no=" + do_no + ", writer=" + writer + ", stat_no=" + stat_no + ", title=" + title
-				+ ", draft_empno=" + draft_empno + ", draft_date=" + draft_date + ", approval_empno=" + approval_empno
-				+ ", approval_date=" + approval_date + "]";
 	}
 
 	public Writer getWriter() {
@@ -77,6 +63,10 @@ public class Document {
 		return approval_date;
 	}
 
-
-
+	@Override
+	public String toString() {
+		return "Document [do_no=" + do_no + ", writer=" + writer + ", stat_no=" + stat_no + ", title=" + title
+				+ ", draft_empno=" + draft_empno + ", draft_date=" + draft_date + ", approval_empno=" + approval_empno
+				+ ", approval_date=" + approval_date + "]";
+	}
 }

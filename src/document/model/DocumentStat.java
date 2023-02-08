@@ -10,7 +10,6 @@ public class DocumentStat {
 		this.stat_name = stat_name;
 	}
 	
-	
 	public int getStat_no() {
 		return stat_no;
 	}
