@@ -63,7 +63,6 @@
                                 <ul>
                                     <li><a href="/logout.do">로그아웃</a></li>
                                     <li><a href="/changeMyInfo.do">개인정보</a></li>
-                                    <li><a href="../view/mypageForm.jsp">개인정보</a></li>
                                     <c:if test="${AUTHUSER.emp_grade eq 5}">
                                     <li><a href="#">회원정보관리</a></li>
                                     </c:if>

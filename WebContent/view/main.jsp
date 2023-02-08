@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/owl-carousel.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/lightbox.css">
      </head>
+<<<<<<< HEAD
 <style>
 .container1{
   display: flex;
@@ -117,6 +118,10 @@ input[type="submit"]{
 }
 
 </style>
+=======
+    
+                    <div class="service-item">
+>>>>>>> refs/remotes/origin/chat
 <body>
 <%@ include file="module/top00.jsp" %>
 <!-- ***** Main Banner Area Start ***** -->
@@ -126,9 +131,13 @@ input[type="submit"]{
             <div class="row">
                 <div class="col-lg-5">
                     <div class="section-heading">
+<<<<<<< HEAD
                         <h2 style="background: #505D93;background: linear-gradient(to right, #505D93 0%, #ABABAB 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
                           <strong>Astro Company</strong>
                         </h2>
+=======
+                        <h3><strong>Astro Company</strong></h3>
+>>>>>>> refs/remotes/origin/chat
                      </div>
                 </div>
             </div>
@@ -164,6 +173,7 @@ input[type="submit"]{
                                     <img src="./../assets/images/sell4.png" alt="">
                                 </div>
                                 <div class="down-content">
+<<<<<<< HEAD
                                 </div>
                             </div>
                             <div class="item">
@@ -171,6 +181,8 @@ input[type="submit"]{
                                     <img src="./../assets/images/sell5.png" alt="">
                                 </div>
                                 <div class="down-content">
+=======
+>>>>>>> refs/remotes/origin/chat
                                 </div>
                             </div>
                         </div>
@@ -183,6 +195,7 @@ input[type="submit"]{
     <!-- ***** Main Banner Area Start ***** -->
      <section class="our-services">
         <div class="container">
+<<<<<<< HEAD
         
             <div class="row">
                 <div class="col-lg-10">
@@ -219,6 +232,34 @@ input[type="submit"]{
                         <h4>사내 메신져</h4>
                         
                         <p></p>
+=======
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="section-heading">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>현재 접속자</h4>
+                        <img src="./../assets/images/프로필.PNG" alt="">
+                        <p>사원이름: <br>
+                        사원번호:<br>
+                        직급:<br>
+                        부서:<br></p>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>근태관리</h4><br>
+                        <p>출퇴근관리<br> 출근 / 퇴근 </p><br><br><br>
+                        <h4>전자결재</h4><br>
+                        <p>대기문서<br>반려문서<br>승인문서<br> </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                        <h4>공지?</h4>
+>>>>>>> refs/remotes/origin/chat
                         
                         <img src="" alt="">
                     </div>

@@ -59,7 +59,7 @@ public class LoginHandler implements CommandHandler {
 			User user = loginService.login(emp_id, emp_pw);
 			HttpSession session = request.getSession();
 			session.setAttribute("AUTHUSER",user);
-			response.sendRedirect(request.getContextPath()+"/view/main.jsp");
+			response.sendRedirect(request.getContextPath()+"/chat.do");
 			return null;
 		}catch(LoginFailException e) {
 			errors.put("idOrPwNotMatch", Boolean.TRUE);

@@ -31,15 +31,12 @@ $(document).ready(function(){
 	
 });
 	
-
-
 </script>
 <title>회원정보 수정</title>
 </head>
 <body>
  <% System.out.println("수정페이지");  %>	
 		<c:if test="${! empty AUTHUSER}">
-		${AUTHUSER}님, 안녕하세요 <br/>
 		</c:if>
 		
 	<div class="header">
