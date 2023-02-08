@@ -41,18 +41,24 @@
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
     
     <style>
-		table {
-	    width: 800px;
-	    height: 600px;
-	    margin-left: auto;
-	    margin-right: auto;
-	 	}
+ 		table { 
+  	    width: 800px;
+/*  	    height: 600px;  */
+ 	    margin-left: auto; 
+ 	    margin-right: auto; 
+ 	 	} 
 	 	th {
 	    text-align: center;
 /* 	    border: 1px solid #EFEFEF; */
 	    background: #C5CAD7
 	 	}
-	 	textarea{ width:98%; border:0; resize: none;}
+/* 	 	textarea{ width:98%; border:1px solid #CBCACA; border-radius:4px; resize: none;} */
+	 	textarea{ width:97%;
+	 			  padding: 7px; 
+	 			  border:1px solid #CBCACA; 
+	 			  border-radius:5px; 
+	 			  resize: none;
+	 			 }
 	 	
 	 	
 	 	#ism{
@@ -94,6 +100,19 @@
 		  border: solid 1px #191970;
 		  border-radius: 3px;
 	 	}
+	 	
+ 	 	#t1{ 
+ 	 	height:30px; 
+ 	 	} 
+ 	 	#t2{ 
+ 		height:30px; 
+	 	} 
+ 	 	#t3{ 
+ 	 	height:30px; 
+ 	 	} 
+ 	 	#t4{ 
+ 		height:30px; 
+ 	 	} 
     </style>
     
         <script>
@@ -135,7 +154,8 @@ ${modReq}<br/><br/><br/><br/>
 --%>
 
 <%--  <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
-<p class="home" style="text-align: left; margin-left:150px;">
+<!-- <p class="home" style="text-align: left; margin-left:150px;"> -->
+<p class="home" style="margin:0 auto; max-width: 950px;">
 <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
 </p>
  <hr/>
@@ -148,31 +168,32 @@ ${modReq}<br/><br/><br/><br/>
  <input type="hidden" name="rowSize" id="rowSize" value="${rowSize}"/>
  
  <table border="1">
- 	<tr>
+ 	<tr id="t1" style="height:30px;">
  		<th>게시글 번호</th>
  		<td>${modReq.noticeNumber}</td>
  	</tr>
  	
- 	 <tr>
+ 	 <tr id="t2">
  		<th>작성자명</th>
  		<td>${modReq.writer_name}</td>
  	</tr>
 
- 	 <tr>
+ 	 <tr id="t3">
  		<th>최초 작성일</th>
  		<td><fmt:formatDate pattern="yyyy년 MM월 dd일  HH:mm:ss" type="date" value="${noticeData1.notice.regdate}" /></td>
  	</tr>
  	
- 	 <tr>
- 		<th>제목</th>
+ 	 <tr id="t4">
+ 		<th>제목<b style="color:red; font-weight: 500;">*</b></th>
  		<td><%-- ${noticeData.notice.title} --%>
- 		<input type="text" name="title" id="title" style="border:0;" value="${modReq.title}"/>
+ 		<input type="text" name="title" id="title" style="border:1px solid #CBCACA; width:450px; padding:7px; border-radius:5px;" value="${modReq.title}"/>
  		</td>
  	</tr>
  	
  	 <tr>
- 		<th>내용</th>
+ 		<th>내용<b style="color:red; font-weight: 500;">*</b></th>
  		<td>
+<%--  		<textarea name="content" id="content" rows="20" cols="60" autofocus>${modReq.content}</textarea> --%>
  		<textarea name="content" id="content" rows="20" cols="60" autofocus>${modReq.content}</textarea>
  		</td>
  	</tr>

@@ -44,24 +44,19 @@
 		width:80%;
  	    margin-left: auto; 
  	    margin-right: auto; 
-/*   	    border: 1px solid #bcbcbc; */
+/* 		border: 1px solid black; */
   	    text-align: center;
-/*   	    border-collapse: separate; border-radius: 8px; */
- 	 	} 
- 	 	.t2{ 
-		width: 950px;
- 	    margin-left: auto; 
- 	    margin-right: auto; 
-  	    border: 1px solid #bcbcbc;
-  	    text-align: center;
+/*    	    border-collapse: separate; border-radius: 8px; */
  	 	} 
  	 	
  	 	.hang{ 
 		height:30px;
  	 	} 
+ 	 	
+ 	 	tr:hover {background-color: #dcdcdc;}
 	 	
 	 	th {
-/*  	    border: 1px solid #bcbcbc; */
+/*  	border: 1px solid #bcbcbc; */
 /* 		border: 1px solid #EFEFEF; */
 	 	}
 	 	
@@ -81,25 +76,19 @@
 	 	td {
 	    width: 120px;
 /*   	    border: 1px solid #bcbcbc; */
+		
 	 	}
 	 	
  	 	tr { 
  	    height: 60px; 
 /*  	    border: 1px solid #bcbcbc; */
+		
  	 	} 
 	 	
-/* 		#rowSizeFrm { */
-/* 		text-align: right; margin-right: auto; */
-/* 		} */
-	 	
-	 	
 	 	h1 { text-align: center; }
-/* 	 	p { text-align: right; margin-right:200px;} */
-/* 	 	p { text-align: right; margin-right: auto; margin-left: auto;} */
-/*  	 	.write {float:left; margin-left: auto;} */
-  	 	.write {float:left;}
-  	 	.choice {float:right;}
-/* 	 	.home { text-align: left; margin-left:150px;} */
+
+		#bwr {margin:0 auto; max-width:950px; inline-block;}
+		#sch {margin:0 auto; max-width:950px; inline-block;} 
 	 	#sub{
 	 	  color: white;
 		  text-align: center;
@@ -115,7 +104,7 @@
 		  border: solid 1px #191970;
 		  border-radius: 3px;
 	 	}
-/*         #C5CAD7 */
+
         </style>
         
         
@@ -137,14 +126,15 @@
 				//gr=999;
  	          if(gr==null || gr==1){ 
 	             alert("권한이 없습니다.");
-<%--          	             location.replace("<%=request.getContextPath()%>/notice/list.do?rowSize=${rsize}"); --%>
- 	             location.href='<%=request.getContextPath()%>/notice/list.do?rowSize=${rsize}';
+<%--          	             location.replace("<%=request.getContextPath()%>/notice/list.do?rowSize=${rowSize}"); --%>
+ 	             location.href='<%=request.getContextPath()%>/notice/list.do?rowSize=${rowSize}';
  	          }else{
-<%--          	             location.replace("<%=request.getContextPath()%>/notice/write.do?rowSize=${rsize}"); --%>
- 	             location.href='<%=request.getContextPath()%>/notice/write.do?rowSize=${rsize}';
+<%--          	             location.replace("<%=request.getContextPath()%>/notice/write.do?rowSize=${rowSize}"); --%>
+<%--  	             location.href='<%=request.getContextPath()%>/notice/write.do?rowSize=${rowSize}'; --%>
+ 	            location.href='<%=request.getContextPath()%>/notice/write.do?pageNo=${pageNo}&rowSize=${rowSize}';
 	          }
  	          
-	    }
+	    	}
         
         </script>
     
@@ -162,7 +152,7 @@ List<Notice> listNotice=~~~~;
  NoticePage noticePage<=목록+페이징처리 관련내용.
  request.setAttribute("noticePage", noticePage);
  request.setAttribute("pageNo", pageNo);
- request.setAttribute("rsize", rsize);
+ request.setAttribute("rowSize", rowSize);
  request.setAttribute("searchPage", searchPage);
  request.setAttribute("choice", choice);
  request.setAttribute("keyword", keyword);
@@ -210,12 +200,12 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 
 
 <%-- <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
-<p class="home" style="text-align: left; margin-left:150px;">
+<!-- <p class="home" style="text-align: left; margin-left:150px;"> -->
+<p class="home" style="margin:0 auto; max-width: 950px;">
 <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
-<!-- <h6>공 지 사 항</h6> -->
 </p>
+
 <hr/>
-<!--  <h1>공  지  사  항</h1> -->
  
  
 <br/><br/><br/><br/>

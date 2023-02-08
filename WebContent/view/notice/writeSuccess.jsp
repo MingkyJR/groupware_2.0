@@ -50,9 +50,11 @@
 		request.setAttribute("modReq", modReq);
  --%>
 <%--  <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
- <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
+<p class="home" style="margin:0 auto; max-width: 950px;">
+<a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
+</p>
  <hr/>
- <h3>쓰기성공!!!(writerSuccess.jsp)</h3>
+<!--  <h3>쓰기성공!!!(writerSuccess.jsp)</h3> -->
  	 <%--
  	 <c:set var="변수명" value="변수값"/>
  	 <c:set var="pageNo" 

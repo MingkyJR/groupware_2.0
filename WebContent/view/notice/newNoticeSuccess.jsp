@@ -40,6 +40,24 @@
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
 
 </head>
+	<style>
+		#wrb{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	
+	 	#list{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	</style>
+
 <body>
 <%@ include file="../module/top00.jsp" %>
 
@@ -49,18 +67,40 @@
  	request.setAttribute("newNoticeNo", newNoticeNo);
  	request.setAttribute("rowSize", rowSize); //로우사이즈
  --%>
- rowSize=${rowSize}
+<%--  rowSize=${rowSize} --%>
 <%--  <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
- <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
+<p class="home" style="margin:0 auto; max-width: 950px;">
+<a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
+</p>
  <hr/>
- <h3>입력성공!!!(newNoticeSuccess.jsp)</h3>
+<!--  <h3>입력성공!!!(newNoticeSuccess.jsp)</h3> -->
  	 <%----%>
  	 <c:set var="변수명" value="변수값"/>
  	 <c:set var="pageNo" 
  	    value="${(empty param.pageNo)?'1':param.pageNo}"/>                      
- 	 
- 	 	<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=1&rowSize=${rowSize}">목록보기</a>
- 	 	<a href="<%=request.getContextPath()%>/notice/read.do?no=${newNoticeNo}&pageNo=1&rowSize=${rowSize}">작성한 글 보기</a>
+<div style="text-align:center;"> 	 
+<%--  	 	<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=1&rowSize=${rowSize}">목록보기</a> --%>
+ 	 	<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=1&rowSize=${rowSize}'">목록보기</button>
+<%--  	 	<a href="<%=request.getContextPath()%>/notice/read.do?no=${newNoticeNo}&pageNo=1&rowSize=${rowSize}">작성한 글 보기</a> --%>
+ 	 	<button type="button" id="wrb" onclick="location.href='<%=request.getContextPath()%>/notice/read.do?no=${newNoticeNo}&pageNo=1&rowSize=${rowSize}'">작성한 글 보기</button>
+</div>
+
+ 	 	<script>
+ 	 	$(document).ready(function(){
+	 		//let pageNoVal = ${pageNo};
+			//let rowSizeVal = ${rowSize}; 
+			
+// 			let pageNoVal =  "<c:out value = '${pageNo}'/>";
+// 			let rowSizeVal =  "<c:out value = '${rowSize}'/>";
+			alert("작성완료");
+// 			//alert("22222222222222222"+rowSizeVal);
+			<%-- location.href="<%=request.getContextPath()%>/notice/list.do?pageNo="+pageNoVal+"&rowSize="+rowSizeVal; --%>
+        	
+ 	 	});
+        </script>
+
+
+
 <%@ include file="../module/bottom00.jsp" %>
 </body>
 </html>
