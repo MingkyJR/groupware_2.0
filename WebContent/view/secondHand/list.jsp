@@ -101,7 +101,7 @@
 		cursor: pointer;
 	}
 	.example button:hover {
-		background: #0b7dda;
+		background: #788AD0;
 	}
 	.btnRegi {
 		margin: 10px;
