@@ -18,128 +18,17 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/lightbox.css">
      </head>
     
-   
+                    <div class="service-item">
 <body>
 <%@ include file="module/top00.jsp" %>
 <!-- ***** Main Banner Area Start ***** -->
   
-    <!-- ***** Header Area End ***** -->
-
-    <!-- ***** Main Banner Area Start ***** -->
-    <div class="main-banner" id="top">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="left-content">
-                        <div class="thumb">
-                            <div class="inner-content">
-                                <h4>공지사항</h4>
-                                <span>사내이벤트 &amp; 경조사</span>
-                                <div class="main-border-button">
-                                    <a href="#">바로가기</a>
-                                </div>
-                            </div>
-                            <img src="./../assets/images/gray.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="right-content">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="right-first-image">
-                                    <div class="thumb">
-                                        <div class="inner-content">
-                                            <h4><br>현재접속자</h4>
-                                            <br> <br> <br> <br> <br>
-                                            <span>~~~님 </span><br>
-                                        </div>
-                                        <div class="hover-content">
-                                            <div class="inner">
-                                                <h4>마이페이지</h4>
-                                                <p></p>
-                                                <div class="main-border-button">
-                                                    <a href="#">바로가기</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <img src="./../assets/images/gray.jpg">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="right-first-image">
-                                    <div class="thumb">
-                                        <div class="inner-content">
-                                            <h4>메신저</h4>
-                                            <span>채팅방참여</span>
-                                        </div>
-                                        <div class="hover-content">
-                                            <div class="inner">
-                                                <h4>그룹 메신저</h4>
-                                                <div class="main-border-button">
-                                                    <a href="#">바로가기</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <img src="./../assets/images/gray.jpg">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="right-first-image">
-                                    <div class="thumb">
-                                        <div class="inner-content">
-                                            <h4>근태관리</h4>
-                                            <span>월별근태<br>출&결근처리</span>
-                                        </div>
-                                        <div class="hover-content">
-                                            <div class="inner">
-                                                <h4>근태관리<br>통합페이지</h4>
-                                                 <div class="main-border-button">
-                                                    <a href="#">바로가기</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <img src="./../assets/images/gray.jpg">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="right-first-image">
-                                    <div class="thumb">
-                                        <div class="inner-content">
-                                            <h4>전자결재</h4>
-                                            <span>문서작성,결재대기,결재확인</span>
-                                        </div>
-                                        <div class="hover-content">
-                                            <div class="inner">
-                                                <h4>전자결재<br>통합페이지</h4>
-                                                <div class="main-border-button">
-                                                    <a href="#">바로가기</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <img src="./../assets/images/gray.jpg">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-     <!-- ***** 중고장터 ***** -->
-    <section class="section" id="men" style="margin-top:-100px;">
+<section id="men" style="margin-top:-100px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
                     <div class="section-heading">
-                        <h3><strong>사내 중고장터</strong></h3>
+                        <h3><strong>Astro Company</strong></h3>
                      </div>
                 </div>
             </div>
@@ -154,7 +43,6 @@
                                     <img src="./../assets/images/sell.png" alt="">
                                 </div>
                                 <div class="down-content">
-                                    <h4>중고</h4>
                                 </div>
                             </div>
                             <div class="item">
@@ -162,7 +50,6 @@
                                     <img src="./../assets/images/sell.png" alt="">
                                 </div>
                                 <div class="down-content">
-                                    <h4>미사용</h4>
                                 </div>
                             </div>
                             <div class="item">
@@ -170,7 +57,6 @@
                                     <img src="./../assets/images/sell.png" alt="">
                                 </div>
                                 <div class="down-content">
-                                    <h4>선물용</h4>
                                 </div>
                             </div>
                             <div class="item">
@@ -178,7 +64,6 @@
                                     <img src="./../assets/images/sell.png" alt="">
                                 </div>
                                 <div class="down-content">
-                                    <h4>상품권</h4>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +72,45 @@
             </div>
         </div>
     </section>
-   
+
+    <!-- ***** Main Banner Area Start ***** -->
+     <section class="our-services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="section-heading">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>현재 접속자</h4>
+                        <img src="./../assets/images/프로필.PNG" alt="">
+                        <p>사원이름: <br>
+                        사원번호:<br>
+                        직급:<br>
+                        부서:<br></p>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>근태관리</h4><br>
+                        <p>출퇴근관리<br> 출근 / 퇴근 </p><br><br><br>
+                        <h4>전자결재</h4><br>
+                        <p>대기문서<br>반려문서<br>승인문서<br> </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                        <h4>공지?</h4>
+                        
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 		<!-- jQuery -->
     <script src="<%=request.getContextPath()%>/assets/js/jquery-2.1.0.min.js"></script>
 
