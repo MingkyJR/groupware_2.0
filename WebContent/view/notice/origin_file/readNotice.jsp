@@ -70,7 +70,8 @@
 *1페이지당 게시글수:${rowSize}<br/><br/>--%>
 
 <%-- ${AUTHUSER.emp_grade} --%>
-
+<%-- ${AUTHUSER.emp_id} --%>
+<%-- ${noticeData.notice.writer.writer_id} --%>
 
 <%--  <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
  <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
@@ -150,14 +151,14 @@
  		<button type="button" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}';">목록보기</button>
  		<%--수정과 삭제기능은 로그인한 유저의 id와 작성자의 id가 일치하는 경우에만 노출하도록 한다. --%>
  		<%-- <c:if test="${AUTHUSER.memberid==noticeData.notice.writer.writer_id}"> --%>
- 		
+<%--  		<c:if test="${AUTHUSER.emp_id==noticeData.notice.writer.writer_id}"> --%>
 <%--  		<a href="<%=request.getContextPath()%>/notice/modify.do?no=${noticeData.notice.number}&pageNo=${pageNo}&rowSize=${rowSize}">게시글 수정</a> --%>
  		<button type="button" onclick="mdAuthCheck(${AUTHUSER.emp_grade});">게시글 수정</button>
  		
 <%--  		<a href="<%=request.getContextPath()%>/notice/delete.do?no=${noticeData.notice.number}">글삭제(delete용)</a> --%>
  		<button type="button" onclick="rmAuthCheck(${AUTHUSER.emp_grade});">게시글 삭제</button>
 <%--  		<button type="button" onclick="rmAuthCheck(${AUTHUSER.grade});">게시글 삭제(delete)</button> --%>
- 		
+<%--  		</c:if> --%>
 <%--  		<a href="<%=request.getContextPath()%>/notice/delete2.do?no=${noticeData.notice.number}">글삭제(update용)</a> --%>
 <%--  		<button type="button" onclick="rmAuthCheck2(${AUTHUSER.grade});">게시글 삭제(update)</button>  //기능상 필요없어서 막아놓기 --%>
  		<%-- </c:if>--%>
