@@ -12,7 +12,6 @@ import java.util.List;
 
 import jdbc.JdbcUtil;
 import work.model.Work;
-import work.service.DatePg;
 
 public class WorkDAO {
 	
@@ -114,6 +113,42 @@ public class WorkDAO {
 			return workList;
 		}finally {
 			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
+		}
+	}
+	
+	public void insert_edit(Connection conn, Date reg_date, Timestamp edit_in_time, Timestamp edit_out_time, String emp_name, String reason, int emp_no) throws SQLException {
+		String sql = "insert into w_edit(edit_num, reg_date, edit_in_time, edit_out_time, emp_name, edit_req_date,reason,emp_no) " + 
+					 "values(w_edit_seq.nextval,?,?,?,?,current_timestamp,?,?)";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setDate(1, new java.sql.Date(reg_date.getTime()));
+			pstmt.setTimestamp(2, edit_in_time);
+			pstmt.setTimestamp(3, edit_out_time);
+			pstmt.setString(4, emp_name);
+			pstmt.setString(5, reason);
+			pstmt.setInt(6, emp_no);
+			int result = pstmt.executeUpdate();
+			System.out.println("insert_edit 실행 결과 수 = "+result);
+		}finally {
+			JdbcUtil.close(pstmt);
+		}
+		
+	}
+	
+	public void update_work_status(Connection conn, Date reg_date, int emp_no) throws SQLException {
+		String sql = "update work_history " + 
+					 "set work_status = '수정 요청중' " + 
+					 "where TO_DATE(work_reg_date, 'YY/MM/DD') = to_CHAR(?,'YY/MM/DD') and emp_no = ?";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setDate(1, new java.sql.Date(reg_date.getTime()));
+			pstmt.setInt(2, emp_no);
+			int result = pstmt.executeUpdate();
+			System.out.println("update_work_status 실행 결과 수 = "+result);
+		}finally {
 			JdbcUtil.close(pstmt);
 		}
 	}
