@@ -88,7 +88,7 @@
       </p>
       <p class="empNoInput"><c:if test="${errors.empNo}">조회할 사원 번호를 입력해주세요</c:if></p>
       </form>
-      <p>나중에 employee service 빌려서 조회한 사원 정보 표시 예정</p>
+      <p>사원번호 ${pageAtt.emp_no}</p>
       </div>
     <table class="table">
   <thead>
