@@ -40,6 +40,17 @@
     <!-- Global Init -->
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
        <style>
+/* // Set border-radius on the top-left and bottom-left of the first table data on the table row */
+/* td:first-child, */
+/* th:first-child { */
+/*   border-radius: 10px 0 0 10px; */
+/* } */
+
+/* // Set border-radius on the top-right and bottom-right of the last table data on the table row */
+/* td:last-child, */
+/* th:last-child { */
+/*   border-radius: 0 10px 10px 0; */
+/* } */
 		.t1{ 
 		width: 950px;
  	    margin-left: auto; 
