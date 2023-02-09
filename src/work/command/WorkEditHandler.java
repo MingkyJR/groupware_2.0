@@ -11,6 +11,7 @@ import mvc.command.CommandHandler;
 import work.model.Work;
 import work.service.DatePg;
 import work.service.Page;
+import work.service.WorkCnt;
 import work.service.WorkService;
 
 public class WorkEditHandler implements CommandHandler {
@@ -35,7 +36,6 @@ public class WorkEditHandler implements CommandHandler {
 		
 
 		 
-		Work work = workService.selectIn(emp_no);
 		DatePg date = new DatePg();
 		
 		String strPageYear = request.getParameter("pageYear");
@@ -58,12 +58,8 @@ public class WorkEditHandler implements CommandHandler {
 		}
 		List<Work> workList = workService.selectMonth(pageYear, pageMon, emp_no);
 		Page pageAtt = new Page(pageYear, pageMon, emp_no);
-		if(work == null) {
-			work = new Work(null, null, "퇴근", emp_no, null);
-		}
 		request.setAttribute("pageAtt", pageAtt);
 		request.setAttribute("today", date.getToday());
-		request.setAttribute("work", work);
 		request.setAttribute("monthList", workList);
 		
 		//Model

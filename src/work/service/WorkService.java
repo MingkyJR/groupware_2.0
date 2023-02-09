@@ -6,8 +6,10 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
+import employee.model.Employee;
 import jdbc.conn.ConnectionProvider;
 import work.dao.WorkDAO;
+import work.model.Edit;
 import work.model.Work;
 
 public class WorkService {
@@ -80,6 +82,63 @@ public class WorkService {
 			e.printStackTrace();
 		}
 	}
+	
+	public List<Edit> select_edit(String emp_name){
+		Connection conn = null;
+		List<Edit> editList = null;
+			try {
+				conn = ConnectionProvider.getConnection();
+				editList = workDAO.select_edit(conn, emp_name);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return editList;
+	}
+	
+	public Edit select_edit_content(int edit_num, int emp_no, Date reg_date) {
+		Connection conn = null;
+		Edit edit = null;
+		try {
+			conn = ConnectionProvider.getConnection();
+			edit = workDAO.select_edit_content(conn,edit_num, emp_no, reg_date);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return edit;
+	}
+	
+	public Employee selectByNo(int no) {
+		Connection conn = null;
+		Employee employee = null;
+		try {
+			conn = ConnectionProvider.getConnection();
+			employee = workDAO.selectByNo(conn, no);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return employee;
+	}
+	
+	public void updateWork(Timestamp work_out_time, int emp_no, Date reg_date, String work_status) {
+		Connection conn = null;
+		try {
+			conn = ConnectionProvider.getConnection();
+			workDAO.updateWork(conn, work_out_time, emp_no, reg_date, work_status);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void updateEdit(int edit_num, int emp_no, Date reg_date, String edit_status) {
+		Connection conn = null;
+		try {
+			conn = ConnectionProvider.getConnection();
+			workDAO.updateEdit(conn,edit_num, emp_no, reg_date, edit_status);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	
 	
 	

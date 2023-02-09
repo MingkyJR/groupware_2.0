@@ -147,6 +147,12 @@
       <c:if test="${month.work_status eq '요청중'}">
       <span class="work_status ws3">${month.work_status}</span>
       </c:if>
+      <c:if test="${month.work_status eq '수정'}">
+      <span class="work_status" style="background-color: #8080ff;">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '반려'}">
+      <span class="work_status" style="background-color: #f2c539;">${month.work_status}</span>
+      </c:if>
       </td>
     </tr>
   	</c:forEach>
