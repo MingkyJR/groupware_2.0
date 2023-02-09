@@ -204,6 +204,7 @@
 				<img src="<%=request.getContextPath()%>/secondHand/imageOut.do?reFileName=${content.refileName}" />
 			</c:if>
 		</div>
+		<div style="text-align: center; margin-top: 10px;">${ price }원</div>
 		<div style="margin: 10px 0;">${content.content}</div>
 		<div class="comment_option">댓글</div>
 		<c:forEach var="re" items="${ reply }">
