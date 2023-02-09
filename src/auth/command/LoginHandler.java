@@ -57,6 +57,8 @@ public class LoginHandler implements CommandHandler {
 			return FORM_VIEW;
 		}
 		
+		//2.비즈니스로직수행<->Service<->DAO<->DB-p607 53라인
+		//3.Model&4.viewm
 		try {//P607 53라인
 			User user = loginService.login(emp_id, emp_pw);
 			HttpSession session = request.getSession();
@@ -69,6 +71,8 @@ public class LoginHandler implements CommandHandler {
 		}
 	}
 	
+	
+	//문자열의 좌우공백제거-p607 64라인
 	private String trim(String str) {
 		return  (str==null)? null:str.trim();
 	}

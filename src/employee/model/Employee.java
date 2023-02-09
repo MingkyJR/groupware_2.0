@@ -39,6 +39,19 @@ public class Employee {
 	}
 	
 
+	public Employee(int emp_no, String emp_id, String emp_kname, String emp_phonenumber, String emp_email,
+					String dept_name, int emp_position, int emp_grade) {
+		this.emp_no = emp_no;
+		this.emp_id = emp_id;
+		this.emp_kname = emp_kname;
+		this.emp_phonenumber = emp_phonenumber;
+		this.emp_email = emp_email;
+		this.dept_name = dept_name;
+		this.emp_position = emp_position;
+		this.emp_grade = emp_grade;
+	}
+
+	
 
 	public Employee(String emp_id, String emp_pw, String emp_kname, String emp_ename, int emp_postcode,
 			String emp_address, String emp_birthday, String emp_phonenumber, String emp_email, String dept_name,
@@ -57,6 +70,7 @@ public class Employee {
 		this.dept_name = dept_name;
 		this.emp_position = emp_position;
 	}
+
 
 
 
