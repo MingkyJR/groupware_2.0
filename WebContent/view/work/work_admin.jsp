@@ -9,6 +9,7 @@
  <meta name="description" content="member board Web Application">
  <meta name="keywords" content="member, board, article, mvc">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
  <title>직원 누적 근태현황</title>
  <script src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
@@ -45,6 +46,15 @@
  
  	
  </script>
+ <style>
+ .tttt th{
+ background-color: #dfedf7;
+ border: solid 1px black;
+ }
+ .tttt td{
+ border: solid 1px black;
+ }
+ </style>
 </head>
 <body>
 	<!-- 네비 바 인클루드 -->
@@ -54,13 +64,7 @@
     <!-- 월별 누적 근태현황 -->
     <div class="col total">
       <h3>직원 누적 근태현황</h3> 
-      <div class="page">
-      <%--<h2>
-      
-       <a href="work_admin.do?pageMon=${pageAtt.mon - 1}&pageYear=${pageAtt.year}&empNo=${pageAtt.emp_no}"><img src="/icon/chevron-left.svg" class="chevron"></a>
-      <span>${pageAtt.year}.${pageAtt.mon}</span>
-      <a href="work_admin.do?pageMon=${pageAtt.mon + 1}&pageYear=${pageAtt.year}&empNo=${pageAtt.emp_no}"><img src="/icon/chevron-right.svg" class="chevron"></a>
-      </h2> --%>
+      <div class="page" style="text-align: right;">
       <form action="work_admin.do" method="post">
       <p class="empNoInput">
       <select name="pageYear" onchange="">
@@ -88,7 +92,13 @@
       </p>
       <p class="empNoInput"><c:if test="${errors.empNo}">조회할 사원 번호를 입력해주세요</c:if></p>
       </form>
-      <p>나중에 employee service 빌려서 조회한 사원 정보 표시 예정</p>
+      <table class="table tttt" style="margin-top: 10px;">
+       <tbody>
+        <tr>
+        	<th>사원번호</th><td>${emp.emp_no}</td><th>이름</th><td>${emp.emp_kname}</td><th>부서</th><td>${emp.dept_name}</td>
+        </tr>
+       </tbody>
+      </table>
       </div>
     <table class="table">
   <thead>
@@ -118,6 +128,12 @@
       </c:if>
       <c:if test="${month.work_status eq '요청중'}">
       <span class="work_status ws3">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '수정'}">
+      <span class="work_status" style="background-color: #8080ff;">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '반려'}">
+      <span class="work_status" style="background-color: #f2c539;">${month.work_status}</span>
       </c:if>
       </td>
     </tr>

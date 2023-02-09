@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>    
 <!DOCTYPE html>
 <html lang="ko">
@@ -10,7 +10,7 @@
  <meta name="keywords" content="member, board, article, mvc">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
- <title>출퇴근 수정 요청</title>
+ <title>수정 요청 목록</title>
  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/templatemo-hexashop.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/owl-carousel.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/lightbox.css">
-     
     
     <script src="<%=request.getContextPath()%>/assets/js/jquery-2.1.0.min.js"></script>
 
@@ -40,75 +39,62 @@
     
     <!-- Global Init -->
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/work/work.css">
-    
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/work/work.css">
+		
 </head>
 <body>
 <%@ include file="../module/top00.jsp" %>
-
 <div class="container" style="margin-top: 10px;">
   <div class="row">
-  	<!-- 출퇴근 버튼, 정보 영역 -->
-    
     <!-- 월별 누적 근태현황 -->
-   
     <div class="col total">
-    <h2 style="font-weight: bold; padding-top: 10px;padding-left: 5px;">출퇴근 수정 요청</h2>
-      <div class="page">
-      <h2>
-      <a href="workEdit.do?pageMon=${pageAtt.mon - 1}&pageYear=${pageAtt.year}"><img src="/assets/icon/chevron-left.svg" class="chevron"></a>
-      <span>${pageAtt.year}.${pageAtt.mon}</span>
-      <a href="workEdit.do?pageMon=${pageAtt.mon + 1}&pageYear=${pageAtt.year}"><img src="/assets/icon/chevron-right.svg" class="chevron"></a>
-      </h2>
+      <h3>출퇴근 수정 요청 목록</h3> 
+      <div class="page" style="text-align: right; margin-bottom: 10px;">
+      <form action="editList.do" method="post">
+      <p class="empNoInput">
+      	 사원이름 : <input type="text" name="emp_name" size="5"> <button type="submit" style="border: 1px solid;">조회</button>
+      </p>
+      <%-- <p class="empNoInput"><c:if test="${errors.empNo}">조회할 사원 이름을 입력해주세요</c:if></p> --%>
+      </form>
       </div>
-      <p style="text-align: right; font-weight: bold; padding-right: 30px;">${AUTHUSER.emp_kname} 님의 ${pageAtt.year}년 ${pageAtt.mon}월 출퇴근 기록</p>
-      
-      
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">일자</th>
-      <th scope="col">업무시작</th>
-      <th scope="col">업무종료</th>
-      <th scope="col">근무시간</th>
-      <th scope="col">초과시간</th>
+      <th scope="col">번호</th>
+      <th scope="col">요청일자</th>
+      <th scope="col">근무일</th>
+      <th scope="col">요청자</th>
+      <th scope="col">사원번호</th>
+      <th scope="col">수정요청 시간</th>
       <th scope="col">상태</th>
-      <th></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
-  	<c:forEach var="month" items="${monthList}">
+  	<c:forEach var="edit" items="${editList}">
   	<tr>
-      <th scope="row"><fmt:formatDate type="date" value="${month.work_reg_date}" pattern="dd [E]" /></th>
-      <td><fmt:formatDate type="date" value="${month.work_in_time}" pattern="kk:mm:ss"/></td>
-      <td><fmt:formatDate type="date" value="${month.work_out_time}" pattern="kk:mm:ss"/></td>
-      <td><c:if test="${not empty month.work_out_time}">${month.total_day}</c:if></td>
-      <td>${month.overtime}</td>
+  		<td>${edit.edit_num}</td>
+      <td><fmt:formatDate type="date" value="${edit.edit_req_date}" pattern="YYYY.MM.dd kk:mm:ss"/></td>
+      <td><fmt:formatDate type="date" value="${edit.reg_date}" pattern="YYYY.MM.dd"/></td>
+      <td>${edit.emp_name}</td>
+      <td>${edit.emp_no}</td>
       <td>
-      <c:if test="${month.work_status eq '근태이상'}">
-      <span class="work_status ws1">${month.work_status}</span>
-      </c:if>
-      <c:if test="${month.work_status eq '정상처리'}">
-      <span class="work_status ws2">${month.work_status}</span>
-      </c:if>
-      <c:if test="${month.work_status eq '요청중'}">
-      <span class="work_status ws3">${month.work_status}</span>
-      </c:if>
-      <c:if test="${month.work_status eq '수정'}">
-      <span class="work_status" style="background-color: #8080ff;">${month.work_status}</span>
-      </c:if>
-      <c:if test="${month.work_status eq '반려'}">
-      <span class="work_status" style="background-color: #f2c539;">${month.work_status}</span>
-      </c:if>
+      <fmt:formatDate type="date" value="${edit.edit_in_time}" pattern="kk:mm"/>
+       ~ 
+      <fmt:formatDate type="date" value="${edit.edit_out_time}" pattern="kk:mm"/>
       </td>
       <td>
-      <c:if test="${month.work_status eq '근태이상'}">
-      <a href="writeEdit.do?date=${month.work_reg_date}&empNo=${AUTHUSER.emp_no}&inTime=${month.work_in_time}"><img src="/assets/icon/pencil-square.svg"></a>
+      <c:if test="${edit.edit_status eq '요청중'}">
+      <span class="work_status ws3">${edit.edit_status}</span>
       </c:if>
-      <c:if test="${month.work_status eq '반려'}">
-      <a href="writeEdit.do?date=${month.work_reg_date}&empNo=${AUTHUSER.emp_no}&inTime=${month.work_in_time}"><img src="/assets/icon/pencil-square.svg"></a>
+      <c:if test="${edit.edit_status eq '수정'}">
+      <span class="work_status" style="background-color: #8080ff;">${edit.edit_status}</span>
+      </c:if>
+      <c:if test="${edit.edit_status eq '반려'}">
+      <span class="work_status" style="background-color: #f2c539;">${edit.edit_status}</span>
       </c:if>
       </td>
+      <td><a href="listContent.do?num=${edit.edit_num}&emp_no=${edit.emp_no}&regDate=${edit.reg_date}">상세조회</a></td>
     </tr>
   	</c:forEach>
   </tbody>
