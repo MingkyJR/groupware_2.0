@@ -70,7 +70,7 @@
 								</tr>
 								<tr>
 									<td><strong>사장님</strong> <br> <input type="text"
-										name="to" value="ehdgydi@naver.com" />
+										name="to" value="ehdgydi@gmail.com" />
 								</tr>
 								<tr>
 									<td><strong>제목 </strong><br> <input type="text"

@@ -51,22 +51,12 @@
                                 </ul>
                             </li>
                             <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/secondHand/list.do">중고장터</a></li>
-                             <li class="submenu">
-                                <a href="javascript:;">전자결재</a>
                   <c:if test="${!empty AUTHUSER && (AUTHUSER.emp_grade ne 5)}">
-                                <ul>
-                                    <li><a href="<%=request.getContextPath()%>/view/eApproval/4-00.통합페이지.jsp">통합페이지</a></li>
-                                    <li><a href="<%=request.getContextPath()%>/document/writeDocument.do">전자결재</a></li>
-                                    <li><a href="<%=request.getContextPath()%>/view/eApproval/4-12.대기문커버리스트.jsp">결재대기 </a></li>
-                                    <li><a href="<%=request.getContextPath()%>/view/eApproval/4-13.승인문커버리스트.jsp">승인결과 </a></li>
-                                </ul>
+                              <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/eApproval/4-00.통합페이지.jsp">전자결재</a></li>
                   </c:if>
                   <c:if test="${not empty AUTHUSER && (AUTHUSER.emp_grade eq 5)}">
-                                <ul>
-                                    <li><a href="<%=request.getContextPath()%>/view/eApproval/4-00.통합페이지2.jsp">전자결재</a></li>
-                                </ul>
+                              <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/eApproval/4-00.통합페이지2.jsp">전자결재</a></li>
                   </c:if>
-                            </li>
                                   <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/report/page1.jsp">마음의소리</a></li>
                             <li class="submenu">
                                 <a href="javascript:;">마이페이지</a>

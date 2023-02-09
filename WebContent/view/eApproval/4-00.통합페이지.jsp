@@ -61,7 +61,8 @@
 				</select> <br>
 				<br>
 				<div style="border-radius: 10px; padding: 20px; box-shadow: 0px 0px 5px 0px gray; width:90%;">
-					<input class="btn1" type="button" value="기안서(일반)"><br>
+				
+					<input class="btn1" type="button" value="기안서(일반)" onclick="location.href='<%=request.getContextPath()%>/document/writeDocument.do';" > <br>
 					<input class="btn1" type="button" value="보고서"><br>
 					<input class="btn1" type="button" value="품의서"><br>
 					<input class="btn1" type="button" value="경조비지급신청서"><br>

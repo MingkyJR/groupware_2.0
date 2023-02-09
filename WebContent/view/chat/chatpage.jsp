@@ -145,13 +145,14 @@ table {
 
 .tg {
 font-weight:bolder;
-	color:white;
+	color:black;
 	border-collapse: collapse;
 	border-style: hidden;
 	border: solid gray 1px;
 	text-align: center;
 	border-color: gray;
 	border-spacing: 0;
+	height:10px;
 }
 
 .tg td {
@@ -184,7 +185,8 @@ font-weight:bolder;
 .tg .tg-qla2 {
 	background-color: #939397;
 	border-color: inherit;
-	vertical-align: top
+	vertical-align: top;
+	height:10px;
 }
 
 .tg .tg-0pky {
@@ -193,6 +195,7 @@ font-weight:bolder;
 }
 
 .main11 {
+width:300px;
 	margin-top: 300px;
 	height: 600px;
 	border: 0.5px solid gray;
@@ -204,7 +207,7 @@ font-weight:bolder;
 aside {
 	margin-top: -20px;
 	float: left;
-	width: 240px;
+	width: 350px;
 	height: 950px;
 }
 .t1{
@@ -297,7 +300,9 @@ width:1250px;
 		  background-color: #ddd;
 		  border-radius: 5px;
 		}
-	 	
+	 	tr{
+	 	height:10px;
+	 	}
 </style>
 <body>
 	<%--
@@ -308,15 +313,15 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 	<%@ include file="../module/top00.jsp"%>
 	<aside>
 		<table class="tg"
-			style="table-layout: fixed; text-align: center;margin-top: 4px; width: 100px; background: #9bbbd4;" >
+			style="table-layout: fixed; text-align: center;margin-top: 4px; width: 30px; " >
 			<colgroup>
-				<col style="width: 100px">
-				<col style="width: 140px">
+				<col style="width: 150px">
+				<col style="width: 200px">
 			</colgroup>
 			<thead>
 				<tr>
 					<th class="tg-c3ow" colspan="2" rowspan="2"><img
-						style="border-radius: 80px; height: 107px; width: 180px;"
+						style="border-radius: 100px; height: 200px; width: 200px;"
 						src="./../assets/images/프로필.PNG" alt=""></th>
 				</tr>
 				<tr>
@@ -328,17 +333,13 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 					<td class="tg-0pky">${AUTHUSER.emp_kname}</td>
 				</tr>
 				<tr>
-					<td class="tg-qla2">직급</td>
-					<td class="tg-0pky">${AUTHUSER.emp_position}</td>
-				</tr>
-				<tr>
 					<td class="tg-qla2" >부서</td>
 					<td class="tg-0pky">${AUTHUSER.dept_name}</td>
 				</tr>
 			</tbody>
 		</table>
 
-		<div id="main11" style="border:1px solid gray;">
+		<div id="main11" >
 			<div id="chat-container" >
 				<c:forEach var="item" items="${mVOList}">
 					<div class="my-chat-box">
@@ -518,6 +519,7 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 		
  	
 </div>
+<br><br><br><br>
 
 
 
@@ -571,8 +573,8 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 	
 
 	var textarea = document.getElementById("messageWindow");
-	//var webSocket = new WebSocket('ws://localhost/webChatServer');
-  var webSocket = new WebSocket('ws://172.30.1.57/webChatServer');
+	var webSocket = new WebSocket('ws://localhost/webChatServer');
+  //var webSocket = new WebSocket('ws://172.30.1.57/webChatServer');
 	var inputMessage = document.getElementById('inputMessage');
 	
 	webSocket.onerror = function(e){

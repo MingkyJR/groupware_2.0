@@ -71,7 +71,6 @@ div {
 		int cnt: 삭제(update)된 행 수 1 이면 삭제성공  ,0이면 실패
 			request.setAttribute("cnt", cnt);  
 		--%> 
- <a href="<%=request.getContextPath()%>/index.jsp">메인페이지로</a>
 	<h2>변경</h2>
 	<hr/>
 	<p>1 이면 변경성공  ,0이면 실패</p>
