@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="u" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -49,8 +50,17 @@
 	 	th {
 	    text-align: center;
 /* 	    border: 1px solid #EFEFEF; */
-	    background: #C5CAD7
+	    background: #C5CAD7;
+	    width : 190px;
 	 	}
+	 	
+	 	.c {
+	    text-align: left;
+/* 	    border: 1px solid #EFEFEF; */
+/* 	    background: #C5CAD7 */
+		padding-left : 5px; 
+	 	}
+	 	
 	 	
 	 	#list{
 	 	  color: white;
@@ -140,42 +150,42 @@
 <a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
 </p>
  <hr/>
-  
+
 <br/><br/>
 <!--  <h3>readNotice.jsp</h3> -->
  <table border="1" style="text-align:center;">
 <!--  <table border="1"> -->
  	<tr>
- 		<th>게시글 번호</th>
- 		<td>${noticeData.notice.number}</td>
+ 		<th class="h">게시글 번호</th>
+ 		<td class="c">${noticeData.notice.number}</td>
  	</tr>
  	
  	 <tr>
- 		<th>작성자명</th>
- 		<td>${noticeData.notice.writer.writer_name}</td>
+ 		<th class="h">작성자명</th>
+ 		<td class="c">${noticeData.notice.writer.writer_name}</td>
  	</tr>
  	
  	 <tr>
- 		<th>최초 작성일</th>
+ 		<th class="h">최초 작성일</th>
 <%--  		<td>${noticeData.notice.regdate}</td> --%>
- 		<td><fmt:formatDate pattern="yyyy년 MM월 dd일  HH:mm:ss" type="date" value="${noticeData.notice.regdate}" /></td>
+ 		<td class="c"><fmt:formatDate pattern="yyyy년 MM월 dd일  HH:mm:ss" type="date" value="${noticeData.notice.regdate}" /></td>
  	</tr>
  	
  	<tr>
- 		<th>마지막 수정일</th>
+ 		<th class="h">마지막 수정일</th>
 <%--  		<td>${noticeData.notice.regdate}</td> --%>
- 		<td><fmt:formatDate pattern="yyyy년 MM월 dd일  HH:mm:ss" type="date" value="${noticeData.notice.moddate}" /></td>
+ 		<td class="c"><fmt:formatDate pattern="yyyy년 MM월 dd일  HH:mm:ss" type="date" value="${noticeData.notice.moddate}" /></td>
  	</tr>
  	
  	
  	 <tr>
- 		<th>제목</th>
- 		<td>${noticeData.notice.title}</td>
+ 		<th class="h">제목</th>
+ 		<td class="c">${noticeData.notice.title}</td>
  	</tr>
  	
  	 <tr>
- 		<th>내용</th>
- 		<td><u:pre value="${noticeData.content.content}"/>
+ 		<th class="h">내용</th>
+ 		<td class="c" style="white-space: pre-wrap;"><u:pre value="${noticeData.content.content}"/>
  		<br/>
  		<br/>
  		<br/>
@@ -186,7 +196,7 @@
  	</tr>
  	
  	 <tr>
- 		<td colspan="2" style="text-align:center;">
+ 		<td colspan="2" style="text-align:center;" class="c">
  		<%--pp662 29라인 
  		<c:set var="변수명" value="변수값"/> 
  		<%--

@@ -411,8 +411,8 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 <!--  검색기능 폼 -->
  <form name="searchFrm" id="searchFrm" action="<%=request.getContextPath()%>/notice/list.do" 
  		method="post" style="text-align:center;">
- <input type="hidden" name="pageNo" id="pageNo" value="${pageNo}"/>
- <input type="hidden" name="rowSize" id="rowSize" value="${rowSize}"/> 
+<%--  <input type="hidden" name="pageNo" id="pageNo" value="${pageNo}"/> --%>
+<%--  <input type="hidden" name="rowSize" id="rowSize" value="${rowSize}"/>  --%>
  <select name="choice" id="choice"> <!-- 높이:20 중간맞춤 -->
 <!--     <option value="sel">선택</option> -->
     <option value="title" <c:if test="${choice == 'title'}">selected</c:if>>제목</option>
