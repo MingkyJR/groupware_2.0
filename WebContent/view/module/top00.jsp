@@ -47,7 +47,7 @@
                                     <li><a href="<%=request.getContextPath()%>/workEdit.do">출퇴근 수정</a></li>
                                     <c:if test="${AUTHUSER.emp_grade eq 5}">
                                     <li><a href="<%=request.getContextPath()%>/work_admin.do">직원 근태현황 조회</a></li>
-                                    <li><a href="#">직원 출퇴근 수정</a></li>
+                                    <li><a href="<%=request.getContextPath()%>/editList.do">직원 출퇴근 수정</a></li>
                                     </c:if>
                                 </ul>
                             </li>
@@ -72,9 +72,12 @@
                             <li class="submenu">
                                 <a href="javascript:;">마이페이지</a>
                                 <ul>
-                                    <li><a href="/login.do">로그인</a></li>
-                                    <li><a href="/logout.do">로그아웃</a></li>
-                                    <li><a href="/changeMyInfo.do">개인정보</a></li>
+                     
+                                 		<li><a href="/logout.do">로그아웃</a></li>
+                                    <li><a href="../view/mypageForm.jsp">회원정보수정</a></li>
+                                    <c:if test="${AUTHUSER.emp_grade eq 5}">
+                                    <li><a href="#">회원정보관리</a></li>
+                                    </c:if>
                                 </ul>
                             </li>
                             
