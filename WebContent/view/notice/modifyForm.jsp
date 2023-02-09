@@ -113,6 +113,12 @@
  	 	#t4{ 
  		height:30px; 
  	 	} 
+ 	 	.c {
+	    text-align: left;
+/* 	    border: 1px solid #EFEFEF; */
+/* 	    background: #C5CAD7 */
+		padding-left : 5px; 
+	 	}
     </style>
     
         <script>
@@ -170,22 +176,22 @@ ${modReq}<br/><br/><br/><br/>
  <table border="1">
  	<tr id="t1" style="height:50px;">
  		<th>게시글 번호</th>
- 		<td>${modReq.noticeNumber}</td>
+ 		<td class="c">${modReq.noticeNumber}</td>
  	</tr>
  	
  	 <tr id="t2" style="height:50px;">
  		<th>작성자명</th>
- 		<td>${modReq.writer_name}</td>
+ 		<td class="c">${modReq.writer_name}</td>
  	</tr>
 
  	 <tr id="t3" style="height:50px;">
  		<th>최초 작성일</th>
- 		<td><fmt:formatDate pattern="yyyy년 MM월 dd일  HH:mm:ss" type="date" value="${noticeData1.notice.regdate}" /></td>
+ 		<td class="c"><fmt:formatDate pattern="yyyy년 MM월 dd일  HH:mm:ss" type="date" value="${noticeData1.notice.regdate}" /></td>
  	</tr>
  	
  	 <tr id="t4" style="height:50px;">
  		<th>제목<b style="color:red; font-weight: 500;">*</b></th>
- 		<td><%-- ${noticeData.notice.title} --%>
+ 		<td class="c"><%-- ${noticeData.notice.title} --%>
  		<input type="text" name="title" id="title" style="border:1px solid #CBCACA; width:450px; padding:7px; border-radius:5px;" value="${modReq.title}"/>
  		</td>
  	</tr>
