@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+* {
+	font-family: 나눔고딕;
+}
+
+#messageWindow {
+	background: black;
+	color: greenyellow;
+}
+
+.inputMessage {
+	width: 180px;
+	height: 31px;
+}
+
+#btn-submit {
+	background: white;
+	background: #F7E600;
+	width: 60px;
+	height: 31.5px;
+	color: #607080;
+	border: none;
+	margin-left:-6px;
+}
+
+#main-container {
+	margin-top: 200px;
+	width: 350px;
+	/* height:600px; */
+	border: 1px solid black;
+	margin: 0px;
+	display: inline-block;
+	background: #9bbbd4;
+	scrollbar-color: #d4aa70 #e4e4e4;
+	scrollbar-width: thin;
+}
+
+#chat-container {
+	padding:5px;
+	border: hidden;
+	vertical-align: bottom;
+	min-height: 397px;
+	max-height: 397px;
+	overflow: scroll;
+	overflow-x: hidden;
+	background: #9bbbd4;
+	overflow-y: scroll;
+}
+
+
+.chat {
+	font-size: 10px;
+	color: black;
+	margin: 5px;
+	min-height: 20px;
+	padding: 5px;
+	min-width: 50px;
+	text-align: left;
+	height: auto;
+	word-break: break-all;
+	background: #ffffff;
+	width: auto;
+	display: inline-block;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.notice {
+	color: #607080;
+	font-weight: bold;
+	border: none;
+	text-align: center;
+	background-color: #9bbbd4;
+	display: block;
+	font-size: 5px;
+}
+
+.my-chat {
+	text-align: right;
+	background: #F7E600;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#bottom-container {
+}
+
+.chat-info {
+	color: #556677;
+	font-size: 10px;
+	text-align: right;
+	padding: 5px;
+	padding-top: 0px;
+}
+
+.chat-box {
+	text-align: left;
+}
+
+.my-chat-box {
+	text-align: right;
+}

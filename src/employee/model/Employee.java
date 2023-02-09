@@ -2,7 +2,6 @@
 
 public class Employee {
 
-	//(DB employee테이블)직원관련 데이터저장,제공 등의 기능
 	
 	private int emp_no;
 	private String emp_id;

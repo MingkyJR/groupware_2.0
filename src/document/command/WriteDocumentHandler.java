@@ -26,7 +26,6 @@ public class WriteDocumentHandler implements CommandHandler {
 		} else if (request.getMethod().equalsIgnoreCase("POST")) {
 			return processSubmit(request, response);// 쓰기처리요청
 		} else {
-
 			response.setStatus(HttpServletResponse.SC_METHOD_NOT_ALLOWED);
 			return null;
 		}
@@ -40,13 +39,9 @@ public class WriteDocumentHandler implements CommandHandler {
 	}
 
 	public User loginedUser(HttpServletRequest request) {
-
 		User authUser = (User) request.getSession().getAttribute("AUTHUSER");
-
 		return authUser;
-
 	}
-
 
 	private String processSubmit(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
@@ -64,7 +59,6 @@ public class WriteDocumentHandler implements CommandHandler {
 		if (!errors.isEmpty()) {
 			return FORM_VIEW;
 		}
-
 		int newDocumentNo = writeDocumentService.write(writeReq);
 		request.setAttribute("newDocumentNo", newDocumentNo);
 		return "/view/eApproval/4-11.작성성공.jsp";

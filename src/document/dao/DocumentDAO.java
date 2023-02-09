@@ -43,8 +43,7 @@ public class DocumentDAO {
 			JdbcUtil.close(stmt);
 		}
 	}
-	
-	//셀프게시글
+	//셀프게시글 리스트 페이징
 	public List<Document> selfselect(Connection conn, int empNo, int startRow, int size) throws SQLException {
 		PreparedStatement stmt = null;
 		String sql = "SELECT do_no,stat_no,title,draft_empno,draft_date,emp_kname,dept_name,emp_position    "
@@ -98,8 +97,6 @@ public class DocumentDAO {
 		}
 	}
 	
-	
-	
 	// 대기 게시글 수
 	public int selectCount(Connection conn) throws SQLException {
 		PreparedStatement stmt = null;
@@ -118,11 +115,6 @@ public class DocumentDAO {
 		}
 	}
 	
-
-	
-	
-	
-
 	// 대기객체
 	private Document convertDocument(ResultSet rs) throws SQLException {
 		return new Document(rs.getInt("do_no"),
@@ -151,8 +143,6 @@ public class DocumentDAO {
 			JdbcUtil.close(stmt);
 		}
 	}// 상세조회 selectById()끝
-
-
 
 	// 반려 목록페이징
 	public List<Document> retur(Connection conn, int startRow, int size) throws SQLException {
@@ -322,7 +312,6 @@ public class DocumentDAO {
 	}
 
 	// 글수정
-
 	public void update(Connection conn, int do_no) {
 		PreparedStatement stmt = null;
 		String sql = "UPDATE E_Approval " + "WHERE do_no  = ? ";
@@ -337,14 +326,9 @@ public class DocumentDAO {
 	}
 
 	// 글쓰기
-
 	public Document insert(Connection conn, Document document) throws SQLException {
 		PreparedStatement stmt = null; // insert용
 		Statement stmt2 = null; // select용
-		// int do_no, int stat_no, String title, int draft_empno, Date draft_date,int
-		// approval_empno, Date approval_date
-		// INSERT INTO E_Approval
-		// VALUES(dooneup_seq.NEXTVAL,1,'기안서1',1,sysdate,5,sysdate);
 		String sql = "INSERT INTO E_Approval  "
 				+ "VALUES(donoeup_seq.NEXTVAL,1,gian_seq.nextval||'.기안서',?,sysdate,5,sysdate,?,?,? ) ";
 		ResultSet rs = null;
@@ -357,19 +341,21 @@ public class DocumentDAO {
 			int cnt = stmt.executeUpdate();
 			System.out.println("insert결과행수" + cnt);
 			if (cnt > 0) { // 입력이 되었다면
-
 				stmt2 = conn.createStatement();
 				String sql1 = "select donoeup_seq.CURRVAL from E_Approval";
 				rs = stmt2.executeQuery(sql1);
 				if (rs.next()) {// p635 34라인
 					Integer newNum = rs.getInt(1);
-					return new Document(newNum, document.getWriter(), document.getStat_no(), document.getTitle(),
-							document.getDraft_empno(), document.getDraft_date(), document.getApproval_empno(),
-							document.getApproval_date());
-
+					return new Document(newNum, 
+										document.getWriter(), 
+										document.getStat_no(), 
+										document.getTitle(),
+										document.getDraft_empno(), 
+										document.getDraft_date(), 
+										document.getApproval_empno(),
+										document.getApproval_date());
 				}
 			}
-
 			return null;
 		} finally {
 			JdbcUtil.close(rs);
@@ -377,11 +363,8 @@ public class DocumentDAO {
 			JdbcUtil.close(stmt);
 		}
 	}
-
 	// Date타입을 Timestamp타입으로 변환-p635 52라인
 	private Timestamp toTimestamp(Date date) {
 		return new Timestamp(date.getTime());
-
 	}
-
 }

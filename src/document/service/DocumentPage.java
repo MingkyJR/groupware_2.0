@@ -14,8 +14,6 @@ public class DocumentPage {
 	private int startPage;		//시작페이지번호
 	private int endPage;		//끝페이지번호
 
-
-
 	public DocumentPage(int total, int currentPage, int size, List<Document> content) {
 		this.total = total;
 		this.currentPage = currentPage;

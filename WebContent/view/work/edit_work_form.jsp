@@ -8,7 +8,8 @@
  <meta name="description" content="member board Web Application">
  <meta name="keywords" content="member, board, article, mvc">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title></title>
+ <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+ <title>출퇴근 수정 요청</title>
  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
@@ -37,30 +38,46 @@
     
     <!-- Global Init -->
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
+    <%-- <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/work/work.css"> --%>
+    <style>
+    th{
+    background-color: #f2f7ff;
+    }
+    </style>
 
 </head>
 <body>
 <%@ include file="../module/top00.jsp" %>
-<h3>출퇴근 수정요청</h3>
-<hr>
-<p>조정정보</p>
-<form>
-<table class="table table-bordered">
-  <tbody>
-    <tr>
-      <th scope="row">근무일</th>
-      <td>${work_reg_date}</td>
-    </tr>
-    <tr>
-      <th scope="row">수정요청 시간</th>
-      <td><input type="time"> ~ <input type="time"></td>
-    </tr>
-    <tr>
-      <th scope="row">사유</th>
-      <td><textarea></textarea></td>
-    </tr>
-  </tbody>
-</table>
+
+<form method="post">
+<div class="container" style="margin-top: 10px;">
+	<div class="row">
+	 <div class="col">
+	 <h3 style="border-bottom: solid black; padding-bottom: 5px;">출퇴근 수정요청</h3>
+	 <h4 style="padding-bottom: 10px; padding-top: 25px;">조정 정보</h4>
+		<table class="table table-bordered">
+		  <tbody>
+		    <tr>
+		      <th scope="row">근무일</th>
+		      <td>${date}</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">수정요청 시간</th>
+		      <td><input type="time" name="newInTime" value="${inTime}" min="08:30" max="18:00"> ~ <input type="time" name="newOutTime"></td>
+		    </tr>
+		    <tr>
+		      <th scope="row" style="line-height: 252px;">사유</th>
+		      <td><textarea name="reason" rows="10" style="width: 100%; resize: none;"></textarea></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<input type="hidden" name="date" value="${date}">
+		<div style="text-align: right;">
+		<input type="submit">
+		</div>
+	 </div>
+	</div>
+</div>
 </form>
 
 <%@ include file="../module/bottom00.jsp" %>

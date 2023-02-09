@@ -71,8 +71,7 @@
 			cursor: pointer;
 		}
 		button:hover {
-			border-right: 1px solid black;
-			border-bottom: 1px solid black;
+			background-color: #788AD0;
 		}
 		img{
 			max-width: 100%;
@@ -88,6 +87,12 @@
 			border: none; 
 			outline: none; 
 			resize: none;
+		}
+		#btnList{
+			background-color: #ebad34;
+		}
+		#btnList:hover{
+			background-color: #ffc500;
 		}
 	</style>
 	<script>
@@ -188,7 +193,6 @@
 </head>
 <body>
 <%@ include file="../module/top00.jsp" %>
-${AUTHUSER.emp_id}
 	<div class="second_container">
 		<div>
 			<div class="title"><h3>${content.title}</h3></div>
@@ -204,9 +208,9 @@ ${AUTHUSER.emp_id}
 		<div class="comment_option">댓글</div>
 		<c:forEach var="re" items="${ reply }">
 			<div class="comment_area">
-				<div>${ re.empID }</div>		
-				<div>${ re.reContent }</div>
-					${ re.str_Date }
+				<div style="font-weight:450; margin: 3px 0; font-size: medium;">${ re.empID }</div>		
+				<div style="margin-bottom: 3px;">${ re.reContent }</div>
+				<span style="font-style: italic;">${ re.str_Date }</span>
 					<c:if test="${ re.empID==AUTHUSER.emp_id }">
 						<a href="#" style="text-decoration: none; color: black;">
 							<span class="replyDel" style="float: right; margin-right: 5px;" param="${ re.reNo }">댓글삭제</span>
@@ -227,7 +231,7 @@ ${AUTHUSER.emp_id}
 				<textarea rows="" cols="" placeholder="댓글을 입력해주세요." id="recontent" name="recontent" ></textarea>
 			<div style="text-align: right;"><button id="btnReply">등록</button></div>
 		</div>
-		<button><a href="<%=request.getContextPath()%>/secondHand/list.do?pageNo=${currentPage}" style="text-decoration: none; color: white;">목록보기</a></button>
+		<button id="btnList"><a href="<%=request.getContextPath()%>/secondHand/list.do?pageNo=${currentPage}" style="text-decoration: none; color: white;">목록보기</a></button>
 		<c:if test="${content.empID==AUTHUSER.emp_id}">
 			<button id="btnDelete">삭제</button>
 			<button id="btnUpdate">수정</button>
@@ -236,7 +240,6 @@ ${AUTHUSER.emp_id}
 <%@ include file="../module/bottom00.jsp" %>
 </body>
 </html>
-
 
 
 

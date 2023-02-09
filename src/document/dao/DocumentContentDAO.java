@@ -15,7 +15,6 @@ import jdbc.JdbcUtil;
 public class DocumentContentDAO {
 
 	//대기 상세조회
-
 	public DocumentContent selectById(Connection conn, int no ) throws SQLException{
 		PreparedStatement stmt = null;
 		String sql = "select do_no,form_name,create_empno,create_date,title,plans,Sugg,Uniq,comm " + 
@@ -50,7 +49,6 @@ public class DocumentContentDAO {
 	}
 
 	//글내용수정
-	
 	public void update(Connection conn, int do_no , String title,String plans,String sugg,String uniq, String comm) {
 		PreparedStatement stmt = null;
 		String sql = 	"UPDATE E_Form " + 
@@ -72,10 +70,7 @@ public class DocumentContentDAO {
 		}
 	}
 
-
-	
 	//내용입력
-	
 	public DocumentContent insert(Connection conn,DocumentContent content) {
 		PreparedStatement stmt = null;
 		//INSERT INTO E_Form VALUES ( '기안서'||board_seq.nextval,'기안서',1,sysdate,'업무명','계획','제안','특이',null );
@@ -103,8 +98,6 @@ public class DocumentContentDAO {
 			JdbcUtil.close(stmt);
 		}
 	}
-
-	
 }
 
 

@@ -87,7 +87,7 @@
 			</div>	
 		</div>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+<%@ include file="./../module/bottom00.jsp" %>
 </body>
 </html>
 

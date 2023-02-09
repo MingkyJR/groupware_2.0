@@ -61,7 +61,6 @@ public class WriteDocumentService {
 		
 	}//write()끝
 
-
 	private Document toDocument(WriteRequest writeReq) {
 		return new Document(	null,
 								writeReq.getWriter(), 

@@ -12,10 +12,7 @@ public class DocumentRequest {
 	private String Sugg;//건의사항
 	private String Uniqe;//특이사항
 	private int create_date;//작성자번호
-	
-	
 
-	
 	public DocumentRequest(int form_no, Date creat_date, String title, String plans, String sugg, String uniqe,	int create_date) {
 		this.form_no = form_no;
 		this.creat_date = creat_date;
@@ -48,7 +45,6 @@ public class DocumentRequest {
 	public String getSugg() {
 		return Sugg;
 	}
-
 
 	public String getUniqe() {
 		return Uniqe;

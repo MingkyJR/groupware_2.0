@@ -135,7 +135,7 @@ $("p:contains(' 4')").html("수석");
 $("p:contains(' 5')").html("대표");
 
 </script>
-<%--  <%@ include file="./module/bottom00.jsp" %> --%>
+
 </body>
 </html>
 

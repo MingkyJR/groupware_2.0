@@ -2,16 +2,9 @@
 
 import java.util.Map;
 
-//이 클래스는 회원가입 요청 및 유효성 검사시 필요한 회원정보를 보관하고 설정하는 클래스이다
-
-/*"insert into employee(emp_id, emp_pw, emp_kname, emp_ename, emp_zipcode," + 
-"emp_postcode, emp_birthday, emp_phonenumber," + 
-"emp_email, dept_name, emp_position) " + 
-"values (아이디?,비밀번호?,한글이름?,영문이름?,우편번호?,주소?,생년월일?,연락처?,이메일?,부서?,직급?)"; */
 
 public class JoinRequest {
 	
-	//필드
 	private String emp_id;
 	private String emp_pw;
 	private String re_emp_pw; //재확인용 비번

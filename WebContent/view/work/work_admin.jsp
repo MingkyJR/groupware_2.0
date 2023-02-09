@@ -9,39 +9,52 @@
  <meta name="description" content="member board Web Application">
  <meta name="keywords" content="member, board, article, mvc">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
  <title>직원 누적 근태현황</title>
  <script src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
- <!-- bootstrap css -->
- <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
- <style>
- .total {
- border: 2px solid #c7c7c7;
- min-height:365px;
- padding-top: 8px;
- margin-bottom: 10px;
- }
-	
-	.page{
-	text-align: center;
-	border-bottom: 1px solid #c7c7c7;
-	}
-	.chevron{
-	width : 25px;
-	}
-	.fmt_time{
-		float: right;
-	}
-	.empNoInput{
-	text-align: right;
-	}
- 
- </style>
+ <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/templatemo-hexashop.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/lightbox.css">
+     
+    
+    <script src="<%=request.getContextPath()%>/assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="<%=request.getContextPath()%>/assets/js/popper.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="<%=request.getContextPath()%>/assets/js/owl-carousel.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/accordions.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/datepicker.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/scrollreveal.min.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/waypoints.min.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/jquery.counterup.min.js"></script>
+    <script src="<%=request.getContextPath()%>/assets/js/imgfix.min.js"></script> 
+    <script src="<%=request.getContextPath()%>/assets/js/slick.js"></script> 
+    <script src="<%=request.getContextPath()%>/assets/js/lightbox.js"></script> 
+    <script src="<%=request.getContextPath()%>/assets/js/isotope.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
+ <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/work/work.css">
  <script>
  $(document).ready(function(){
 	  });
  
  	
  </script>
+ <style>
+ .tttt th{
+ background-color: #dfedf7;
+ border: solid 1px black;
+ }
+ .tttt td{
+ border: solid 1px black;
+ }
+ </style>
 </head>
 <body>
 	<!-- 네비 바 인클루드 -->
@@ -51,13 +64,7 @@
     <!-- 월별 누적 근태현황 -->
     <div class="col total">
       <h3>직원 누적 근태현황</h3> 
-      <div class="page">
-      <%--<h2>
-      
-       <a href="work_admin.do?pageMon=${pageAtt.mon - 1}&pageYear=${pageAtt.year}&empNo=${pageAtt.emp_no}"><img src="/icon/chevron-left.svg" class="chevron"></a>
-      <span>${pageAtt.year}.${pageAtt.mon}</span>
-      <a href="work_admin.do?pageMon=${pageAtt.mon + 1}&pageYear=${pageAtt.year}&empNo=${pageAtt.emp_no}"><img src="/icon/chevron-right.svg" class="chevron"></a>
-      </h2> --%>
+      <div class="page" style="text-align: right;">
       <form action="work_admin.do" method="post">
       <p class="empNoInput">
       <select name="pageYear" onchange="">
@@ -85,7 +92,13 @@
       </p>
       <p class="empNoInput"><c:if test="${errors.empNo}">조회할 사원 번호를 입력해주세요</c:if></p>
       </form>
-      <p>나중에 employee service 빌려서 조회한 사원 정보 표시 예정</p>
+      <table class="table tttt" style="margin-top: 10px;">
+       <tbody>
+        <tr>
+        	<th>사원번호</th><td>${emp.emp_no}</td><th>이름</th><td>${emp.emp_kname}</td><th>부서</th><td>${emp.dept_name}</td>
+        </tr>
+       </tbody>
+      </table>
       </div>
     <table class="table">
   <thead>
@@ -95,6 +108,7 @@
       <th scope="col">업무종료</th>
       <th scope="col">근무시간</th>
       <th scope="col">초과시간</th>
+      <th scope="col">상태</th>
     </tr>
   </thead>
   <tbody>
@@ -103,8 +117,25 @@
       <th scope="row"><fmt:formatDate type="date" value="${month.work_reg_date}" pattern="dd [E]" /></th>
       <td><fmt:formatDate type="date" value="${month.work_in_time}" pattern="kk:mm:ss"/></td>
       <td><fmt:formatDate type="date" value="${month.work_out_time}" pattern="kk:mm:ss"/></td>
-      <td>${month.total_day}</td>
+      <td><c:if test="${not empty month.work_out_time}">${month.total_day}</c:if></td>
       <td>${month.overtime}</td>
+      <td>
+      <c:if test="${month.work_status eq '근태이상'}">
+      <span class="work_status ws1">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '정상처리'}">
+      <span class="work_status ws2">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '요청중'}">
+      <span class="work_status ws3">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '수정'}">
+      <span class="work_status" style="background-color: #8080ff;">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '반려'}">
+      <span class="work_status" style="background-color: #f2c539;">${month.work_status}</span>
+      </c:if>
+      </td>
     </tr>
   	</c:forEach>
   </tbody>
@@ -113,6 +144,7 @@
   </div>
 </div>
  
+ <%@ include file="../module/bottom00.jsp" %>
 </body>
 </html>
 

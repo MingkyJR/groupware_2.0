@@ -101,7 +101,7 @@
 		cursor: pointer;
 	}
 	.example button:hover {
-		background: #0b7dda;
+		background: #788AD0;
 	}
 	.btnRegi {
 		margin: 10px;
@@ -156,7 +156,6 @@
 <%@ include file="../module/bottom00.jsp" %>
 </body>
 </html>
-
 
 
 

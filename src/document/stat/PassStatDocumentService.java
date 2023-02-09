@@ -7,7 +7,6 @@ import document.dao.DocumentDAO;
 import jdbc.JdbcUtil;
 import jdbc.conn.ConnectionProvider;
 
-//삭제처리관련 Service클래스
 public class PassStatDocumentService {
 	private DocumentDAO documentDAO = new DocumentDAO();
 	

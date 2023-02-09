@@ -38,7 +38,6 @@ public class ModifyDocumentService {
 											modifyRequest.getUniq(),
 											modifyRequest.getComm()											
 											);
-			
 			conn.commit();//커밋
 		}catch (SQLException e) {
 			JdbcUtil.rollback(conn);

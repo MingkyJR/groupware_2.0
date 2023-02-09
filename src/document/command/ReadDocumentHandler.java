@@ -36,7 +36,6 @@ public class ReadDocumentHandler implements CommandHandler {
 		request.setAttribute("documentData", documentData);
 		request.setAttribute("pageNo", pageNo);
 		request.setAttribute("rowSize", rsize);
-
 		return "/view/eApproval/4-03.문서읽기.jsp";
 	}
 

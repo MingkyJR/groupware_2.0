@@ -9,6 +9,7 @@
  <meta name="description" content="member board Web Application">
  <meta name="keywords" content="member, board, article, mvc">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
  <title>출퇴근 수정 요청</title>
  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -39,43 +40,12 @@
     
     <!-- Global Init -->
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
-    <style>
-    .total {
-		 border: 2px solid #c7c7c7;
-		 min-height:365px;
-		 padding-top: 8px;
-		 margin-bottom: 10px;
-		 }
-		 
-		 .page{
-			text-align: center;
-			border-bottom: 1px solid #c7c7c7;
-			}
-			.chevron{
-			width : 25px;
-			}
-			
-			.work_status{
-			color: white;
-			border-radius: 25px;
-			font-size: small;
-			padding: 3px;
-			}
-			.ws1{
-			background-color: #FE2E2E;
-			color: white;
-			}
-			.ws2{
-			background-color: #2E9AFE;
-			color: white;
-			}
-    
-    </style>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/work/work.css">
     
 </head>
 <body>
 <%@ include file="../module/top00.jsp" %>
-<h2>출퇴근 수정 요청 페이지</h2>
+
 <div class="container" style="margin-top: 10px;">
   <div class="row">
   	<!-- 출퇴근 버튼, 정보 영역 -->
@@ -83,13 +53,17 @@
     <!-- 월별 누적 근태현황 -->
    
     <div class="col total">
+    <h2 style="font-weight: bold; padding-top: 10px;padding-left: 5px;">출퇴근 수정 요청</h2>
       <div class="page">
       <h2>
-      <a href="work.do?pageMon=${pageAtt.mon - 1}&pageYear=${pageAtt.year}"><img src="/assets/icon/chevron-left.svg" class="chevron"></a>
+      <a href="workEdit.do?pageMon=${pageAtt.mon - 1}&pageYear=${pageAtt.year}"><img src="/assets/icon/chevron-left.svg" class="chevron"></a>
       <span>${pageAtt.year}.${pageAtt.mon}</span>
-      <a href="work.do?pageMon=${pageAtt.mon + 1}&pageYear=${pageAtt.year}"><img src="/assets/icon/chevron-right.svg" class="chevron"></a>
+      <a href="workEdit.do?pageMon=${pageAtt.mon + 1}&pageYear=${pageAtt.year}"><img src="/assets/icon/chevron-right.svg" class="chevron"></a>
       </h2>
       </div>
+      <p style="text-align: right; font-weight: bold; padding-right: 30px;">${AUTHUSER.emp_kname} 님의 ${pageAtt.year}년 ${pageAtt.mon}월 출퇴근 기록</p>
+      
+      
     <table class="table">
   <thead>
     <tr>
@@ -99,7 +73,7 @@
       <th scope="col">근무시간</th>
       <th scope="col">초과시간</th>
       <th scope="col">상태</th>
-      <th scope="col"></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -117,10 +91,22 @@
       <c:if test="${month.work_status eq '정상처리'}">
       <span class="work_status ws2">${month.work_status}</span>
       </c:if>
+      <c:if test="${month.work_status eq '요청중'}">
+      <span class="work_status ws3">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '수정'}">
+      <span class="work_status" style="background-color: #8080ff;">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '반려'}">
+      <span class="work_status" style="background-color: #f2c539;">${month.work_status}</span>
+      </c:if>
       </td>
       <td>
       <c:if test="${month.work_status eq '근태이상'}">
-      <a href="writeEdit.do?date=${month.work_reg_date}&empNo=${AUTHUSER.emp_no}"><img src="/assets/icon/pencil-square.svg"></a>
+      <a href="writeEdit.do?date=${month.work_reg_date}&empNo=${AUTHUSER.emp_no}&inTime=${month.work_in_time}"><img src="/assets/icon/pencil-square.svg"></a>
+      </c:if>
+      <c:if test="${month.work_status eq '반려'}">
+      <a href="writeEdit.do?date=${month.work_reg_date}&empNo=${AUTHUSER.emp_no}&inTime=${month.work_in_time}"><img src="/assets/icon/pencil-square.svg"></a>
       </c:if>
       </td>
     </tr>

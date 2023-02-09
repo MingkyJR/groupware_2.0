@@ -13,17 +13,11 @@ import jdbc.JdbcUtil;
 import jdbc.conn.ConnectionProvider;
 
 
-//p592
-//DAO(Data Access Object) : DB연동하여 쿼리실행관련된 기능
-//이 클래스는 DAO로서 주로 회원관련DB작업을 수행
 public class EmployeeDAO {
 	
 	public Employee selectById(String id,Connection conn) {
 		System.out.println("EmployeeDAO-selectById() id="+id);
 		
-		//1.드라이버로드->2.conn얻기->3.객체준비->4.실행->5.자원해제
-		
-		//3.객체준비
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select emp_no, emp_id, emp_pw, emp_kname, emp_ename, emp_postcode," + 
@@ -33,16 +27,12 @@ public class EmployeeDAO {
 						"where emp_id=?";
 		Employee employee = null; //user가 입력한 id를 사용하는 기존employee 정보를 저장하기위한 변수
 		
-		//4.실행
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,id);
 			rs = pstmt.executeQuery();
-			System.out.println("rs="+rs);
 			
-			//결과가 있다면=>user가 입력한 id를 사용하는 기존member가 존재
 			if(rs.next()) {
-				//select memberno,memberid,memberpwd,membername,email,regdate,grade의 결과를 이용
 				
 				int emp_no = rs.getInt("emp_no");
 				String emp_id = rs.getString("emp_id");
@@ -59,7 +49,6 @@ public class EmployeeDAO {
 				int emp_extnumber = rs.getInt("emp_extnumber");
 				int emp_grade = rs.getInt("emp_grade");
 				
-				//해당 회원의 정보를 가지는 회원객체를 생성
 				employee = new Employee(emp_no, emp_id, emp_pw, emp_kname, emp_ename,
 									emp_postcode, emp_address, emp_birthday,
 									emp_phonenumber, emp_email, dept_name, emp_position,
@@ -77,10 +66,6 @@ public class EmployeeDAO {
 		
 	}// selectById()끝
 
-	
-	//회원가입-p593 42라인
-	/*imployee:회원되고싶은 유저가 입력한 user정보
-	 *conn:Connection객체*/
 	public void insert(Employee employee,Connection conn) throws SQLException {
 		String sql = "insert into employee(emp_id, emp_pw, emp_kname, emp_ename, emp_postcode," + 
 					"emp_address, emp_birthday, emp_phonenumber," + 
@@ -108,7 +93,6 @@ public class EmployeeDAO {
 	}
 
 		
-	//회원정보 수정
 	
 	public void update(Connection conn, Employee employee) {
 	

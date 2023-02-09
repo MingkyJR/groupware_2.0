@@ -24,7 +24,6 @@ public class ModifyRequest {
 		this.comm = comm;
 	}
 
-
 	public int getEmp_no() {
 		return emp_no;
 	}

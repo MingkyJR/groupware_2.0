@@ -9,6 +9,7 @@
  <meta name="description" content="member board Web Application">
  <meta name="keywords" content="member, board, article, mvc">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
  <title>근태관리</title>
  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -18,65 +19,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/owl-carousel.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/lightbox.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
-    <style>
-		 .date2 {
-		 	color : gray;
-		 	margin-bottom: 5px;
-		 }
-		 
-		 .time2{
-		  font-size: 60px;
-		  padding-top: 25px;
-		  padding-bottom: 25px;
-		 }
-		 .inOut{
-		 border: 2px solid #c7c7c7;
-		 height:365px;
-		 padding-top: 8px;
-		 margin-right: 5px;
-		 }
-		 .total {
-		 border: 2px solid #c7c7c7;
-		 min-height:365px;
-		 padding-top: 8px;
-		 margin-bottom: 10px;
-		 }
-		 .find-btn{
-			text-align: center;
-			}
-			.find-btn1{
-			display :inline-block;
-			margin-left: 5px;
-			margin-right: 5px;
-			}
-			
-			.page{
-			text-align: center;
-			border-bottom: 1px solid #c7c7c7;
-			}
-			.chevron{
-			width : 25px;
-			}
-			.fmt_time{
-				float: right;
-			}
-			
-			.work_status{
-			color: white;
-			border-radius: 25px;
-			font-size: small;
-			padding: 3px;
-			}
-			.ws1{
-			background-color: #FE2E2E;
-			color: white;
-			}
-			.ws2{
-			background-color: #2E9AFE;
-			color: white;
-			}
- 
- </style>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/work/work.css">
  <script>
   $(document).ready(function(){
 	  });
@@ -200,6 +143,15 @@
       </c:if>
       <c:if test="${month.work_status eq '정상처리'}">
       <span class="work_status ws2">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '요청중'}">
+      <span class="work_status ws3">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '수정'}">
+      <span class="work_status" style="background-color: #8080ff;">${month.work_status}</span>
+      </c:if>
+      <c:if test="${month.work_status eq '반려'}">
+      <span class="work_status" style="background-color: #f2c539;">${month.work_status}</span>
       </c:if>
       </td>
     </tr>

@@ -14,7 +14,6 @@ $(document).ready(function(){
 	$("#email_dd").change(function(){
 		let val = $("select#email_dd option:selected").val();
 		$("#emp_email_d").val(val);
-		
 	});
 
 	let address = '${AUTHUSER.emp_address}';
@@ -31,8 +30,6 @@ $(document).ready(function(){
 	
 });
 	
-
-
 </script>
 <title>회원정보 수정</title>
 </head>
