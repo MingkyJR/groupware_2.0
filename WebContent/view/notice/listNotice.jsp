@@ -243,9 +243,6 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 
 <%-- <a href="<%=request.getContextPath()%>/index.jsp">HOME</a> --%>
 <!-- <p class="home" style="text-align: left; margin-left:150px;"> -->
-<p class="home" style="margin:0 auto; max-width: 950px;">
-<a href="<%=request.getContextPath()%>/view/main.jsp">HOME</a>
-</p>
 
 <hr/>
  
