@@ -50,7 +50,7 @@
  	 	} 
  	 	
  	 	.hang{ 
-		height:30px;
+		height:50px;
  	 	} 
  	 	
  	 	tr:hover {background-color: #dcdcdc;}

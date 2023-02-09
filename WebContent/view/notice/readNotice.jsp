@@ -155,30 +155,30 @@
 <!--  <h3>readNotice.jsp</h3> -->
  <table border="1" style="text-align:center;">
 <!--  <table border="1"> -->
- 	<tr>
+ 	<tr style="height:50px;">
  		<th class="h">게시글 번호</th>
  		<td class="c">${noticeData.notice.number}</td>
  	</tr>
  	
- 	 <tr>
+ 	 <tr style="height:50px;">
  		<th class="h">작성자명</th>
  		<td class="c">${noticeData.notice.writer.writer_name}</td>
  	</tr>
  	
- 	 <tr>
+ 	 <tr style="height:50px;">
  		<th class="h">최초 작성일</th>
 <%--  		<td>${noticeData.notice.regdate}</td> --%>
  		<td class="c"><fmt:formatDate pattern="yyyy년 MM월 dd일  HH:mm:ss" type="date" value="${noticeData.notice.regdate}" /></td>
  	</tr>
  	
- 	<tr>
+ 	<tr style="height:50px;">
  		<th class="h">마지막 수정일</th>
 <%--  		<td>${noticeData.notice.regdate}</td> --%>
  		<td class="c"><fmt:formatDate pattern="yyyy년 MM월 dd일  HH:mm:ss" type="date" value="${noticeData.notice.moddate}" /></td>
  	</tr>
  	
  	
- 	 <tr>
+ 	 <tr style="height:50px;">
  		<th class="h">제목</th>
  		<td class="c">${noticeData.notice.title}</td>
  	</tr>
@@ -195,7 +195,7 @@
  		<br/></td>
  	</tr>
  	
- 	 <tr>
+ 	 <tr style="height:50px;">
  		<td colspan="2" style="text-align:center;" class="c">
  		<%--pp662 29라인 
  		<c:set var="변수명" value="변수값"/> 
