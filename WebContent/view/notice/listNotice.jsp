@@ -40,6 +40,17 @@
     <!-- Global Init -->
     <script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
        <style>
+/* // Set border-radius on the top-left and bottom-left of the first table data on the table row */
+/* td:first-child, */
+/* th:first-child { */
+/*   border-radius: 10px 0 0 10px; */
+/* } */
+
+/* // Set border-radius on the top-right and bottom-right of the last table data on the table row */
+/* td:last-child, */
+/* th:last-child { */
+/*   border-radius: 0 10px 10px 0; */
+/* } */
 		.t1{ 
 		width: 950px;
  	    margin-left: auto; 
@@ -50,7 +61,7 @@
  	 	} 
  	 	
  	 	.hang{ 
-		height:30px;
+		height:50px;
  	 	} 
  	 	
  	 	tr:hover {background-color: #dcdcdc;}
@@ -104,7 +115,38 @@
 		  border: solid 1px #191970;
 		  border-radius: 3px;
 	 	}
-
+		
+		#list{
+	 	  color: white;
+		  text-align: center;
+		  background: #7C8EBF;
+		  border: solid 1px #191970;
+		  border-radius: 3px;
+	 	}
+	 	
+/* 	 	------------------------------------------------------------------ */
+	 	.paging {
+		  display: inline-block;
+		}
+		
+		.paging a {
+		  color: black;
+		  float: left;
+		  padding: 8px 16px;
+		  text-decoration: none;
+		}
+		
+		.paging a.active {
+		  background-color: #4CAF50;
+		  color: white;
+		  border-radius: 5px;
+		}
+		
+		.paging a:hover:not(.active) {
+		  background-color: #ddd;
+		  border-radius: 5px;
+		}
+	 	
         </style>
         
         
@@ -311,43 +353,63 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 		<c:if test="${empty keyword or (keyword eq '')}">
 	 		<%-- JSTL if조건문: 이전 출력 --%>
 	 		<c:if test="${noticePage.startPage>5}">
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage-5}&rowSize=${rowSize}">Prev</a> 
+	 		<div class="paging">
+	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage-5}&rowSize=${rowSize}">&laquo;</a> 
+<%-- 	 		 <button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage-5}&rowSize=${rowSize}';">&laquo;</button> --%>
+			</div>
 	 		</c:if>	
 	 			
 	 		<%-- JSTL forEach조건문: 페이지 번호 출력 --%>
 	 		<c:forEach var="pNo"
 	 			begin="${noticePage.startPage}" end="${noticePage.endPage}">
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pNo}&rowSize=${rowSize}">[${pNo}]</a> 
+	 			<div class="paging">
+	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pNo}&rowSize=${rowSize}">${pNo}</a> 
+<%-- 	 		<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pNo}&rowSize=${rowSize}';">${pNo}</button> --%>
+				</div>
 	 		</c:forEach>
 	 		
 	 		<%-- JSTL forEach조건문: 다음 출력 --%>
 	 		<c:if test="${noticePage.endPage<noticePage.totalPages}">
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage+5}&rowSize=${rowSize}">Next</a> 
+	 		<div class="paging">
+	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage+5}&rowSize=${rowSize}">&raquo;</a> 
+<%-- 	 		<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage+5}&rowSize=${rowSize}';">&raquo;</button> --%>
+			</div>
 	 		</c:if>	
 		</c:if>
 		
 		<c:if test="${not empty keyword or (keyword ne '')}">
 		 	<c:if test="${noticePage.hasNoNotices()}"> 
-		 		<a href="<%=request.getContextPath()%>/notice/list.do">전체목록보기</a> 
+<%-- 		 		<a href="<%=request.getContextPath()%>/notice/list.do">전체목록보기</a> --%>
+	 		 <button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do';">전체목록보기</button>		 		 
 		 	</c:if>
 		 	<c:if test="${noticePage.hasNotices()}"> 
 			<%-- JSTL if조건문: 이전 출력 --%>
 	 		<c:if test="${noticePage.startPage>5}">
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage-5}&rowSize=${rowSize}&choice=${choice}&keyword=${keyword}">Prev</a> 
+	 		<div class="paging">
+	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage-5}&rowSize=${rowSize}&choice=${choice}&keyword=${keyword}">&laquo;</a> 
+<%-- 	 		 <button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage-5}&rowSize=${rowSize}&choice=${choice}&keyword=${keyword}';">&laquo;</button>	 		  --%>
+			</div>
 	 		</c:if>	
 	 			
 	 		<%-- JSTL forEach조건문: 페이지 번호 출력 --%>
 	 		<c:forEach var="pNo"
 	 			begin="${noticePage.startPage}" end="${noticePage.endPage}">
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pNo}&rowSize=${rowSize}&choice=${choice}&keyword=${keyword}">[${pNo}]</a> 
+	 			<div class="paging">
+	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pNo}&rowSize=${rowSize}&choice=${choice}&keyword=${keyword}">${pNo}</a> 
+<%-- 	 		<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pNo}&rowSize=${rowSize}&choice=${choice}&keyword=${keyword}';">${pNo}</button>	 		  --%>
+				</div>
 	 		</c:forEach>
 	 		
 	 		<%-- JSTL forEach조건문: 다음 출력 --%>
 	 		<c:if test="${noticePage.endPage<noticePage.totalPages}">
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage+5}&rowSize=${rowSize}&choice=${choice}&keyword=${keyword}">Next</a>
+	 		<div class="paging">
+	 		 <a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage+5}&rowSize=${rowSize}&choice=${choice}&keyword=${keyword}">&raquo;</a>
+<%-- 			<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${noticePage.startPage+5}&rowSize=${rowSize}&choice=${choice}&keyword=${keyword}';">&raquo;</button>	 		  --%>
+			</div>
 	 		 </c:if>
 	 		 <br/><br/>
-	 		 <a href="<%=request.getContextPath()%>/notice/list.do">전체목록보기</a>	 
+<%-- 	 		 <a href="<%=request.getContextPath()%>/notice/list.do">전체목록보기</a> --%>
+	 		 <button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do';">전체목록보기</button>	 
 	 		</c:if>	
 		</c:if>
 		
@@ -360,8 +422,8 @@ ${noticePage.content} <hr/><hr/><hr/> --%>
 <!--  검색기능 폼 -->
  <form name="searchFrm" id="searchFrm" action="<%=request.getContextPath()%>/notice/list.do" 
  		method="post" style="text-align:center;">
- <input type="hidden" name="pageNo" id="pageNo" value="${pageNo}"/>
- <input type="hidden" name="rowSize" id="rowSize" value="${rowSize}"/> 
+<%--  <input type="hidden" name="pageNo" id="pageNo" value="${pageNo}"/> --%>
+<%--  <input type="hidden" name="rowSize" id="rowSize" value="${rowSize}"/>  --%>
  <select name="choice" id="choice"> <!-- 높이:20 중간맞춤 -->
 <!--     <option value="sel">선택</option> -->
     <option value="title" <c:if test="${choice == 'title'}">selected</c:if>>제목</option>
