@@ -168,22 +168,22 @@ ${modReq}<br/><br/><br/><br/>
  <input type="hidden" name="rowSize" id="rowSize" value="${rowSize}"/>
  
  <table border="1">
- 	<tr id="t1" style="height:30px;">
+ 	<tr id="t1" style="height:50px;">
  		<th>게시글 번호</th>
  		<td>${modReq.noticeNumber}</td>
  	</tr>
  	
- 	 <tr id="t2">
+ 	 <tr id="t2" style="height:50px;">
  		<th>작성자명</th>
  		<td>${modReq.writer_name}</td>
  	</tr>
 
- 	 <tr id="t3">
+ 	 <tr id="t3" style="height:50px;">
  		<th>최초 작성일</th>
  		<td><fmt:formatDate pattern="yyyy년 MM월 dd일  HH:mm:ss" type="date" value="${noticeData1.notice.regdate}" /></td>
  	</tr>
  	
- 	 <tr id="t4">
+ 	 <tr id="t4" style="height:50px;">
  		<th>제목<b style="color:red; font-weight: 500;">*</b></th>
  		<td><%-- ${noticeData.notice.title} --%>
  		<input type="text" name="title" id="title" style="border:1px solid #CBCACA; width:450px; padding:7px; border-radius:5px;" value="${modReq.title}"/>
@@ -198,14 +198,14 @@ ${modReq}<br/><br/><br/><br/>
  		</td>
  	</tr>
  	
- 	 <tr>
+ 	 <tr style="height:50px;">
  		<td colspan="2" style="text-align:center;">
 <!--  		<input type="submit" id="ism" value="수정하기"/> -->
  		<button type="button" id="bsm" onclick="formSubmit();">수정하기</button>
  		</td>
  	</tr>
  	
- 	 <tr>
+ 	 <tr style="height:50px;">
  		<td colspan="2" style="text-align:center;">
  		<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}'">목록보기</button>
  		<button type="button" id="read" onclick="location.href='<%=request.getContextPath()%>/notice/read.do?no=${modReq.noticeNumber}&pageNo=${pageNo}&rowSize=3'">게시글 상세조회</button>
