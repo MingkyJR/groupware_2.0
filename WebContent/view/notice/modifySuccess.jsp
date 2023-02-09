@@ -84,7 +84,7 @@
 <%--  	 	<a href="<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}">목록보기</a> --%>
  	 	<button type="button" id="list" onclick="location.href='<%=request.getContextPath()%>/notice/list.do?pageNo=${pageNo}&rowSize=${rowSize}'">목록보기</button>
 <%--  	 	<a href="<%=request.getContextPath()%>/notice/read.do?no=${modReq.noticeNumber}&pageNo=${pageNo}&rowSize=${rowSize}">수정한 글 보기</a> --%>
- 	 	<button type="button" id="wrb" onclick="location.href='<%=request.getContextPath()%>/notice/read.do?no=${modReq.noticeNumber}&pageNo=${pageNo}&rowSize=${rowSize}'">작성한 글 보기</button>
+ 	 	<button type="button" id="wrb" onclick="location.href='<%=request.getContextPath()%>/notice/read.do?no=${modReq.noticeNumber}&pageNo=${pageNo}&rowSize=${rowSize}'">수정한 글 보기</button>
  	 	
 </div>
  	 	<%-- 수정과 삭제기능은

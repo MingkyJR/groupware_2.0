@@ -21,7 +21,7 @@ public class SecondHandPageDTO {
 		this.endRow = startRow + 7;
 	}
 	public SecondHandPageDTO(int currentPage, String keyword) {
-		System.out.println("page 생성자 호출");
+		System.out.println("SecondHandPageDTO() page 생성자 호출");
 		int totalRows = new SecondHandDAO().searchTotalRows(keyword);
 		this.currentPage = currentPage;
 		this.realEndPage = totalRows/6 + (totalRows%6 == 0 ? 0 : 1);

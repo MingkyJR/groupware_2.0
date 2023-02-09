@@ -120,6 +120,7 @@
 </head>
 <body>
 <%@ include file="../module/top00.jsp" %>
+${ keyword }
 	
 	<div class="second_container">
 	<form class="example" action="<%=request.getContextPath()%>/secondHand/searchList.do" style="text-align: center; margin: 15px 0;">

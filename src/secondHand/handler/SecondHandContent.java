@@ -20,6 +20,7 @@ public class SecondHandContent implements CommandHandler {
 		request.setAttribute("currentPage", Integer.parseInt(request.getParameter("currentPage")));
 		request.setAttribute("content", (SecondHandContentDTO)contentService.service(no));
 		request.setAttribute("no", no);
+		request.setAttribute("price", request.getParameter("price"));
 		return request.getContextPath()+"/view/secondHand/content.jsp";
 	}
 
