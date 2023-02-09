@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import auth.service.User;
+import employee.model.Employee;
 import mvc.command.CommandHandler;
+import work.dao.WorkDAO;
 import work.model.Work;
 import work.service.DatePg;
 import work.service.Page;
@@ -20,7 +22,7 @@ public class WorkAdminHandler implements CommandHandler {
 	private static final String FORM_VIEW = "/view/work/work_admin.jsp";
 	
 	private WorkService workService = new WorkService();
-	
+
 	
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -83,10 +85,12 @@ public class WorkAdminHandler implements CommandHandler {
 				pageMon = 1;
 			}
 		}
+		Employee employee = workService.selectByNo(emp_no);
 		List<Work> monthList = workService.selectMonth(pageYear, pageMon, emp_no);
 		Page pageAtt = new Page(pageYear, pageMon, emp_no);
 		request.setAttribute("pageAtt", pageAtt);
 		request.setAttribute("monthList", monthList);
+		request.setAttribute("emp", employee);
 		
 		//Model
 		return FORM_VIEW;
@@ -123,10 +127,12 @@ public class WorkAdminHandler implements CommandHandler {
 		if(strEmp_no != null) {
 			emp_no = Integer.parseInt(strEmp_no);
 		}
+		Employee employee = workService.selectByNo(emp_no);
 		List<Work> monthList = workService.selectMonth(pageYear, pageMon, emp_no);
 		Page pageAtt = new Page(pageYear, pageMon, emp_no);
 		request.setAttribute("pageAtt", pageAtt);
 		request.setAttribute("monthList", monthList);
+		request.setAttribute("emp", employee);
 		
 		//Model
 		return FORM_VIEW;
