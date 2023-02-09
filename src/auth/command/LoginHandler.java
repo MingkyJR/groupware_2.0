@@ -77,7 +77,7 @@ public class LoginHandler implements CommandHandler {
 		}
 		
 		//2.비즈니스로직수행<->Service<->DAO<->DB-p607 53라인
-		//3.Model&4.view
+		//3.Model&4.viewm
 		try {//P607 53라인
 			//로그인에 성공하면 로그인한 회원의 정보를 session담는다
 			User user = loginService.login(emp_id, emp_pw);

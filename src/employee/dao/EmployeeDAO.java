@@ -4,10 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import employee.model.Employee;
 import jdbc.JdbcUtil;
+import jdbc.conn.ConnectionProvider;
 
 
 //p592
@@ -139,10 +142,72 @@ public class EmployeeDAO {
 		}
 	}
 	
+	
+	//회원조회 쿼리 실행
+	public List<Employee> getMember(Connection conn) {
+		//리스트를 리턴, 서비스에서 db연결을 위한 커넥션 프로바이더를 받아서 연결
+		
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		String sql = "select emp_no, emp_id, emp_kname, emp_phonenumber," + 
+						"emp_email, dept_name, emp_position, emp_grade " + 
+						"from employee";
+		List<Employee> list = new ArrayList<Employee>();
+		//리스트 
+			
+			try {
+				stmt = conn.prepareStatement(sql); //커넥션.프리페어스테이트먼트sql에 쿼리문 실행 
+				rs = stmt.executeQuery(sql); //쿼리문의 결과를 rs에 저장
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			try {
+				while(rs.next()) {
+					
+					int emp_no = rs.getInt("emp_no");
+					String emp_id = rs.getString("emp_id");
+					String emp_kname = rs.getString("emp_kname");
+					String emp_phonenumber = rs.getString("emp_phonenumber");
+					String emp_email = rs.getString("emp_email");
+					String dept_name = rs.getString("dept_name");
+					int emp_position = rs.getInt("emp_position");
+					int emp_grade = rs.getInt("emp_grade");
+					
+					Employee emp = new Employee(emp_no, emp_id, emp_kname,
+												emp_phonenumber, emp_email, dept_name, emp_position, emp_grade);
+					
+					/*
+					 * Employee emp = new Employee(rs.getInt("emp_no")... 이랑 똑같음);
+					 * 
+					 */
+					
+					
+					list.add(emp); //emp = Employee클래스 List<>로 지정했으니까 emp에 리스트로 저장해서 리턴
+				}
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {//5.자원해제
+				JdbcUtil.close(rs);
+				JdbcUtil.close(stmt);
+			} return list;
+						
+				
+				
+				
+				
+				
+			
+
+	}
+	
+
+	
 }//class끝
-
-
-
 
 
 

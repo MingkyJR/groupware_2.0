@@ -14,7 +14,7 @@ $(document).ready(function(){
 	$("#email_dd").change(function(){
 		let val = $("select#email_dd option:selected").val();
 		$("#emp_email_d").val(val);
-		alert('hi');
+		
 	});
 
 	let address = '${AUTHUSER.emp_address}';
@@ -36,11 +36,7 @@ $(document).ready(function(){
 </script>
 <title>회원정보 수정</title>
 </head>
-<body>
- <% System.out.println("수정페이지");  %>	
-		<c:if test="${! empty AUTHUSER}">
-		${AUTHUSER}님, 안녕하세요 <br/>
-		</c:if>
+<body>	
 		
 	<div class="header">
 		<span> 회원정보수정 </span> <br/>
@@ -84,11 +80,11 @@ $(document).ready(function(){
 				
 				<div class="field">
 					<h3>주소*</h3>
-					<input type="text" id="sample6_address" name="sample6_address"> <br/>
+					<input type="text" id="new_sample6_address" name="new_sample6_address" required="required"> <br/>
 					<h3>상세주소*</h3> 
-					<input type="text" id="sample6_detailAddress" name="sample6_detailAddress" > <br/>
+					<input type="text" id="new_sample6_detailAddress" name="new_sample6_detailAddress" required="required" > <br/>
 					<h3>참고항목*</h3> 
-					<input type="text" id="sample6_extraAddress" name="sample6_extraAddress">
+					<input type="text" id="new_sample6_extraAddress" name="new_sample6_extraAddress" required="required" >
 				</div>
 				
 				<div class="field">
@@ -117,14 +113,14 @@ $(document).ready(function(){
 			 
 			 <div class="field">
 				<h3>부서선택*</h3>  
-				<select size="1" name ="dept_name" id="dept_name">
+				<select size="1" name ="new_dept_name" id="new_dept_name">
 					<option value="management">경영지원실</option>
 					<option value="development">기술개발부</option>
 					<option value="qa">QA팀</option>
 					<option value="business">사업부</option>
 				</select>
 				<h3>직급선택*</h3>  
-				<select size="1" name="emp_position" id="emp_position">
+				<select size="1" name="new_position" id="new_position">
 					<option value="1">사원</option>
 					<option value="2">선임</option>
 					<option value="3">책임</option>

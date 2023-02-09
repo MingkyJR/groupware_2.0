@@ -1,4 +1,4 @@
-﻿package employee.service;
+﻿ package employee.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -31,7 +31,6 @@ public class ChangeMyInfoService {
 		Employee employee = null;
 		try {
 			conn = ConnectionProvider.getConnection();
-		
 			conn.setAutoCommit(false);//autoCommit 설정x
 			
 			//로그인한 회원임을 확인
