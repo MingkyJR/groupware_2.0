@@ -400,8 +400,8 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 	
 
 	var textarea = document.getElementById("messageWindow");
-	var webSocket = new WebSocket('ws://localhost/webChatServer');
-	//var webSocket = new WebSocket('ws://172.30.1.84/webChatServer');
+	//var webSocket = new WebSocket('ws://localhost/webChatServer');
+  var webSocket = new WebSocket('ws://172.30.1.57/webChatServer');
 	var inputMessage = document.getElementById('inputMessage');
 	
 	webSocket.onerror = function(e){

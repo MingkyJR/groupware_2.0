@@ -36,6 +36,12 @@ public class ChatHandler implements CommandHandler {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
 	//로그인한 유저정보는 세션에서 받자
 	public User loginedUser(HttpServletRequest request) {
 		User authUser = (User)request.getSession().getAttribute("AUTHUSER");

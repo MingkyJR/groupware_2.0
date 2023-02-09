@@ -38,8 +38,7 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/main.jsp">메인페이지</a></li>
-                            <li class="scroll-to-section"><a href="#">공지사항</a></li>
+                            <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/notice/list.do">공지사항</a></li>
                             <li class="submenu">
                                 <a href="<%=request.getContextPath()%>/work.do">근태관리</a>
                                 <ul>
@@ -52,7 +51,6 @@
                                 </ul>
                             </li>
                             <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/secondHand/list.do">중고장터</a></li>
-                            <li class="scroll-to-section"><a href="#">메세지</a></li>
                              <li class="submenu">
                                 <a href="javascript:;">전자결재</a>
                   <c:if test="${!empty AUTHUSER && (AUTHUSER.emp_grade ne 5)}">
@@ -69,6 +67,7 @@
                                 </ul>
                   </c:if>
                             </li>
+                                  <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/report/page1.jsp">마음의소리</a></li>
                             <li class="submenu">
                                 <a href="javascript:;">마이페이지</a>
                                 <ul>
@@ -80,7 +79,7 @@
                                     </c:if>
                                 </ul>
                             </li>
-                               <li class="scroll-to-section"><a href="<%=request.getContextPath()%>/view/report/page1.jsp">마음의소리</a></li>
+                         
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
