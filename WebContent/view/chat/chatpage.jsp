@@ -37,13 +37,12 @@
 }
 
 .app1 {
-	margin-top:45px;
+	margin-top: 45px;
 	position: relative;
 	width: 260px;
 	height: 450px;
-	border:gray 0.5px;
+	border: gray 0.5px;
 	border-color: solid;
-	border-radius: 10px;
 	background-color: rgb(171, 193, 209);
 }
 
@@ -69,7 +68,6 @@ ul1>li {
 	margin-bottom: 10px;
 	padding: 6px;
 	background-color: rgb(254, 229, 77);
-	border-radius: 8px;
 }
 
 ul1>li::after {
@@ -139,31 +137,34 @@ input1[type="submit"] {
 }
 
 table {
+	color:white;
+	text-align: center;
 	border-collapse: collapse;
-	border-radius: 10px;
 	border-style: hidden;
-
-	box-shadow: 0 0 0 1px #D5D5D5;
+	border: solid gray 1px;
 }
 
 .tg {
-	border-color:gray;
+	text-align: center;
+	border-color: gray;
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
 .tg td {
-	border-color:gray;
+	text-align: center;
+	border-color: gray;
 	border-style: solid;
 	border-width: 1px;
 	font-size: 14px;
 	overflow: hidden;
-	padding: 10px 5px;
+	padding: 3px;
 	word-break: normal;
 }
 
 .tg th {
-		border-color:gray;
+	text-align: center;
+	border-color: gray;
 	border-style: solid;
 	border-width: 1px;
 	font-size: 14px;
@@ -174,13 +175,14 @@ table {
 }
 
 .tg .tg-c3ow {
+	text-align: center;
 	border-color: inherit;
 	text-align: center;
 	vertical-align: top
 }
 
 .tg .tg-qla2 {
-	background-color: #D9D6FF;
+	background-color: #939397;
 	border-color: inherit;
 	text-align: center;
 	vertical-align: top
@@ -191,14 +193,22 @@ table {
 	text-align: left;
 	vertical-align: top
 }
-.main11{
-		margin-top:200px;
-    height: 600px;
-    border: 0.5px solid gray;
-    border-radius:10px;
-    margin: 0px;
-    display: inline-block;
-    background: #9bbbd4;
+
+.main11 {
+	margin-top: 200px;
+	height: 600px;
+	border: 0.5px solid gray;
+	margin: 0px;
+	display: inline-block;
+	background: #9bbbd4;
+}
+    
+aside {
+	margin-top: -20px;
+	float: left;
+	width: 240px;
+	height: 950px;
+}
 }
 </style>
 <body>
@@ -208,8 +218,86 @@ request.setAttribute("AUTHUSER", AUTHUSER);
  --%>
 	<!-- ***** Main Banner Area Start ***** -->
 	<%@ include file="../module/top00.jsp"%>
+	<aside>
+		<table class="tg"
+			style="table-layout: fixed; text-align: center;margin-top: 4px; width: 100px; background: #9bbbd4;" >
+			<colgroup>
+				<col style="width: 70px">
+				<col style="width: 170px">
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="tg-c3ow" colspan="2" rowspan="2"><img
+						style="border-radius: 80px; height: 107px; width: 180px;"
+						src="./../assets/images/프로필.PNG" alt=""></th>
+				</tr>
+				<tr>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tg-qla2" >사원이름</td>
+					<td class="tg-0pky">${AUTHUSER.emp_kname}</td>
+				</tr>
+				<tr>
+					<td class="tg-qla2">직급</td>
+					<td class="tg-0pky">${AUTHUSER.emp_position}</td>
+				</tr>
+				<tr>
+					<td class="tg-qla2" >부서</td>
+					<td class="tg-0pky">${AUTHUSER.dept_name}</td>
+				</tr>
+			</tbody>
+		</table>
 
-	<section id="men" style="margin-top: -100px;">
+		<div id="main11">
+			<div id="chat-container" >
+				<c:forEach var="item" items="${mVOList}">
+					<div class="my-chat-box">
+						<c:if test="${name==item.name}">
+							<div class="chat my-chat">
+								<c:out value="${item.content}" />
+							</div>
+							<div class="chat-info">
+								<fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss"
+									value="${item.sendTime}" />
+								<br />
+							</div>
+						</c:if>
+					</div>
+					<div class="chat-box">
+						<c:if test="${name!=item.name}">
+							<div class="chat">
+								<c:out value="${item.name}:${item.content}" />
+							</div>
+							<div class="chat-info chat-box">
+								<fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss"
+									value="${item.sendTime}" />
+								<br />
+							</div>
+						</c:if>
+					</div>
+				</c:forEach>
+			</div>
+			<div id="bottom-container">
+				<input name="inputMessage" id="inputMessage" type="text"
+					class="inputMessage"> <input id="btn-submit" type="submit"
+					value="전송">
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+	</aside>
+	<section id="men" style="margin-top: -100px; margin-left: 239px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5">
@@ -227,12 +315,6 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 				<div class="col-lg-12">
 					<div class="men-item-carousel">
 						<div class="owl-men-item owl-carousel">
-							<div class="item">
-								<div class="thumb">
-									<img src="./../assets/images/sell1.png" alt="">
-								</div>
-								<div class="down-content"></div>
-							</div>
 							<div class="item">
 								<div class="thumb">
 									<img src="./../assets/images/sell2.png" alt="">
@@ -257,117 +339,19 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 								</div>
 								<div class="down-content"></div>
 							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ***** Main Banner Area Start ***** -->
-	<section class="our-services">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-10">
-					<div class="section-heading"></div>
-				</div>
-				<div class="col-lg-4">
-					<div class="service-item">
-						<h4></h4>
-
-						<table class="tg"
-							style="table-layout: fixed; margin-top:47px; width: 260px border-radius: 10px;">
-							<colgroup>
-								<col style="width: 100px">
-								<col style="width: 200px">
-							</colgroup>
-							<thead>
-								<tr>
-									<th class="tg-c3ow" colspan="2" rowspan="2"><img
-										style="border-radius: 200px;" src="./../assets/images/프로필.PNG"
-										alt=""></th>
-								</tr>
-								<tr>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="tg-qla2">사원이름</td>
-									<td class="tg-0pky">${AUTHUSER.emp_kname}</td>
-								</tr>
-								<tr>
-									<td class="tg-qla2">사원번호</td>
-									<td class="tg-0pky">${AUTHUSER.emp_no}</td>
-								</tr>
-								<tr>
-									<td class="tg-qla2">직급</td>
-									<td class="tg-0pky">${AUTHUSER.emp_position}</td>
-								</tr>
-								<tr>
-									<td class="tg-qla2" style="border-bottom-left-radius: 10px">부서</td>
-									<td class="tg-0pky">${AUTHUSER.dept_name}</td>
-								</tr>
-							</tbody>
-						</table>
-
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="service-item">
-						<div class="container1">
-							<div class="app1">
-								<h1 style="color:gray;">Note</h1>
-								<ul id="todo-list" class="ul1">
-								</ul>
-								<form id="todo-form">
-									<input class="input1" name="todo" type="text" placeholder="작성란" maxlength="25"
-										autocomplete="off"><input type="submit" value="추가">
-								</form>
+							<div class="item">
+								<div class="thumb">
+									<img src="./../assets/images/sell1.png" alt="">
+								</div>
+								<div class="down-content"></div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4">
-					<div id="main11" style="margin-top:74px;">
-						<div id="chat-container">
-							<c:forEach var="item" items="${mVOList}">
-								<div class="my-chat-box">
-									<c:if test="${name==item.name}">
-										<div class="chat my-chat">
-											<c:out value="${item.content}" />
-										</div>
-										<div class="chat-info">
-											<fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss"
-												value="${item.sendTime}" />
-											<br />
-										</div>
-									</c:if>
-								</div>
-								<div class="chat-box">
-									<c:if test="${name!=item.name}">
-										<div class="chat">
-											<c:out value="${item.name}:${item.content}" />
-										</div>
-										<div class="chat-info chat-box">
-											<fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss"
-												value="${item.sendTime}" />
-											<br />
-										</div>
-									</c:if>
-								</div>
-							</c:forEach>
-						</div>
-						<div id="bottom-container">
-							<input name="inputMessage" id="inputMessage" type="text"
-								class="inputMessage"> <input id="btn-submit"
-								type="submit" value="전송">
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
-
 	</section>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<!-- jQuery -->
 	<script
 		src="<%=request.getContextPath()%>/assets/js/jquery-2.1.0.min.js"></script>

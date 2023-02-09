@@ -10,42 +10,44 @@
 }
 
 .inputMessage {
-	margin-left:20px;
-	width: 259px;
-	height: 40px;
+	width: 180px;
+	height: 31px;
 }
 
 #btn-submit {
 	background: white;
 	background: #F7E600;
-	width: 65px;
-	height: 50px;
+	width: 60px;
+	height: 31.5px;
 	color: #607080;
 	border: none;
+	margin-left:-6px;
 }
 
 #main-container {
-	margin-top: 200px; 
+	margin-top: 200px;
 	width: 350px;
 	/* height:600px; */
 	border: 1px solid black;
 	margin: 0px;
 	display: inline-block;
 	background: #9bbbd4;
+	scrollbar-color: #d4aa70 #e4e4e4;
+	scrollbar-width: thin;
 }
 
 #chat-container {
-	border-radius : 10px;
-	border:hidden;
+	padding:5px;
+	border: hidden;
 	vertical-align: bottom;
-	margin: 10px;
-	min-height: 400px;
-	max-height: 400px;
+	min-height: 397px;
+	max-height: 397px;
 	overflow: scroll;
 	overflow-x: hidden;
 	background: #9bbbd4;
-	border-radius: 10px;
+	overflow-y: scroll;
 }
+
 
 .chat {
 	font-size: 10px;
@@ -79,10 +81,7 @@
 	border-radius: 10px 10px 10px 10px;
 }
 
-
-
 #bottom-container {
-	margin: -10px;
 }
 
 .chat-info {
