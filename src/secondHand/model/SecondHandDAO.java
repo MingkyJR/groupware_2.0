@@ -306,13 +306,13 @@ public class SecondHandDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String query = 	"SELECT count(no)" + 
-						"FROM secondhand" + 
-						"WHERE title LIKE '%'||'?'||'%'";
+						" FROM secondhand" + 
+						" WHERE title LIKE '%"+keyword+"%'";
 		try {
 			conn = ConnectionProvider.getConnection();
 			pstmt = conn.prepareStatement(query);
-			pstmt.setString(1, keyword);
-			rs = pstmt.executeQuery(query);
+			/* pstmt.setString(1, keyword); */
+			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				result = rs.getInt(1);
 			}
