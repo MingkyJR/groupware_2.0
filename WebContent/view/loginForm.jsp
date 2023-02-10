@@ -63,16 +63,7 @@ style type ="text/css">.tg {
 		<form action="/login.do" method="post">
 			<div class="contents">
 				<h2>Greeting</h2>
-<<<<<<< HEAD
-				<label> <span>ID</span><br /> <input type="text"
-					name="emp_id" id="emp_id" value="${param.emp_id}" /> <c:if
-						test="${errors.emp_id}">ID를 입력하세요</c:if>
-				</label> <br /> <label> <span>PASSWORD</span><br /> <input
-					type="password" name="emp_pw" id="emp_pw" /> <c:if
-						test="${errors.emp_pw}">암호를 입력하세요</c:if> <br />
-				<c:if test="${errors.idOrPwNotMatch}">아이디와 패스워드가 일치하지 않습니다</c:if>
-				</label> <br />
-=======
+			
 				<label>
 				<span>ID</span><br/>
 				<input type="text" name="emp_id" id="emp_id" value="${param.emp_id}"/>
@@ -86,7 +77,6 @@ style type ="text/css">.tg {
 				<br/><c:if test="${errors.idOrPwNotMatch}">아이디와 패스워드가 일치하지 않습니다</c:if>
 				</label>
 				<br/>
->>>>>>> refs/remotes/origin/recss
 				<button type="submit" class="login">Log In</button>
 				<button type="button" class="signup"
 					onclick="location.href='/join.do';">Sign Up</button>
