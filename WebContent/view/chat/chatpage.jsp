@@ -634,8 +634,6 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 		});
 	</script>
 
-	<%@ include file="../module/bottom00.jsp"%>
-</body>
 
 <script>
        $(function() {

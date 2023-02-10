@@ -34,7 +34,7 @@ public class NaverSMTP {
 		auth = new Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("ehdgydi", "dhehddbs12");
+				return new PasswordAuthentication("네이버 아이디", "네이버 비밀번호");
 			}
 		};
 	}

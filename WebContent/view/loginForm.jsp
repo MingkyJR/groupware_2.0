@@ -90,39 +90,7 @@ style type ="text/css">.tg {
 						visibility:hidden
 						로그인페이지 아이디목록 투명화
 	 -->
-	<div style="visibility:hiddend;">
-		<table class="tg" style="margin-left:75%; margin-top:-15%;">
-			<thead>
-				<tr>
-					<th class="tg-0pky"></th>
-					<th class="tg-y698">아이디</th>
-					<th class="tg-y698">비밀번호</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td class="tg-y698">일반사원1</td>
-					<td class="tg-0pky">Umbrella_Kim</td>
-					<td class="tg-0pky">test</td>
-				</tr>
-				<tr>
-					<td class="tg-y698">일반사원2</td>
-					<td class="tg-0pky">Wating Park</td>
-					<td class="tg-0pky">test2</td>
-				</tr>
-				<tr>
-					<td class="tg-y698">관리자1</td>
-					<td class="tg-0pky">CEO</td>
-					<td class="tg-0pky">test1</td>
-				</tr>
-				<tr>
-					<td class="tg-y698">관리자2</td>
-					<td class="tg-0pky">CEO2</td>
-					<td class="tg-0pky">test3</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+	
 
 </div>
 </body>
