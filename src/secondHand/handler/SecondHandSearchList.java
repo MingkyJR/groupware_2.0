@@ -26,6 +26,7 @@ public class SecondHandSearchList implements CommandHandler {
 		list = new SecondHandDAO().listSearch(pageDTO, keyword);
 		request.setAttribute("pageDTO", pageDTO);
 		request.setAttribute("list", list);
+		request.setAttribute("keyword", keyword);
 		return request.getContextPath()+"/view/secondHand/list.jsp";
 	}
 

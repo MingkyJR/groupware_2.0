@@ -120,6 +120,7 @@
 </head>
 <body>
 <%@ include file="../module/top00.jsp" %>
+${ keyword }
 	<button class="btnRegi"><a href="registe.do" style="text-decoration: none; color: white;">게시글 등록</a></button>
 	<div class="second_container">
 	<form class="example" action="<%=request.getContextPath()%>/secondHand/searchList.do" style="text-align: center; margin: 15px 0;">
@@ -128,7 +129,7 @@
 	</form>
 	<c:forEach var="dto" items="${list}">
 		<div class="gallery">
-	  		<a href="<%=request.getContextPath()%>/secondHand/content.do?no=${dto.no}&views=${dto.views}&currentPage=${pageDTO.currentPage}">
+	  		<a href="<%=request.getContextPath()%>/secondHand/content.do?no=${dto.no}&views=${dto.views}&currentPage=${pageDTO.currentPage}&price=${dto.price}">
 	  		<c:if test="${dto.refileName!=null}">
 	    		<img src="<%=request.getContextPath()%>/secondHand/imageOut.do?reFileName=${dto.refileName}" alt="Cinque Terre" width="600" height="400">
 	    	</c:if>
@@ -143,13 +144,13 @@
 	</c:forEach>
 	<div class="second_pagination">
 		<c:if test="${ pageDTO.startPage>1 }">
-			<a href="<%=request.getContextPath()%>/secondHand/list.do?pageNo=${ pageDTO.startPage - 1 }">&laquo;</a>
+			<a href="<%=request.getContextPath()%>/secondHand/list.do?pageNo=${ pageDTO.startPage - 1 }&keyword=${keyword}">&laquo;</a>
 		</c:if>
 		<c:forEach var="pageNum" begin="${ pageDTO.startPage }" end="${ pageDTO.endPage }">
-			<span><a href="<%=request.getContextPath()%>/secondHand/list.do?pageNo=${ pageNum }">${ pageNum }</a></span>
+			<span><a href="<%=request.getContextPath()%>/secondHand/list.do?pageNo=${ pageNum }&keyword=${keyword}">${ pageNum }</a></span>
 		</c:forEach>
 		<c:if test="${ pageDTO.endPage<pageDTO.realEndPage }">
-			<a href="<%=request.getContextPath()%>/secondHand/list.do?pageNo=${ pageDTO.endPage + 1 }">&raquo;</a>
+			<a href="<%=request.getContextPath()%>/secondHand/list.do?pageNo=${ pageDTO.endPage + 1 }&keyword=${keyword}">&raquo;</a>
 		</c:if>
 	</div>
 	</div>
