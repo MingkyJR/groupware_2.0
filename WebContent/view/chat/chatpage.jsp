@@ -144,15 +144,15 @@ table {
 }
 
 .tg {
-font-weight:bolder;
-	color:black;
+	font-weight: bolder;
+	color: black;
 	border-collapse: collapse;
 	border-style: hidden;
 	border: solid gray 1px;
 	text-align: center;
 	border-color: gray;
 	border-spacing: 0;
-	height:10px;
+	height: 10px;
 }
 
 .tg td {
@@ -186,7 +186,7 @@ font-weight:bolder;
 	background-color: #939397;
 	border-color: inherit;
 	vertical-align: top;
-	height:10px;
+	height: 10px;
 }
 
 .tg .tg-0pky {
@@ -195,7 +195,7 @@ font-weight:bolder;
 }
 
 .main11 {
-width:300px;
+	width: 300px;
 	margin-top: 300px;
 	height: 600px;
 	border: 0.5px solid gray;
@@ -203,106 +203,138 @@ width:300px;
 	display: inline-block;
 	background: #9bbbd4;
 }
-    
+
 aside {
 	margin-top: -20px;
 	float: left;
 	width: 350px;
 	height: 950px;
 }
-.t1{
-width:1250px;
-}
- 	 	
- 	 	.hang{ 
-		height:50px;
- 	 	} 
- 	 	
- 	 	tr:hover {background-color: #dcdcdc;}
-	 	
-	 	th {
-/*  	border: 1px solid #bcbcbc; */
-/* 		border: 1px solid #EFEFEF; */
-	 	}
-	 	
-	 	#nu{ width:50px; background: #C5CAD7;
-	 	}
-	 	#ti{ width:230px; background: #C5CAD7;
-	 	}
-	 	#wr{ width:90px; background: #C5CAD7;
-	 	}
-	 	#rd{ width:150px; background: #C5CAD7;
-	 	}
-	 	#md{ width:230px; background: #C5CAD7;
-	 	}
-	 	#ct{ width:60px; background: #C5CAD7;
-	 	}
-	 	
-	 	td {
-	    width: 120px;
-/*   	    border: 1px solid #bcbcbc; */
-		
-	 	}
-	 	
- 	 	tr { 
- 	    height: 60px; 
-/*  	    border: 1px solid #bcbcbc; */
-		
- 	 	} 
-	 	
-	 	h1 { text-align: center; }
 
-		#bwr {margin:0 auto; max-width:950px; inline-block;}
-		#sch {margin:0 auto; max-width:950px; inline-block;} 
-	 	#sub{
-	 	  color: white;
-		  text-align: center;
-		  background: #7C8EBF;
-		  border: solid 1px #191970;
-		  border-radius: 3px;
-	 	}
-	 	
-	 	#wri{
-	 	  color: white;
-		  text-align: center;
-		  background: #7C8EBF;
-		  border: solid 1px #191970;
-		  border-radius: 3px;
-	 	}
-		
-		#list{
-	 	  color: white;
-		  text-align: center;
-		  background: #7C8EBF;
-		  border: solid 1px #191970;
-		  border-radius: 3px;
-	 	}
-	 	
+.t1 {
+	width: 1250px;
+}
+
+.hang {
+	height: 50px;
+}
+
+tr:hover {
+	background-color: #dcdcdc;
+}
+
+th {
+	/*  	border: 1px solid #bcbcbc; */
+	/* 		border: 1px solid #EFEFEF; */
+	
+}
+
+#nu {
+	width: 50px;
+	background: #C5CAD7;
+}
+
+#ti {
+	width: 230px;
+	background: #C5CAD7;
+}
+
+#wr {
+	width: 90px;
+	background: #C5CAD7;
+}
+
+#rd {
+	width: 150px;
+	background: #C5CAD7;
+}
+
+#md {
+	width: 230px;
+	background: #C5CAD7;
+}
+
+#ct {
+	width: 60px;
+	background: #C5CAD7;
+}
+
+td {
+	width: 120px;
+	/*   	    border: 1px solid #bcbcbc; */
+}
+
+tr {
+	height: 60px;
+	/*  	    border: 1px solid #bcbcbc; */
+}
+
+h1 {
+	text-align: center;
+}
+
+#bwr {
+	margin: 0 auto;
+	max-width: 950px;
+	inline-block;
+}
+
+#sch {
+	margin: 0 auto;
+	max-width: 950px;
+	inline-block;
+}
+
+#sub {
+	color: white;
+	text-align: center;
+	background: #7C8EBF;
+	border: solid 1px #191970;
+	border-radius: 3px;
+}
+
+#wri {
+	color: white;
+	text-align: center;
+	background: #7C8EBF;
+	border: solid 1px #191970;
+	border-radius: 3px;
+}
+
+#list {
+	color: white;
+	text-align: center;
+	background: #7C8EBF;
+	border: solid 1px #191970;
+	border-radius: 3px;
+}
+
 /* 	 	------------------------------------------------------------------ */
-	 	.paging {
-		  display: inline-block;
-		}
-		
-		.paging a {
-		  color: black;
-		  float: left;
-		  padding: 8px 16px;
-		  text-decoration: none;
-		}
-		
-		.paging a.active {
-		  background-color: #4CAF50;
-		  color: white;
-		  border-radius: 5px;
-		}
-		
-		.paging a:hover:not(.active) {
-		  background-color: #ddd;
-		  border-radius: 5px;
-		}
-	 	tr{
-	 	height:10px;
-	 	}
+.paging {
+	display: inline-block;
+}
+
+.paging a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+.paging a.active {
+	background-color: #4CAF50;
+	color: white;
+	border-radius: 5px;
+}
+
+.paging a:hover:not (.active ) {
+	background-color: #ddd;
+	border-radius: 5px;
+}
+
+tr {
+	height: 10px;
+}
 </style>
 <body>
 	<%--
@@ -313,7 +345,7 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 	<%@ include file="../module/top00.jsp"%>
 	<aside>
 		<table class="tg"
-			style="table-layout: fixed; text-align: center;margin-top: 4px; width: 30px; " >
+			style="table-layout: fixed; text-align: center; margin-top: 4px; width: 30px;">
 			<colgroup>
 				<col style="width: 150px">
 				<col style="width: 200px">
@@ -329,18 +361,18 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 			</thead>
 			<tbody>
 				<tr>
-					<td class="tg-qla2" >사원이름</td>
+					<td class="tg-qla2">사원이름</td>
 					<td class="tg-0pky">${AUTHUSER.emp_kname}</td>
 				</tr>
 				<tr>
-					<td class="tg-qla2" >부서</td>
+					<td class="tg-qla2">부서</td>
 					<td class="tg-0pky">${AUTHUSER.dept_name}</td>
 				</tr>
 			</tbody>
 		</table>
 
-		<div id="main11" >
-			<div id="chat-container" >
+		<div id="main11">
+			<div id="chat-container">
 				<c:forEach var="item" items="${mVOList}">
 					<div class="my-chat-box">
 						<c:if test="${name==item.name}">
@@ -391,135 +423,159 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 			<div class="row">
 				<div class="col-lg-5">
 					<div class="section-heading">
-						<h2
+						<br>
+						<h1
 							style="background: #505D93; background: linear-gradient(to right, #505D93 0%, #ABABAB 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
 							<strong>Astro Company</strong>
-						</h2>
+						</h1>
+						<br>
 					</div>
+				</div>
+				<div style="margin-left: 89%; margin-top:-15%">
+					<p><strong>
+						위치</strong>:<span id="city"></span><img id="weather" width="50" src="http://openweathermap.org/img/w/04d.png"/>
+					</p>
+					<p><strong>
+						현재기온</strong>:<span id="temp"></span>도
+					</p>
+					<p><strong>
+						현재습도</strong>: <span id="clouds"></span>
+					</p>
+					
+					
 				</div>
 			</div>
 		</div>
-		<div class="container" style="margin-top: -50px; float: inherit;">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="men-item-carousel">
-						<div class="owl-men-item owl-carousel">
-							<div class="item">
-								<div class="thumb">
-									<img src="./../assets/images/sell2.png" alt="">
+			<br> <br>
+			<div class="container" style="margin-top: -50px; float: inherit;">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="men-item-carousel">
+							<div class="owl-men-item owl-carousel">
+								<div class="item">
+									<div class="thumb">
+										<img src="./../assets/images/sell2.png" alt="">
+									</div>
+									<div class="down-content"></div>
 								</div>
-								<div class="down-content"></div>
-							</div>
-							<div class="item">
-								<div class="thumb">
-									<img src="./../assets/images/sell3.png" alt="">
+								<div class="item">
+									<div class="thumb">
+										<img src="./../assets/images/sell3.png" alt="">
+									</div>
+									<div class="down-content"></div>
 								</div>
-								<div class="down-content"></div>
-							</div>
-							<div class="item">
-								<div class="thumb">
-									<img src="./../assets/images/sell4.png" alt="">
+								<div class="item">
+									<div class="thumb">
+										<img src="./../assets/images/sell4.png" alt="">
+									</div>
+									<div class="down-content"></div>
 								</div>
-								<div class="down-content"></div>
-							</div>
-							<div class="item">
-								<div class="thumb">
-									<img src="./../assets/images/sell5.png" alt="">
+								<div class="item">
+									<div class="thumb">
+										<img src="./../assets/images/sell5.png" alt="">
+									</div>
+									<div class="down-content"></div>
 								</div>
-								<div class="down-content"></div>
-							</div>
-							<div class="item">
-								<div class="thumb">
-									<img src="./../assets/images/sell1.png" alt="">
+								<div class="item">
+									<div class="thumb">
+										<img src="./../assets/images/sell1.png" alt="">
+									</div>
+									<div class="down-content"></div>
 								</div>
-								<div class="down-content"></div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 	</section>
-	
-	
-	
-	
-	<div style="height:500px; width:1300px; margin-left:450px;">	
 
 
-<br/>
-	
-	<h2><strong>공지사항</strong></h2>
-<br/><br/>
-	
- <table class="t1" border="1" style="table-layout: fixed;">		
- 	<thead>
- 		<tr class="hang">
- 			<th id="nu">번호</th>
- 			<th id="ti">제목</th>
- 			<th id="wr">작성자</th>
- 			<th id="rd">작성일</th>
- 			<th id="md">최종수정일</th>
- 			<th id="ct">조회수</th>
- 		</tr>
- 	</thead>
- 
 
- 	<tbody>
- 	<%--  keyword가 없으면서 게시글이 없는 경우 --%>
- 	<%-- JSTL if조건문 이용하여 출력 --%>
- 	<c:if test="${empty keyword or (keyword eq '')}">
-	 	<c:if test="${noticePage.hasNoNotices()}"> 
-	 	 <tr>
-	 		<td colspan="6" style="text-align:center;">게시글이 없습니다.</td>
-	 	</tr>
-	 	</c:if>
- 	</c:if>
- 	<%--  keyword가 있으면서 결과가 없는 경우 --%>
- 	<%-- JSTL if조건문 이용하여 출력 --%>
- 	 <c:if test="${not empty keyword or (keyword ne '')}">
-	 	<c:if test="${noticePage.hasNoNotices()}"> 
-	 	 <tr>
-	 		<td colspan="6" style="text-align:center;">결과가 없습니다.</td>
-	 	</tr>
-	 	</c:if>
- 	</c:if>
 
- 	<%-- JSTL forEach 반복문 이용하여 출력시작 
+	<div style="height: 493px; width: 1300px; margin-left: 450px;">
+
+
+		<br />
+
+		<h2>
+			<strong>공지사항</strong>
+		</h2>
+		<br />
+		<br />
+
+		<table class="t1" border="1"
+			style="table-layout: fixed; height: 200px;">
+			<thead>
+				<tr class="hang">
+					<th id="nu">번호</th>
+					<th id="ti">제목</th>
+					<th id="wr">작성자</th>
+					<th id="rd">작성일</th>
+					<th id="md">최종수정일</th>
+					<th id="ct">조회수</th>
+				</tr>
+			</thead>
+
+
+			<tbody>
+				<%--  keyword가 없으면서 게시글이 없는 경우 --%>
+				<%-- JSTL if조건문 이용하여 출력 --%>
+				<c:if test="${empty keyword or (keyword eq '')}">
+					<c:if test="${noticePage.hasNoNotices()}">
+						<tr>
+							<td colspan="6" style="text-align: center;">게시글이 없습니다.</td>
+						</tr>
+					</c:if>
+				</c:if>
+				<%--  keyword가 있으면서 결과가 없는 경우 --%>
+				<%-- JSTL if조건문 이용하여 출력 --%>
+				<c:if test="${not empty keyword or (keyword ne '')}">
+					<c:if test="${noticePage.hasNoNotices()}">
+						<tr>
+							<td colspan="6" style="text-align: center;">결과가 없습니다.</td>
+						</tr>
+					</c:if>
+				</c:if>
+
+				<%-- JSTL forEach 반복문 이용하여 출력시작 
  		for(int i=1; i<=10; i++){syso (i)} 1 2 3 ....9 10  
  		for(타입 변수명 : 컬렉션명){ syso(변수명) }
  		--%>
-<%--  	<c:forEach var="i" begin="1" end="10" step="1"> 
+				<%--  	<c:forEach var="i" begin="1" end="10" step="1"> 
   	<c:forEach var="item" items="${listNotice}">
  		<c:out value="${item}" /><br/><br/>
  	</c:forEach>
  	<br/><br/><br/><br/><br/><br/> --%>
- 	
-<%--  	<c:forEach var="item" items="${listNotice}"> --%>
-	<c:if test="${noticePage.hasNotices()}"> 
- 	<c:forEach var="item" items="${noticePage.content}">
- 	<tr>
- 		<td>${item.number}</td>
- 		<td><a href="<%=request.getContextPath()%>/notice/read.do?no=${item.number}&pageNo=${noticePage.currentPage}&rowSize=${rowSize}">${item.title}</a></td>
- 		<td>${item.writer.writer_name}</td>
-<%--  		<td>${item.regdate}(YYYY-MM-DD)</td> --%>
-<%--  		<td><fmt:formatDate type="date" value="${item.regdate}" /></td> --%>
- 		<td>
-<%--  			<fmt:formatDate type="date" value="${item.regdate}" /><br/> --%>
-<%--  			<fmt:formatDate pattern="yyyy-MM-dd" type="date" value="${item.regdate}" /><br/> --%>
-<%--  			<fmt:formatDate pattern="yyyy년 MM월 dd일" type="date" value="${item.regdate}" /><br/> --%>
- 			<fmt:formatDate pattern="yyyy.MM.dd. HH:mm:ss" type="date" value="${item.regdate}" /></td>
- 		<td><fmt:formatDate pattern="yyyy.MM.dd. HH:mm:ss" type="date" value="${item.moddate}" /></td>
- 		<td>${item.read_cnt}</td>
- 	</tr>
- 	</c:forEach>
- 	</c:if>
- 	</tbody>
-  </table>	
-		
- 	
-</div>
-<br><br><br><br>
+
+				<%--  	<c:forEach var="item" items="${listNotice}"> --%>
+				<c:if test="${noticePage.hasNotices()}">
+					<c:forEach var="item" items="${noticePage.content}">
+						<tr>
+							<td>${item.number}</td>
+							<td><a
+								href="<%=request.getContextPath()%>/notice/read.do?no=${item.number}&pageNo=${noticePage.currentPage}&rowSize=${rowSize}">${item.title}</a></td>
+							<td>${item.writer.writer_name}</td>
+							<%--  		<td>${item.regdate}(YYYY-MM-DD)</td> --%>
+							<%--  		<td><fmt:formatDate type="date" value="${item.regdate}" /></td> --%>
+							<td>
+								<%--  			<fmt:formatDate type="date" value="${item.regdate}" /><br/> --%>
+								<%--  			<fmt:formatDate pattern="yyyy-MM-dd" type="date" value="${item.regdate}" /><br/> --%>
+								<%--  			<fmt:formatDate pattern="yyyy년 MM월 dd일" type="date" value="${item.regdate}" /><br/> --%>
+								<fmt:formatDate pattern="yyyy.MM.dd. HH:mm:ss" type="date"
+									value="${item.regdate}" />
+							</td>
+							<td><fmt:formatDate pattern="yyyy.MM.dd. HH:mm:ss"
+									type="date" value="${item.moddate}" /></td>
+							<td>${item.read_cnt}</td>
+						</tr>
+					</c:forEach>
+				</c:if>
+			</tbody>
+		</table>
+
+
+	</div>
+	
 
 
 
@@ -550,86 +606,104 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 	<!-- Global Init -->
 	<script src="<%=request.getContextPath()%>/assets/js/custom.js"></script>
 	<script>
+		$(function() {
+			var selectedClass = "";
+			$("p").click(function() {
+				selectedClass = $(this).attr("data-rel");
+				$("#portfolio").fadeTo(50, 0.1);
+				$("#portfolio div").not("." + selectedClass).fadeOut();
+				setTimeout(function() {
+					$("." + selectedClass).fadeIn();
+					$("#portfolio").fadeTo(50, 1);
+				}, 500);
+			});
+		});
 
-       $(function() {
-           var selectedClass = "";
-            $("p").click(function(){
-            selectedClass = $(this).attr("data-rel");
-           $("#portfolio").fadeTo(50, 0.1);
-               $("#portfolio div").not("."+selectedClass).fadeOut();
-            setTimeout(function() {
-              $("."+selectedClass).fadeIn();
-              $("#portfolio").fadeTo(50, 1);
-            }, 500);
-           });
-       });
-    </script>
+		$(document).ready(function() {
+			$.ajax({
+				type : "GET",
+				url : "http://spartacodingclub.shop/sparta_api/weather/seoul",
+				data : {},
+				success : function(response) {
+			        let img = response['url'];
+					$('#temp').text(response['temp'])
+					$('#city').text(response['city'])
+					$('#clouds').text(response['clouds'])
+				     $("#weather").attr("src", img);
+				}
+			})
+		});
+	</script>
 
 	<%@ include file="../module/bottom00.jsp"%>
 </body>
 
 
 <script>
-	
-
 	var textarea = document.getElementById("messageWindow");
-	var webSocket = new WebSocket('ws://localhost/webChatServer');
-  //var webSocket = new WebSocket('ws://172.30.1.57/webChatServer');
+	//var webSocket = new WebSocket('ws://localhost/webChatServer');
+	var webSocket = new WebSocket('ws://172.30.1.57/webChatServer');
 	var inputMessage = document.getElementById('inputMessage');
-	
-	webSocket.onerror = function(e){
+
+	webSocket.onerror = function(e) {
 		onError(e);
 	};
-	webSocket.onopen = function(e){
+	webSocket.onopen = function(e) {
 		onOpen(e);
 	};
-	webSocket.onmessage = function(e){
+	webSocket.onmessage = function(e) {
 		onMessage(e);
 	};
-	
-	function onMessage(e){
+
+	function onMessage(e) {
 		var chatMsg = event.data;
-		var date = new Date();	//시간
-		var dateInfo = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-		if(chatMsg.substring(0,6) == 'Server'){
+		var date = new Date(); //시간
+		var dateInfo = date.getHours() + ":" + date.getMinutes() + ":"
+				+ date.getSeconds();
+		if (chatMsg.substring(0, 6) == 'Server') {
 			var $chat = $("<div class='chat notice'>" + chatMsg + "</div>");
 			$('#chat-container').append($chat);
-		}else{
-			var $chat = $("<div class='chat-box'><div class='chat'>" + chatMsg + "</div><div class='chat-info chat-box'>"+ dateInfo +"</div></div>");
+		} else {
+			var $chat = $("<div class='chat-box'><div class='chat'>" + chatMsg
+					+ "</div><div class='chat-info chat-box'>" + dateInfo
+					+ "</div></div>");
 			$('#chat-container').append($chat);
 		}
-		
-		
-		$('#chat-container').scrollTop($('#chat-container')[0].scrollHeight+20);
+
+		$('#chat-container').scrollTop(
+				$('#chat-container')[0].scrollHeight + 20);
 	}
-	
-	function onOpen(e){
-		
+
+	function onOpen(e) {
+
 	}
-	
-	function onError(e){
+
+	function onError(e) {
 		alert("서비스 장애! 재 접속하세요");
-		location.href="http://localhost/login.do";
+		location.href = "http://localhost/login.do";
 	}
-	
+
 	function onClose(e) {
 		alert("접속이 종료 되었습니다.")
 	}
-	
-	function send(){
+
+	function send() {
 		var chatMsg = inputMessage.value;
-		if(chatMsg == ''){
+		if (chatMsg == '') {
 			return;
 		}
 		var date = new Date();
-		var dateInfo = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-		var $chat = $("<div class='my-chat-box'><div class='chat my-chat'>" + chatMsg + "</div><div class='chat-info'>"+ dateInfo +"</div></div>");
+		var dateInfo = date.getHours() + ":" + date.getMinutes() + ":"
+				+ date.getSeconds();
+		var $chat = $("<div class='my-chat-box'><div class='chat my-chat'>"
+				+ chatMsg + "</div><div class='chat-info'>" + dateInfo
+				+ "</div></div>");
 		$('#chat-container').append($chat);
 		webSocket.send(chatMsg);
 		inputMessage.value = "";
-		$('#chat-container').scrollTop($('#chat-container')[0].scrollHeight+20);
+		$('#chat-container').scrollTop(
+				$('#chat-container')[0].scrollHeight + 20);
 	}
-	
 </script>
 </html>
 

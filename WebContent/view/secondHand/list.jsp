@@ -120,9 +120,9 @@
 </head>
 <body>
 <%@ include file="../module/top00.jsp" %>
-${ keyword }
-	<button class="btnRegi"><a href="registe.do" style="text-decoration: none; color: white;">게시글 등록</a></button>
-	<div class="second_container">
+
+	<div class="second_container">	<button class="btnRegi">
+	<a href="registe.do" style="text-decoration: none; color: white;">게시글 등록</a></button>
 	<form class="example" action="<%=request.getContextPath()%>/secondHand/searchList.do" style="text-align: center; margin: 15px 0;">
 		<input type="text" placeholder="Search.." name="keyword">
 		<button type="submit"><i class="fa fa-search"></i></button>

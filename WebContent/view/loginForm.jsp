@@ -78,7 +78,13 @@ style type ="text/css">.tg {
 		</form>
 	</div>
 
-	<div id="footer">
+	<div id="footer" >
+	
+<!-- 	
+						visibility:hidden
+						로그인페이지 아이디목록 투명화
+	 -->
+	<div style="visibility:hiddend;">
 		<table class="tg" style="margin-left:75%; margin-top:-15%;">
 			<thead>
 				<tr>
@@ -112,6 +118,6 @@ style type ="text/css">.tg {
 		</table>
 	</div>
 
-
+</div>
 </body>
 </html>

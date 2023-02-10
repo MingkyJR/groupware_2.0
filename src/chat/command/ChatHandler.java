@@ -57,7 +57,7 @@ public class ChatHandler implements CommandHandler {
 		
 		String strRowSize = request.getParameter("rowSize");//한페이지당 보여지는 게시물 수
 //		int size = Integer.parseInt(strRowSize);-->>원래 에러 나는 형태.... nullpoint exception 뜬다.
-		int rowSize = 3;
+		int rowSize = 5;
 //		if(strRowSize==null) {
 //			rowSize=3;
 //		}else {
