@@ -67,13 +67,13 @@ style type ="text/css">.tg {
 				<label>
 				<span>ID</span><br/>
 				<input type="text" name="emp_id" id="emp_id" value="${param.emp_id}"/>
-				<span class="error"><c:if test="${errors.emp_id}">ID를 입력하세요</c:if></span>
+				<c:if test="${errors.emp_id}">ID를 입력하세요</c:if>
 				</label>
 				<br/>
 				<label>
 				<span>PASSWORD</span><br/>
 				<input type="password" name="emp_pw" id="emp_pw"/>
-				<span class="error"><c:if test="${errors.emp_pw}">암호를 입력하세요</c:if> </span>
+				<c:if test="${errors.emp_pw}">암호를 입력하세요</c:if> 
 				<br/><c:if test="${errors.idOrPwNotMatch}">아이디와 패스워드가 일치하지 않습니다</c:if>
 				</label>
 				<br/>

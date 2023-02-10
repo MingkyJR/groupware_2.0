@@ -657,8 +657,8 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 <script>
 	
 	var textarea = document.getElementById("messageWindow");
-	//var webSocket = new WebSocket('ws://localhost/webChatServer');
-	var webSocket = new WebSocket('ws://172.30.1.96/webChatServer');
+	var webSocket = new WebSocket('ws://localhost/webChatServer');
+	//var webSocket = new WebSocket('ws://172.30.1.96/webChatServer');
 	var inputMessage = document.getElementById('inputMessage');
 	
 	webSocket.onerror = function(e){

@@ -36,7 +36,7 @@ $(document).ready(function(){
 <body>	
 		
 	<div class="header">
-		<h1> 회원정보수정 </h1> <br/>
+		<span> 회원정보수정 </span> <br/>
 		
 	</div>
 		<form action="/changeMyInfo.do" method="post">
@@ -44,14 +44,14 @@ $(document).ready(function(){
 			<div class="contant">
 				
 				<div class="field">
-					<h3>현재 아이디 (수정불가) </h3>
-					<input type="text"  value="${AUTHUSER.emp_id}" readonly="readonly"> <br/>
+					<h3>현재 아이디 </h3>
+					<h3><c:out value="${AUTHUSER.emp_id}"></c:out></h3>
 				</div> 
 				
 				<div class="field">
 					<h3>비밀번호* </h3> 
 					<input type="password" id="curPwd" name="curPwd" required="required"><br/>  
-					<span class="error"><c:if test="${errors.badCurPwd}">비밀번호가 일치하지 않습니다</c:if></span>
+					<c:if test="${errors.badCurPwd}">비밀번호가 일치하지 않습니다</c:if>
 				</div>
 				
 				<div class="field"> 
@@ -130,7 +130,7 @@ $(document).ready(function(){
 					<input type="submit" value="등록">
 					<input type="reset" value="취소"> <br/>
 				</div>
-				<h3  id="footertxt" >	<a href="<%=request.getContextPath()%>/chat.do">메인페이지</a> </h3>
+				<h3  id="footertxt" >	<a href="<%=request.getContextPath()%>/view/main.jsp">메인페이지</a> </h3>
 			</div>
 		</form>
 	
