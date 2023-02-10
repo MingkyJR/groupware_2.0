@@ -31,7 +31,7 @@
 				<div class="field">
 					<h3>아이디*</h3> 
 					<input type="text" id="emp_id" name="emp_id" required="required"> <br/> 
-					<span class="error"><c:if test="${errors.duplicateId}">이미 사용중인 아이디입니다</c:if></span>
+					<c:if test="${errors.duplicateId}">이미 사용중인 아이디입니다</c:if>
 				</div>
 				
 				<div class="field">
@@ -42,7 +42,7 @@
 				<div class="field">
 					<h3>비밀번호 확인* </h3>
 					<input type="password" id="re_emp_pw" name="re_emp_pw" required="required"> <br>
-					<span class="error"><c:if test="${errors.notMatch}">비밀번호가 일치하지 않습니다</c:if></span>
+					<c:if test="${errors.notMatch}">비밀번호가 일치하지 않습니다</c:if>
 				</div>
 				
 				<div class="field">
