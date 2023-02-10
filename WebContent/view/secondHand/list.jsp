@@ -120,22 +120,16 @@
 </head>
 <body>
 <%@ include file="../module/top00.jsp" %>
-<<<<<<< HEAD
 
-	<div class="second_container">	<button class="btnRegi">
-	<a href="registe.do" style="text-decoration: none; color: white;">게시글 등록</a></button>
-=======
-${ keyword }
 	
 	<div class="second_container">
->>>>>>> refs/remotes/origin/recss
 	<form class="example" action="<%=request.getContextPath()%>/secondHand/searchList.do" style="text-align: center; margin: 15px 0;">
 		<input type="text" placeholder="Search.." name="keyword">
 		<button type="submit"><i class="fa fa-search"></i></button>
 	</form>
 	<c:forEach var="dto" items="${list}">
 		<div class="gallery">
-	  		<a href="<%=request.getContextPath()%>/secondHand/content.do?no=${dto.no}&views=${dto.views}&currentPage=${pageDTO.currentPage}">
+	  		<a href="<%=request.getContextPath()%>/secondHand/content.do?no=${dto.no}&views=${dto.views}&currentPage=${pageDTO.currentPage}&price=${dto.price}">
 	  		<c:if test="${dto.refileName!=null}">
 	    		<img src="<%=request.getContextPath()%>/secondHand/imageOut.do?reFileName=${dto.refileName}" alt="Cinque Terre" width="600" height="400">
 	    	</c:if>

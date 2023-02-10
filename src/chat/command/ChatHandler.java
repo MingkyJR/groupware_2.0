@@ -25,7 +25,6 @@ public class ChatHandler implements CommandHandler {
 	
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("ChatHandler_process() 접속");
 		
 		//1.HttpSession 선언
 		HttpSession session = request.getSession();
@@ -81,8 +80,6 @@ public class ChatHandler implements CommandHandler {
 			keyword=strKeyword;
 		}
 		
-		System.out.println("초이스는"+choice);
-		System.out.println("검색어는는"+keyword);
 		
 
 		

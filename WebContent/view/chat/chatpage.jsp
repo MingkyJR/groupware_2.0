@@ -373,38 +373,31 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 
 		<div id="main11">
 			<div id="chat-container">
-				<c:forEach var="item" items="${mVOList}">
-					<div class="my-chat-box">
-						<c:if test="${name==item.name}">
-							<div class="chat my-chat">
-								<c:out value="${item.content}" />
-							</div>
+		<c:forEach  var="item" items="${mVOList}">
+			<div class="my-chat-box">
+				<c:if test="${name==item.name}">
+					<div class="chat my-chat">
+						<c:out value="${item.content}"/></div>
 							<div class="chat-info">
-								<fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss"
-									value="${item.sendTime}" />
-								<br />
+					<fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss" value="${item.sendTime}" /><br/>
 							</div>
-						</c:if>
+				</c:if>
+				</div>
+				<div class="chat-box">
+					<c:if test="${name!=item.name}">
+					<div class="chat">
+					<c:out value="${item.name}:${item.content}"/></div>
+					<div class="chat-info chat-box">
+					<fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss" value="${item.sendTime}" /><br/>
 					</div>
-					<div class="chat-box">
-						<c:if test="${name!=item.name}">
-							<div class="chat">
-								<c:out value="${item.name}:${item.content}" />
-							</div>
-							<div class="chat-info chat-box">
-								<fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss"
-									value="${item.sendTime}" />
-								<br />
-							</div>
-						</c:if>
+					</c:if>
 					</div>
-				</c:forEach>
-			</div>
-			<div id="bottom-container">
-				<input name="inputMessage" id="inputMessage" type="text"
-					class="inputMessage"> <input id="btn-submit" type="submit"
-					value="전송">
-			</div>
+		</c:forEach>
+		</div>
+		<div id="bottom-container">
+			<input name="inputMessage" id="inputMessage" type="text" class="inputMessage">
+			<input id="btn-submit" type="submit" value="전송" >
+		</div>
 		</div>
 
 
@@ -644,73 +637,100 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 	<%@ include file="../module/bottom00.jsp"%>
 </body>
 
+<script>
+       $(function() {
+           var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+           $("#portfolio").fadeTo(50, 0.1);
+               $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+           });
+       });
+    </script>
+
+	<%@ include file="../module/bottom00.jsp" %> 
+</body>
+
 
 <script>
+	
 	var textarea = document.getElementById("messageWindow");
 	//var webSocket = new WebSocket('ws://localhost/webChatServer');
-	var webSocket = new WebSocket('ws://172.30.1.57/webChatServer');
-	
+	var webSocket = new WebSocket('ws://172.30.1.96/webChatServer');
 	var inputMessage = document.getElementById('inputMessage');
-
-	webSocket.onerror = function(e) {
+	
+	webSocket.onerror = function(e){
 		onError(e);
 	};
-	webSocket.onopen = function(e) {
+	webSocket.onopen = function(e){
 		onOpen(e);
 	};
-	webSocket.onmessage = function(e) {
+	webSocket.onmessage = function(e){
 		onMessage(e);
 	};
-
-	function onMessage(e) {
+	
+	function onMessage(e){
 		var chatMsg = event.data;
-		var date = new Date(); //시간
-		var dateInfo = date.getHours() + ":" + date.getMinutes() + ":"
-				+ date.getSeconds();
-		if (chatMsg.substring(0, 6) == 'Server') {
+		var date = new Date();	//시간
+		var dateInfo = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+		if(chatMsg.substring(0,6) == 'Server'){
 			var $chat = $("<div class='chat notice'>" + chatMsg + "</div>");
 			$('#chat-container').append($chat);
-		} else {
-			var $chat = $("<div class='chat-box'><div class='chat'>" + chatMsg
-					+ "</div><div class='chat-info chat-box'>" + dateInfo
-					+ "</div></div>");
+		}else{
+			var $chat = $("<div class='chat-box'><div class='chat'>" + chatMsg + "</div><div class='chat-info chat-box'>"+ dateInfo +"</div></div>");
 			$('#chat-container').append($chat);
 		}
-
-		$('#chat-container').scrollTop(
-				$('#chat-container')[0].scrollHeight + 20);
+		
+		
+		$('#chat-container').scrollTop($('#chat-container')[0].scrollHeight+20);
 	}
-
-	function onOpen(e) {
-
+	
+	function onOpen(e){
+		
 	}
-
-	function onError(e) {
+	
+	function onError(e){
 		alert("서비스 장애! 재 접속하세요");
-		location.href = "http://localhost/login.do";
+		location.href="http://localhost/login.do";
 	}
-
+	
 	function onClose(e) {
 		alert("접속이 종료 되었습니다.")
 	}
-
-	function send() {
+	
+	function send(){
 		var chatMsg = inputMessage.value;
-		if (chatMsg == '') {
+		if(chatMsg == ''){
 			return;
 		}
 		var date = new Date();
-		var dateInfo = date.getHours() + ":" + date.getMinutes() + ":"
-				+ date.getSeconds();
-		var $chat = $("<div class='my-chat-box'><div class='chat my-chat'>"
-				+ chatMsg + "</div><div class='chat-info'>" + dateInfo
-				+ "</div></div>");
+		var dateInfo = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+		var $chat = $("<div class='my-chat-box'><div class='chat my-chat'>" + chatMsg + "</div><div class='chat-info'>"+ dateInfo +"</div></div>");
 		$('#chat-container').append($chat);
 		webSocket.send(chatMsg);
 		inputMessage.value = "";
-		$('#chat-container').scrollTop(
-				$('#chat-container')[0].scrollHeight + 20);
+		$('#chat-container').scrollTop($('#chat-container')[0].scrollHeight+20);
 	}
+	
+</script>
+<!-- 엔터 클릭시 send -->
+<script>
+	$(function(){
+		$('#inputMessage').keydown(function(key){
+			if(key.keyCode == 13){
+				$('#inputMessage').focus();
+				send();
+			}
+		});
+		$('#btn-submit').click(function(){
+			send();
+		});
+		
+	})
 </script>
 </html>
 

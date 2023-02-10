@@ -43,7 +43,7 @@
 <div class="main-banner" id="top">
 			<div style="border-radius: 10px; background-color: white; padding: 20px; box-shadow: 0px 0px 5px 0px gray; margin-left: 1%; float: left; height:700px; width: 50%; box-sizing: border-box;">
 				<span style="text-align: center;"><strong class="h2">결재대기</strong> </span><hr>
-					<iframe style=" width: 100%; height: 85%;" src="http://localhost/document/listDocument.do"></iframe>	<br>	<br>	<br>	<br>
+					<iframe style=" width: 100%; height: 85%;" src="http://172.30.1.57/document/listDocument.do"></iframe>	<br>	<br>	<br>	<br>
 			</div>
 			
 			<div style="border-radius: 10px; background-color: white; padding: 20px; box-shadow: 0px 0px 5px 0px gray; margin-left: 1%; float: left; height:700px; width:40%; box-sizing: border-box;">
