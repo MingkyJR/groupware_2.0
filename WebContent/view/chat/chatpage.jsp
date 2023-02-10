@@ -454,13 +454,17 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 							<div class="owl-men-item owl-carousel">
 								<div class="item">
 									<div class="thumb">
+									<a href="http://172.30.1.57/notice/read.do?no=7&pageNo=1&rowSize=5">
 										<img src="./../assets/images/sell2.png" alt="">
+									</a>
 									</div>
 									<div class="down-content"></div>
 								</div>
 								<div class="item">
 									<div class="thumb">
+									<a href="http://172.30.1.57/notice/read.do?no=6&pageNo=1&rowSize=5">
 										<img src="./../assets/images/sell3.png" alt="">
+									</a>
 									</div>
 									<div class="down-content"></div>
 								</div>
@@ -472,7 +476,9 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 								</div>
 								<div class="item">
 									<div class="thumb">
+									<a href="http://172.30.1.57/notice/read.do?no=8&pageNo=1&rowSize=5">
 										<img src="./../assets/images/sell5.png" alt="">
+									</a>
 									</div>
 									<div class="down-content"></div>
 								</div>
@@ -641,13 +647,9 @@ request.setAttribute("AUTHUSER", AUTHUSER);
 
 <script>
 	var textarea = document.getElementById("messageWindow");
-<<<<<<< HEAD
 	//var webSocket = new WebSocket('ws://localhost/webChatServer');
 	var webSocket = new WebSocket('ws://172.30.1.57/webChatServer');
-=======
-	var webSocket = new WebSocket('ws://localhost:8083/webChatServer');
-  //var webSocket = new WebSocket('ws://172.30.1.57/webChatServer');
->>>>>>> refs/remotes/origin/recss
+	
 	var inputMessage = document.getElementById('inputMessage');
 
 	webSocket.onerror = function(e) {
