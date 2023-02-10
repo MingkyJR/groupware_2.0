@@ -120,8 +120,13 @@
 </head>
 <body>
 <%@ include file="../module/top00.jsp" %>
+<<<<<<< HEAD
 ${ keyword }
 	<button class="btnRegi"><a href="registe.do" style="text-decoration: none; color: white;">게시글 등록</a></button>
+=======
+
+	
+>>>>>>> refs/remotes/origin/main
 	<div class="second_container">
 	<form class="example" action="<%=request.getContextPath()%>/secondHand/searchList.do" style="text-align: center; margin: 15px 0;">
 		<input type="text" placeholder="Search.." name="keyword">
@@ -142,6 +147,9 @@ ${ keyword }
 		<div class="desc">조회수 ${dto.views}</div>
 		</div>
 	</c:forEach>
+	<div style="text-align: right;">
+	<button class="btnRegi"><a href="registe.do" style="text-decoration: none; color: white;">게시글 등록</a></button>
+	</div>
 	<div class="second_pagination">
 		<c:if test="${ pageDTO.startPage>1 }">
 			<a href="<%=request.getContextPath()%>/secondHand/list.do?pageNo=${ pageDTO.startPage - 1 }&keyword=${keyword}">&laquo;</a>

@@ -30,10 +30,11 @@ public class NaverSMTP {
 		serverInfo.put("mail.smtp.socketFactory.fallback", "false");
 
 		// 사용자 인증 정보
+		// 네이버 설정중 smtp 설정을 해야합니다.
 		auth = new Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("네이버아이디", "네이버비밀번호");
+				return new PasswordAuthentication("네이버 아이디", "네이버 비밀번호");
 			}
 		};
 	}

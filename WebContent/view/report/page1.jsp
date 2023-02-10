@@ -58,19 +58,19 @@
 					<div class="service-item">
 						<div class="section-heading">
 							<h2>마음의 소리</h2>
-							<br> <span>사내에 불미스러운 일과 직접적으로 말할 수 <br> 없는 이야기를 사장님과 직접
+							<br> <span>사내에 불미스러운 일과 직접적으로 말할 수 <br> 없는 이야기를 대표님과 직접
 								상담하세요</span>
 						</div>
 
 						<form method="post" action="SendProcess.jsp">
 							<table>
 								<tr>
-									<td><strong>보내는 분</strong> <br>
-									<input type="text" name="from" value="" /></td>
+									<td><strong></strong> <br>
+									<input type="hidden" name="from" value="ehdgydi@naver.com" /></td>
 								</tr>
 								<tr>
-									<td><strong>사장님</strong> <br> <input type="text"
-										name="to" value="ehdgydi@naver.com" />
+									<td><strong>대표님에게</strong> <br>(수정이 필요하면 관리자에게 문의) <input type="hidden"
+										name="to" value="ehdgydi@gmail.com" readonly />
 								</tr>
 								<tr>
 									<td><strong>제목 </strong><br> <input type="text"

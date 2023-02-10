@@ -23,7 +23,7 @@ public class DocumentDAO {
 				+ "FROM  ( SELECT SEQ, do_no,stat_no,title,draft_empno,draft_date,emp_kname,dept_name,emp_position  "
 				+ "			         FROM  (  SELECT ROWNUM AS SEQ, do_no,stat_no,title,draft_empno,draft_date,emp_kname,dept_name,emp_position   "
 				+ "			                FROM  (   SELECT do_no,stat_no,title,draft_empno,draft_date,emp_kname,dept_name,emp_position   "
-				+ "			                           FROM E_Approval where stat_no in (1,2) "
+				+ "			                           FROM E_Approval where stat_no in 1 "
 				+ "			                           order by do_no asc ) ) " + "            WHERE SEQ > ? ) "
 				+ "WHERE ROWNUM <= ? ";
 		ResultSet rs = null;

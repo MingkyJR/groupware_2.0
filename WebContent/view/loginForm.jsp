@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -9,24 +9,61 @@
 <title>login</title>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/css/loginStyle.css">
-<style></style>
-<script>
-	$(document).ready(function(){
-		
-	});//
-</script>
+<style>
+<
+style type ="text/css">.tg {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.tg td {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	overflow: hidden;
+	padding: 10px 5px;
+	word-break: normal;
+}
+
+.tg th {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	overflow: hidden;
+	padding: 10px 5px;
+	word-break: normal;
+}
+
+.tg .tg-0pky {
+	border-color: inherit;
+	text-align: left;
+	vertical-align: top
+}
+
+.tg .tg-y698 {
+	background-color: #efefef;
+	border-color: inherit;
+	text-align: left;
+	vertical-align: top
+}
+</style>
 
 </head>
 <body>
-		<div id="header">
+	<div id="header"></div>
+	<div id="container">
+		<div id="aside">
+			<img id="img" src="/assets/images/login_img.png">
 		</div>
-		<div id="container">
-			<div id="aside">
-				<img id="img" src="/assets/images/login_img.png">
-			</div>
 		<form action="/login.do" method="post">
 			<div class="contents">
 				<h2>Greeting</h2>
+			
 				<label>
 				<span>ID</span><br/>
 				<input type="text" name="emp_id" id="emp_id" value="${param.emp_id}"/>
@@ -41,14 +78,20 @@
 				</label>
 				<br/>
 				<button type="submit" class="login">Log In</button>
-				<button type="button" class="signup" onclick="location.href='/join.do';">Sign Up</button>
+				<button type="button" class="signup"
+					onclick="location.href='/join.do';">Sign Up</button>
 			</div>
 		</form>
-		</div>
-		
-		<div id="footer">
-		</div>
+	</div>
 
+	<div id="footer" >
+	
+<!-- 	
+						visibility:hidden
+						로그인페이지 아이디목록 투명화
+	 -->
+	
 
+</div>
 </body>
 </html>

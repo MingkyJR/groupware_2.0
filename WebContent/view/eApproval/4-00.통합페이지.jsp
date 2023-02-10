@@ -61,7 +61,8 @@
 				</select> <br>
 				<br>
 				<div style="border-radius: 10px; padding: 20px; box-shadow: 0px 0px 5px 0px gray; width:90%;">
-					<input class="btn1" type="button" value="기안서(일반)"><br>
+				
+					<input class="btn1" type="button" value="기안서(일반)" onclick="location.href='<%=request.getContextPath()%>/document/writeDocument.do';" > <br>
 					<input class="btn1" type="button" value="보고서"><br>
 					<input class="btn1" type="button" value="품의서"><br>
 					<input class="btn1" type="button" value="경조비지급신청서"><br>
@@ -77,7 +78,7 @@
 
 			<div style="border-radius: 10px; background-color: white; padding: 20px; box-shadow: 0px 0px 5px 0px gray; margin-left: 1%; float: left; height:700px; width: 47%; box-sizing: border-box;">
 				<span style="text-align: center;"><strong class="h2">결재대기</strong> </span><hr>
-					<iframe style=" width: 100%; height: 85%;" src="http://localhost/document/listSelfDocument.do"></iframe>	<br>	<br>	<br>	<br>
+					<iframe style=" width: 100%; height: 85%;" src="http://172.30.1.96/document/listSelfDocument.do"></iframe>	<br>	<br>	<br>	<br>
 			</div>
 			
 			<div style="border-radius: 10px; background-color: white; padding: 20px; box-shadow: 0px 0px 5px 0px gray; margin-left: 1%; float: left; height:700px; width:35%; box-sizing: border-box;">

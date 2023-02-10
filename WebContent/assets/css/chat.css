@@ -10,14 +10,14 @@
 }
 
 .inputMessage {
-	width: 180px;
+	width: 280px;
 	height: 31px;
 }
 
 #btn-submit {
 	background: white;
 	background: #F7E600;
-	width: 60px;
+	width: 70px;
 	height: 31.5px;
 	color: #607080;
 	border: none;
@@ -37,20 +37,20 @@
 }
 
 #chat-container {
+	width:350px;
 	padding:5px;
 	border: hidden;
 	vertical-align: bottom;
-	min-height: 397px;
-	max-height: 397px;
+	min-height: 490px;
+	max-height: 490px;
 	overflow: scroll;
 	overflow-x: hidden;
 	background: #9bbbd4;
-	overflow-y: scroll;
 }
 
 
 .chat {
-	font-size: 10px;
+	font-size: 11px !important;
 	color: black;
 	margin: 5px;
 	min-height: 20px;
@@ -81,8 +81,6 @@
 	border-radius: 10px 10px 10px 10px;
 }
 
-#bottom-container {
-}
 
 .chat-info {
 	color: #556677;
