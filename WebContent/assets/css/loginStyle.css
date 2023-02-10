@@ -1,9 +1,17 @@
 @charset "UTF-8";
 
-#header{
-	width:1000px;
-	height:100px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+body{
 	
+
+  line-height: 1.5em;
+  
+}
+
+
+#header{
+	height:130px;
 }
 
 #container{
@@ -11,14 +19,18 @@
 	flex-wrap: wrap;
 	justify-content:center;
 	align-items: center;
+	width:830px;
+	margin: auto;
 }
 
 
+#aside{
+	width: 450px;
+}
+
 #img{
+	
 	width:100%;
-	max-width:700px;
-	height:100%;
-	max-height:450px;
 	vertical-align:middle;
 	
 }
@@ -28,7 +40,7 @@
 	border:1px solid #dadada;
 	padding: 10px;
 	color:#fff;
-	width: 48%;
+	width:90px;
 	cursor: pointer;
 }
 
@@ -37,6 +49,10 @@
 	border:1px solid #dadada;
 	padding: 10px;
 	color:#fff;
-	width: 48%;
+	width:90px;
 	cursor: pointer;
+}
+
+.error{
+	color: red;
 }

@@ -82,7 +82,7 @@
 		    </tr>
 		    <tr>
 		      <th scope="row" style="line-height: 252px;">사유</th>
-		      <td><textarea name="reason" rows="10" style="width: 100%; resize: none;">${edit.reason}</textarea></td>
+		      <td><textarea name="reason" readonly="readonly" rows="10" style="width: 100%; resize: none;">${edit.reason}</textarea></td>
 		    </tr>
 		  </tbody>
 		</table>

@@ -6,7 +6,9 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import auth.service.LoginService;
 import auth.service.User;
 import employee.service.ChangeMyInfoService;
 import employee.service.InvalidPasswordException;
@@ -20,6 +22,7 @@ public class changeMyinfoHandler implements CommandHandler {
 
 	private static final String FORM_VIEW = "/view/mypageForm.jsp";
 	private ChangeMyInfoService changMyInfoService = new ChangeMyInfoService();
+	private LoginService loginService = new LoginService();
 	
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -82,12 +85,25 @@ public class changeMyinfoHandler implements CommandHandler {
 		}
 		
 		//2.비즈니스로직수행<->Service<->DAO<->DB-p607 53라인
+		
+		
 		//3.Model&4.view-p623 57라인
+		
+		
+		
 		try {
 			changMyInfoService.changMyInfo(user.getEmp_id(), curPwd, newPwd, new_kname,	new_ename, 
 										new_emp_postcode, new_emp_address, new_birthday, 
 										new_phonenumber,new_emp_email, new_dept_name, emp_position);
 			System.out.println("changMyInfoService비즈니스 로직");
+			
+			
+			User user_change = loginService.login(user.getEmp_id(), newPwd);
+			HttpSession session = request.getSession();
+			session.setAttribute("AUTHUSER",user_change);
+			
+			
+			
 			return request.getContextPath()+"/view/changeSuccess.jsp";
 		}catch(InvalidPasswordException e) {
 			errors.put("badCurPwd", Boolean.TRUE);
