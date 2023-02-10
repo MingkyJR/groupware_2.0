@@ -64,9 +64,6 @@
                      
                                  		<li><a href="/logout.do">로그아웃</a></li>
                                     <li><a href="../view/mypageForm.jsp">회원정보수정</a></li>
-                                    <c:if test="${AUTHUSER.emp_grade eq 5}">
-                                    <li><a href="#">회원정보관리</a></li>
-                                    </c:if>
                                 </ul>
                             </li>
                          
