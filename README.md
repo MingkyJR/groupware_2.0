@@ -52,5 +52,8 @@
 ![image](https://github.com/MingkyJR/groupware_2.0/assets/99116319/c6304b01-4ca4-4dc1-93f9-94172cb945b0)
 
 
+
+
 <p>블로그 상세 후기</p>
+<p><a href="https://happymingkyjr.tistory.com/24" target="_blank"><img src="https://img.shields.io/badge/Tistory-000000?style=flat-square&logo=Tistory&logoColor=white"/></a></p>
 
