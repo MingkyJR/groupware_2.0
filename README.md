@@ -53,7 +53,7 @@
 
 
 
-
-<p>블로그 상세 후기</p>
-<p><a href="https://happymingkyjr.tistory.com/24" target="_blank"><img src="https://img.shields.io/badge/Tistory-000000?style=flat-square&logo=Tistory&logoColor=white"/></a></p>
+<br>
+<br>
+<p>블로그 후기 <a href="https://happymingkyjr.tistory.com/24" target="_blank"><img src="https://img.shields.io/badge/Tistory-000000?style=flat-square&logo=Tistory&logoColor=white"/></a></p>
 
